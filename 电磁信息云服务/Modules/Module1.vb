@@ -21,6 +21,7 @@ Module Module1
     Public AutoFenXiFuCha As Double = 5
     Public VoiceMuban As Integer = 0
     Public voiceRate As Integer = 2
+
     Public VoiceKind As Integer = 0
     Public selectGisPanel As GisPanel
     Public TZBQIco As String = "http://123.207.31.37:8082/bmapico/TZBQ.png" & "?t=" & Now.Ticks
