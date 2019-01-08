@@ -23,25 +23,25 @@ Partial Class OnlineSignal
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim ChartArea7 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend7 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series7 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(OnlineSignal))
         Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
         Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
         Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(OnlineSignal))
-        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend3 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea4 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend4 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series4 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea5 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend5 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series5 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea6 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend6 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series6 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea8 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend8 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series8 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea9 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend9 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series9 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea10 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend10 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series10 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea11 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend11 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series11 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.Panel9 = New System.Windows.Forms.Panel()
@@ -385,21 +385,21 @@ Partial Class OnlineSignal
         '
         'Chart4
         '
-        ChartArea1.Name = "ChartArea1"
-        ChartArea1.Position.Auto = False
-        ChartArea1.Position.Height = 100.0!
-        ChartArea1.Position.Width = 98.0!
-        Me.Chart4.ChartAreas.Add(ChartArea1)
+        ChartArea7.Name = "ChartArea1"
+        ChartArea7.Position.Auto = False
+        ChartArea7.Position.Height = 100.0!
+        ChartArea7.Position.Width = 98.0!
+        Me.Chart4.ChartAreas.Add(ChartArea7)
         Me.Chart4.ContextMenuStrip = Me.ContextMenuStrip4
         Me.Chart4.Dock = System.Windows.Forms.DockStyle.Fill
-        Legend1.Name = "Legend1"
-        Me.Chart4.Legends.Add(Legend1)
+        Legend7.Name = "Legend1"
+        Me.Chart4.Legends.Add(Legend7)
         Me.Chart4.Location = New System.Drawing.Point(0, 0)
         Me.Chart4.Name = "Chart4"
-        Series1.ChartArea = "ChartArea1"
-        Series1.Legend = "Legend1"
-        Series1.Name = "Series1"
-        Me.Chart4.Series.Add(Series1)
+        Series7.ChartArea = "ChartArea1"
+        Series7.Legend = "Legend1"
+        Series7.Name = "Series1"
+        Me.Chart4.Series.Add(Series7)
         Me.Chart4.Size = New System.Drawing.Size(1064, 205)
         Me.Chart4.TabIndex = 3
         Me.Chart4.Text = "Chart4"
@@ -720,20 +720,20 @@ Partial Class OnlineSignal
         '
         'Chart5
         '
-        ChartArea2.Name = "ChartArea1"
-        ChartArea2.Position.Auto = False
-        ChartArea2.Position.Height = 100.0!
-        ChartArea2.Position.Width = 98.0!
-        Me.Chart5.ChartAreas.Add(ChartArea2)
+        ChartArea1.Name = "ChartArea1"
+        ChartArea1.Position.Auto = False
+        ChartArea1.Position.Height = 100.0!
+        ChartArea1.Position.Width = 98.0!
+        Me.Chart5.ChartAreas.Add(ChartArea1)
         Me.Chart5.Dock = System.Windows.Forms.DockStyle.Fill
-        Legend2.Name = "Legend1"
-        Me.Chart5.Legends.Add(Legend2)
+        Legend1.Name = "Legend1"
+        Me.Chart5.Legends.Add(Legend1)
         Me.Chart5.Location = New System.Drawing.Point(0, 0)
         Me.Chart5.Name = "Chart5"
-        Series2.ChartArea = "ChartArea1"
-        Series2.Legend = "Legend1"
-        Series2.Name = "Series1"
-        Me.Chart5.Series.Add(Series2)
+        Series1.ChartArea = "ChartArea1"
+        Series1.Legend = "Legend1"
+        Series1.Name = "Series1"
+        Me.Chart5.Series.Add(Series1)
         Me.Chart5.Size = New System.Drawing.Size(1064, 209)
         Me.Chart5.TabIndex = 4
         Me.Chart5.Text = "Chart5"
@@ -938,20 +938,20 @@ Partial Class OnlineSignal
         '
         'Chart6
         '
-        ChartArea3.Name = "ChartArea1"
-        ChartArea3.Position.Auto = False
-        ChartArea3.Position.Height = 100.0!
-        ChartArea3.Position.Width = 98.0!
-        Me.Chart6.ChartAreas.Add(ChartArea3)
+        ChartArea8.Name = "ChartArea1"
+        ChartArea8.Position.Auto = False
+        ChartArea8.Position.Height = 100.0!
+        ChartArea8.Position.Width = 98.0!
+        Me.Chart6.ChartAreas.Add(ChartArea8)
         Me.Chart6.Dock = System.Windows.Forms.DockStyle.Fill
-        Legend3.Name = "Legend1"
-        Me.Chart6.Legends.Add(Legend3)
+        Legend8.Name = "Legend1"
+        Me.Chart6.Legends.Add(Legend8)
         Me.Chart6.Location = New System.Drawing.Point(0, 40)
         Me.Chart6.Name = "Chart6"
-        Series3.ChartArea = "ChartArea1"
-        Series3.Legend = "Legend1"
-        Series3.Name = "Series1"
-        Me.Chart6.Series.Add(Series3)
+        Series8.ChartArea = "ChartArea1"
+        Series8.Legend = "Legend1"
+        Series8.Name = "Series1"
+        Me.Chart6.Series.Add(Series8)
         Me.Chart6.Size = New System.Drawing.Size(1064, 359)
         Me.Chart6.TabIndex = 81
         Me.Chart6.Text = "Chart6"
@@ -1990,60 +1990,60 @@ Partial Class OnlineSignal
         '
         'Chart1
         '
-        ChartArea4.Name = "ChartArea1"
-        ChartArea4.Position.Auto = False
-        ChartArea4.Position.Height = 100.0!
-        ChartArea4.Position.Width = 98.0!
-        Me.Chart1.ChartAreas.Add(ChartArea4)
+        ChartArea9.Name = "ChartArea1"
+        ChartArea9.Position.Auto = False
+        ChartArea9.Position.Height = 100.0!
+        ChartArea9.Position.Width = 98.0!
+        Me.Chart1.ChartAreas.Add(ChartArea9)
         Me.Chart1.Dock = System.Windows.Forms.DockStyle.Fill
-        Legend4.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend4)
+        Legend9.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend9)
         Me.Chart1.Location = New System.Drawing.Point(0, 0)
         Me.Chart1.Name = "Chart1"
-        Series4.ChartArea = "ChartArea1"
-        Series4.Legend = "Legend1"
-        Series4.Name = "Series1"
-        Me.Chart1.Series.Add(Series4)
+        Series9.ChartArea = "ChartArea1"
+        Series9.Legend = "Legend1"
+        Series9.Name = "Series1"
+        Me.Chart1.Series.Add(Series9)
         Me.Chart1.Size = New System.Drawing.Size(833, 205)
         Me.Chart1.TabIndex = 2
         Me.Chart1.Text = "Chart1"
         '
         'Chart2
         '
-        ChartArea5.Name = "ChartArea1"
-        ChartArea5.Position.Auto = False
-        ChartArea5.Position.Height = 100.0!
-        ChartArea5.Position.Width = 98.0!
-        Me.Chart2.ChartAreas.Add(ChartArea5)
+        ChartArea10.Name = "ChartArea1"
+        ChartArea10.Position.Auto = False
+        ChartArea10.Position.Height = 100.0!
+        ChartArea10.Position.Width = 98.0!
+        Me.Chart2.ChartAreas.Add(ChartArea10)
         Me.Chart2.Dock = System.Windows.Forms.DockStyle.Fill
-        Legend5.Name = "Legend1"
-        Me.Chart2.Legends.Add(Legend5)
+        Legend10.Name = "Legend1"
+        Me.Chart2.Legends.Add(Legend10)
         Me.Chart2.Location = New System.Drawing.Point(0, 0)
         Me.Chart2.Name = "Chart2"
-        Series5.ChartArea = "ChartArea1"
-        Series5.Legend = "Legend1"
-        Series5.Name = "Series1"
-        Me.Chart2.Series.Add(Series5)
+        Series10.ChartArea = "ChartArea1"
+        Series10.Legend = "Legend1"
+        Series10.Name = "Series1"
+        Me.Chart2.Series.Add(Series10)
         Me.Chart2.Size = New System.Drawing.Size(833, 187)
         Me.Chart2.TabIndex = 3
         Me.Chart2.Text = "Chart2"
         '
         'Chart3
         '
-        ChartArea6.Name = "ChartArea1"
-        ChartArea6.Position.Auto = False
-        ChartArea6.Position.Height = 100.0!
-        ChartArea6.Position.Width = 98.0!
-        Me.Chart3.ChartAreas.Add(ChartArea6)
+        ChartArea11.Name = "ChartArea1"
+        ChartArea11.Position.Auto = False
+        ChartArea11.Position.Height = 100.0!
+        ChartArea11.Position.Width = 98.0!
+        Me.Chart3.ChartAreas.Add(ChartArea11)
         Me.Chart3.Dock = System.Windows.Forms.DockStyle.Fill
-        Legend6.Name = "Legend1"
-        Me.Chart3.Legends.Add(Legend6)
+        Legend11.Name = "Legend1"
+        Me.Chart3.Legends.Add(Legend11)
         Me.Chart3.Location = New System.Drawing.Point(0, 0)
         Me.Chart3.Name = "Chart3"
-        Series6.ChartArea = "ChartArea1"
-        Series6.Legend = "Legend1"
-        Series6.Name = "Series1"
-        Me.Chart3.Series.Add(Series6)
+        Series11.ChartArea = "ChartArea1"
+        Series11.Legend = "Legend1"
+        Series11.Name = "Series1"
+        Me.Chart3.Series.Add(Series11)
         Me.Chart3.Size = New System.Drawing.Size(833, 282)
         Me.Chart3.TabIndex = 4
         Me.Chart3.Text = "Chart3"

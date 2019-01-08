@@ -2320,4 +2320,7 @@ Public Class OnlineSignal
         End Try
     End Sub
 
+    Private Sub PictureBox14_Click(sender As Object, e As EventArgs) Handles PictureBox14.Click
+        stopDevice()
+    End Sub
 End Class

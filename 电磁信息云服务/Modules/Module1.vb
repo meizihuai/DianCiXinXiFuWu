@@ -12,7 +12,7 @@ Imports Newtonsoft.Json
 Imports Newtonsoft.Json.Linq
 Module Module1
     Public exeName As String = "电磁信息云服务.exe"
-    Public Version As String = "1.4.3.4"
+    Public Version As String = "1.4.3.6"
     Public uiOpenImg As Image = Image.FromFile("./img/展开.png")
     Public uiCloseImg As Image = Image.FromFile("./img/收起.png")
     Public alldevlist As List(Of deviceStu)

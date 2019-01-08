@@ -192,6 +192,7 @@ Public Class CarFreqGis
         If IsNothing(carList) Then Return
         If index >= carList.Count Then Return
         Dim car As deviceStu = carList(index)
+        mOrderMsg = ""
         selectCar = car
         selectDeviceId = car.DeviceID
         selectLineId = ""
@@ -640,6 +641,7 @@ Public Class CarFreqGis
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
         StartFreq()
     End Sub
+    Private mOrderMsg As String = ""
     Private Sub StartFreq()
         Dim msg As String = ""
         Dim freqbegin As Double = Val(TextBox1.Text)
@@ -656,6 +658,7 @@ Public Class CarFreqGis
         p.DHDevice = DHDeviceStr
         p.deviceID = selectDeviceId
         Dim orderMsg As String = JsonConvert.SerializeObject(p)
+        mOrderMsg = orderMsg
         SendMsgToDev(orderMsg)
     End Sub
     Private Function SendMsgToDev(ByVal orderMsg As String)
@@ -717,6 +720,23 @@ Public Class CarFreqGis
             flagIsCreatingModule = True
             '按下 开始建模
             LinkLabel2.Text = "关闭建模"
+        End If
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        If mOrderMsg <> "" Then
+            Try
+                Label31.Visible = True
+                Dim str As String = "?func=tssOrder&datamsg=" & mOrderMsg & "&token=" & token
+                Dim result As String = GetH(HttpMsgUrl, str)
+                Dim r As String = GetNorResult("result", result)
+                Dim msg As String = GetNorResult("msg", result)
+                Dim errmsg As String = GetNorResult("errmsg", result)
+
+            Catch ex As Exception
+
+            End Try
+            Label31.Visible = False
         End If
     End Sub
 #End Region

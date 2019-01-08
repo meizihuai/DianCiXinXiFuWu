@@ -24,9 +24,9 @@ Partial Class CarFreqGis
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CarFreqGis))
-        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.LVDetail = New System.Windows.Forms.ListView()
@@ -53,6 +53,7 @@ Partial Class CarFreqGis
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.WebGis = New System.Windows.Forms.WebBrowser()
         Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.Panel13 = New System.Windows.Forms.Panel()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.LinkLabel3 = New System.Windows.Forms.LinkLabel()
         Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
@@ -79,7 +80,7 @@ Partial Class CarFreqGis
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.Panel13 = New System.Windows.Forms.Panel()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel1.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
@@ -89,6 +90,7 @@ Partial Class CarFreqGis
         Me.Panel2.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.Panel8.SuspendLayout()
+        Me.Panel13.SuspendLayout()
         Me.Panel7.SuspendLayout()
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
@@ -98,7 +100,6 @@ Partial Class CarFreqGis
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel10.SuspendLayout()
-        Me.Panel13.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -361,6 +362,18 @@ Partial Class CarFreqGis
         Me.Panel8.Size = New System.Drawing.Size(719, 51)
         Me.Panel8.TabIndex = 11
         '
+        'Panel13
+        '
+        Me.Panel13.Controls.Add(Me.CheckBox2)
+        Me.Panel13.Controls.Add(Me.LinkLabel3)
+        Me.Panel13.Controls.Add(Me.LinkLabel2)
+        Me.Panel13.Controls.Add(Me.Label4)
+        Me.Panel13.Location = New System.Drawing.Point(72, 11)
+        Me.Panel13.Name = "Panel13"
+        Me.Panel13.Size = New System.Drawing.Size(342, 39)
+        Me.Panel13.TabIndex = 16
+        Me.Panel13.Visible = False
+        '
         'CheckBox2
         '
         Me.CheckBox2.AutoSize = True
@@ -427,26 +440,26 @@ Partial Class CarFreqGis
         '
         'Chart1
         '
-        ChartArea1.AlignmentStyle = System.Windows.Forms.DataVisualization.Charting.AreaAlignmentStyles.Position
-        ChartArea1.InnerPlotPosition.Auto = False
-        ChartArea1.InnerPlotPosition.Height = 86.0!
-        ChartArea1.InnerPlotPosition.Width = 96.0!
-        ChartArea1.InnerPlotPosition.X = 4.0!
-        ChartArea1.InnerPlotPosition.Y = 4.0!
-        ChartArea1.Name = "ChartArea1"
-        ChartArea1.Position.Auto = False
-        ChartArea1.Position.Height = 100.0!
-        ChartArea1.Position.Width = 98.0!
-        Me.Chart1.ChartAreas.Add(ChartArea1)
+        ChartArea2.AlignmentStyle = System.Windows.Forms.DataVisualization.Charting.AreaAlignmentStyles.Position
+        ChartArea2.InnerPlotPosition.Auto = False
+        ChartArea2.InnerPlotPosition.Height = 86.0!
+        ChartArea2.InnerPlotPosition.Width = 96.0!
+        ChartArea2.InnerPlotPosition.X = 4.0!
+        ChartArea2.InnerPlotPosition.Y = 4.0!
+        ChartArea2.Name = "ChartArea1"
+        ChartArea2.Position.Auto = False
+        ChartArea2.Position.Height = 100.0!
+        ChartArea2.Position.Width = 98.0!
+        Me.Chart1.ChartAreas.Add(ChartArea2)
         Me.Chart1.Dock = System.Windows.Forms.DockStyle.Fill
-        Legend1.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend1)
+        Legend2.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend2)
         Me.Chart1.Location = New System.Drawing.Point(0, 0)
         Me.Chart1.Name = "Chart1"
-        Series1.ChartArea = "ChartArea1"
-        Series1.Legend = "Legend1"
-        Series1.Name = "Series1"
-        Me.Chart1.Series.Add(Series1)
+        Series2.ChartArea = "ChartArea1"
+        Series2.Legend = "Legend1"
+        Series2.Name = "Series1"
+        Me.Chart1.Series.Add(Series2)
         Me.Chart1.Size = New System.Drawing.Size(719, 256)
         Me.Chart1.TabIndex = 3
         Me.Chart1.Text = "Chart1"
@@ -652,17 +665,10 @@ Partial Class CarFreqGis
         Me.Label6.TabIndex = 11
         Me.Label6.Text = "频谱地图"
         '
-        'Panel13
+        'Timer1
         '
-        Me.Panel13.Controls.Add(Me.CheckBox2)
-        Me.Panel13.Controls.Add(Me.LinkLabel3)
-        Me.Panel13.Controls.Add(Me.LinkLabel2)
-        Me.Panel13.Controls.Add(Me.Label4)
-        Me.Panel13.Location = New System.Drawing.Point(72, 11)
-        Me.Panel13.Name = "Panel13"
-        Me.Panel13.Size = New System.Drawing.Size(342, 39)
-        Me.Panel13.TabIndex = 16
-        Me.Panel13.Visible = False
+        Me.Timer1.Enabled = True
+        Me.Timer1.Interval = 10000
         '
         'CarFreqGis
         '
@@ -687,6 +693,8 @@ Partial Class CarFreqGis
         Me.Panel6.ResumeLayout(False)
         Me.Panel8.ResumeLayout(False)
         Me.Panel8.PerformLayout()
+        Me.Panel13.ResumeLayout(False)
+        Me.Panel13.PerformLayout()
         Me.Panel7.ResumeLayout(False)
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel5.ResumeLayout(False)
@@ -699,8 +707,6 @@ Partial Class CarFreqGis
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel10.ResumeLayout(False)
         Me.Panel10.PerformLayout()
-        Me.Panel13.ResumeLayout(False)
-        Me.Panel13.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -758,4 +764,5 @@ Partial Class CarFreqGis
     Friend WithEvents LinkLabel3 As LinkLabel
     Friend WithEvents LinkLabel2 As LinkLabel
     Friend WithEvents Panel13 As Panel
+    Friend WithEvents Timer1 As Timer
 End Class
