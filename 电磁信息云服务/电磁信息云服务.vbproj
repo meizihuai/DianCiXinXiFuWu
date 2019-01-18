@@ -64,7 +64,7 @@
     <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\dlls\Newtonsoft.Json.dll</HintPath>
+      <HintPath>D:\dlls\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -373,6 +373,12 @@
     <Compile Include="frms\ShowNotify.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="usrPanels\POAPanel.Designer.vb">
+      <DependentUpon>POAPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="usrPanels\POAPanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="usrPanels\SignalBiaoPanel.Designer.vb">
       <DependentUpon>SignalBiaoPanel.vb</DependentUpon>
     </Compile>
@@ -564,6 +570,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frms\ShowNotify.resx">
       <DependentUpon>ShowNotify.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usrPanels\POAPanel.resx">
+      <DependentUpon>POAPanel.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="usrPanels\SignalBiaoPanel.resx">
       <DependentUpon>SignalBiaoPanel.vb</DependentUpon>

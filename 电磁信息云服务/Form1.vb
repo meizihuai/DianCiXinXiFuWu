@@ -234,6 +234,9 @@ Public Class Form1
         ut.item("信息服务").AddNode("截图上报")
         ut.item("信息服务").AddNode("截图管理")
 
+        ut.AddNode("智能监测")
+        ut.item("智能监测").AddNode("POA定位")
+
         ut.AddNode("公交系统")
         ut.item("公交系统").AddNode("频谱地图")
         ut.item("公交系统").AddNode("历史频谱")
@@ -351,6 +354,12 @@ Public Class Form1
             End If
             If SonName = "设备设置" Then
                 Dim p As New DeviceSetting
+                ShowPanel(p)
+            End If
+        End If
+        If fatherName = "智能监测" Then
+            If SonName = "POA定位" Then
+                Dim p As New POAPanel
                 ShowPanel(p)
             End If
         End If

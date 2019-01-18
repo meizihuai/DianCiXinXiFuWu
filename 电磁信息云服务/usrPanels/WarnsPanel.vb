@@ -61,7 +61,7 @@ Public Class WarnsPanel
         LVWarn.Columns.Add("序号", 50)
         LVWarn.Columns.Add("预警类别")
         LVWarn.Columns.Add("预警地点")
-        LVWarn.Columns.Add("设备ID")      
+        LVWarn.Columns.Add("设备名称")
         LVWarn.Columns.Add("预警时间", 150)
         LVWarn.Columns.Add("预警字段", 150)
         LVWarn.Columns.Add("经度")
@@ -82,6 +82,14 @@ Public Class WarnsPanel
         If result = "[]" Then
             Exit Sub
         End If
+        Dim resutl As String = GetServerResult("func=GetAllDBDevlist&token=" & token)
+        Dim deviceDt As DataTable = JsonConvert.DeserializeObject(resutl, GetType(DataTable))
+        Dim dik As New Dictionary(Of String, String)
+        For Each row As DataRow In deviceDt.Rows
+            Dim deviceId As String = row("DeviceID").ToString
+            Dim deviceName As String = row("DeviceNickName").ToString
+            dik.Add(deviceId, deviceName)
+        Next
         Dim dt As DataTable = JsonConvert.DeserializeObject(result, GetType(DataTable))
         If IsNothing(dt) = False Then
             Dim dv As DataView = dt.DefaultView
@@ -105,7 +113,12 @@ Public Class WarnsPanel
                 itm.SubItems.Add(GetWarnKindName(row("WarnKind")))
                 itm.SubItems.Add(row("Address"))
                 'itm.SubItems.Add("九江市开发区")
-                itm.SubItems.Add(row("DeviceID"))
+                Dim deviceId As String = row("DeviceID").ToString
+                Dim deviceName As String = deviceId
+                If dik.ContainsKey(deviceId) Then
+                    deviceName = dik(deviceId)
+                End If
+                itm.SubItems.Add(deviceName)
                 itm.SubItems.Add(row("MsgTime"))
                 itm.SubItems.Add(WARN2Msg(row("DeviceMsg"), row("Address")))
                 Dim DeviceMsg As String = row("DeviceMsg")
