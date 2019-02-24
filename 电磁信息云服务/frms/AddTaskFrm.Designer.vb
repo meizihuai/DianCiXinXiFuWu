@@ -25,7 +25,8 @@ Partial Class AddTaskFrm
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AddTaskFrm))
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.txtTaskBg2 = New System.Windows.Forms.RichTextBox()
+        Me.cbDeviceID2 = New System.Windows.Forms.CheckedListBox()
+        Me.txtTaskBg2 = New System.Windows.Forms.TextBox()
         Me.Label70 = New System.Windows.Forms.Label()
         Me.Label28 = New System.Windows.Forms.Label()
         Me.Label27 = New System.Windows.Forms.Label()
@@ -41,7 +42,6 @@ Partial Class AddTaskFrm
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
-        Me.cbDeviceID2 = New System.Windows.Forms.ComboBox()
         Me.txtEmailName2 = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.txtWechatName2 = New System.Windows.Forms.TextBox()
@@ -57,7 +57,8 @@ Partial Class AddTaskFrm
         Me.Label24 = New System.Windows.Forms.Label()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.txtTaskBg = New System.Windows.Forms.RichTextBox()
+        Me.cbDeviceID = New System.Windows.Forms.CheckedListBox()
+        Me.txtTaskBg = New System.Windows.Forms.TextBox()
         Me.Label69 = New System.Windows.Forms.Label()
         Me.Label29 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
@@ -68,7 +69,6 @@ Partial Class AddTaskFrm
         Me.Label21 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.cbDeviceID = New System.Windows.Forms.ComboBox()
         Me.txtEmailName = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.txtWechatName = New System.Windows.Forms.TextBox()
@@ -85,7 +85,6 @@ Partial Class AddTaskFrm
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Button23 = New System.Windows.Forms.Button()
         Me.cbDeviceID3 = New System.Windows.Forms.CheckedListBox()
         Me.txtTaskBg3 = New System.Windows.Forms.TextBox()
         Me.Panel12 = New System.Windows.Forms.Panel()
@@ -126,7 +125,8 @@ Partial Class AddTaskFrm
         Me.Label47 = New System.Windows.Forms.Label()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.txtTaskBg5 = New System.Windows.Forms.RichTextBox()
+        Me.cbDeviceID5 = New System.Windows.Forms.CheckedListBox()
+        Me.txtTaskBg5 = New System.Windows.Forms.TextBox()
         Me.Label72 = New System.Windows.Forms.Label()
         Me.txtModuleTime5 = New System.Windows.Forms.TextBox()
         Me.Label68 = New System.Windows.Forms.Label()
@@ -138,7 +138,6 @@ Partial Class AddTaskFrm
         Me.Label71 = New System.Windows.Forms.Label()
         Me.Button9 = New System.Windows.Forms.Button()
         Me.Button10 = New System.Windows.Forms.Button()
-        Me.cbDeviceID5 = New System.Windows.Forms.ComboBox()
         Me.txtEmailName5 = New System.Windows.Forms.TextBox()
         Me.Label73 = New System.Windows.Forms.Label()
         Me.txtWechatName5 = New System.Windows.Forms.TextBox()
@@ -154,9 +153,10 @@ Partial Class AddTaskFrm
         Me.Label80 = New System.Windows.Forms.Label()
         Me.TabPage6 = New System.Windows.Forms.TabPage()
         Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.cbDeviceID6 = New System.Windows.Forms.CheckedListBox()
+        Me.txtTaskBg6 = New System.Windows.Forms.TextBox()
         Me.txtSaveTimeStep6 = New System.Windows.Forms.TextBox()
         Me.Label94 = New System.Windows.Forms.Label()
-        Me.txtTaskBg6 = New System.Windows.Forms.RichTextBox()
         Me.Label81 = New System.Windows.Forms.Label()
         Me.Label82 = New System.Windows.Forms.Label()
         Me.Label83 = New System.Windows.Forms.Label()
@@ -167,7 +167,6 @@ Partial Class AddTaskFrm
         Me.Label85 = New System.Windows.Forms.Label()
         Me.Button11 = New System.Windows.Forms.Button()
         Me.Button12 = New System.Windows.Forms.Button()
-        Me.cbDeviceID6 = New System.Windows.Forms.ComboBox()
         Me.txtEmailName6 = New System.Windows.Forms.TextBox()
         Me.Label86 = New System.Windows.Forms.Label()
         Me.txtWechatName6 = New System.Windows.Forms.TextBox()
@@ -183,9 +182,10 @@ Partial Class AddTaskFrm
         Me.Label93 = New System.Windows.Forms.Label()
         Me.TabPage7 = New System.Windows.Forms.TabPage()
         Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.cbDeviceID7 = New System.Windows.Forms.CheckedListBox()
+        Me.txtTaskBg7 = New System.Windows.Forms.TextBox()
         Me.txtThreshol7 = New System.Windows.Forms.TextBox()
         Me.Label95 = New System.Windows.Forms.Label()
-        Me.txtTaskBg7 = New System.Windows.Forms.RichTextBox()
         Me.Label96 = New System.Windows.Forms.Label()
         Me.Label97 = New System.Windows.Forms.Label()
         Me.Label98 = New System.Windows.Forms.Label()
@@ -196,7 +196,6 @@ Partial Class AddTaskFrm
         Me.Label100 = New System.Windows.Forms.Label()
         Me.Button13 = New System.Windows.Forms.Button()
         Me.Button14 = New System.Windows.Forms.Button()
-        Me.cbDeviceID7 = New System.Windows.Forms.ComboBox()
         Me.txtEmailName7 = New System.Windows.Forms.TextBox()
         Me.Label101 = New System.Windows.Forms.Label()
         Me.txtWechatName7 = New System.Windows.Forms.TextBox()
@@ -212,6 +211,8 @@ Partial Class AddTaskFrm
         Me.Label108 = New System.Windows.Forms.Label()
         Me.TabPage9 = New System.Windows.Forms.TabPage()
         Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.cbDeviceID8 = New System.Windows.Forms.CheckedListBox()
+        Me.txtTaskBg8 = New System.Windows.Forms.TextBox()
         Me.txtMinValueSecond8 = New System.Windows.Forms.TextBox()
         Me.Label128 = New System.Windows.Forms.Label()
         Me.txtMinValue8 = New System.Windows.Forms.TextBox()
@@ -222,7 +223,6 @@ Partial Class AddTaskFrm
         Me.Label125 = New System.Windows.Forms.Label()
         Me.txtMaxPercent8 = New System.Windows.Forms.TextBox()
         Me.Label124 = New System.Windows.Forms.Label()
-        Me.txtTaskBg8 = New System.Windows.Forms.RichTextBox()
         Me.Label109 = New System.Windows.Forms.Label()
         Me.txtModuleTime8 = New System.Windows.Forms.TextBox()
         Me.Label110 = New System.Windows.Forms.Label()
@@ -234,7 +234,6 @@ Partial Class AddTaskFrm
         Me.Label115 = New System.Windows.Forms.Label()
         Me.Button15 = New System.Windows.Forms.Button()
         Me.Button16 = New System.Windows.Forms.Button()
-        Me.CBDeviceID8 = New System.Windows.Forms.ComboBox()
         Me.txtEmailName8 = New System.Windows.Forms.TextBox()
         Me.Label116 = New System.Windows.Forms.Label()
         Me.txtWechatName8 = New System.Windows.Forms.TextBox()
@@ -250,12 +249,12 @@ Partial Class AddTaskFrm
         Me.Label123 = New System.Windows.Forms.Label()
         Me.TabPage8 = New System.Windows.Forms.TabPage()
         Me.Panel9 = New System.Windows.Forms.Panel()
+        Me.txtTaskBg9 = New System.Windows.Forms.TextBox()
         Me.Button20 = New System.Windows.Forms.Button()
         Me.Button19 = New System.Windows.Forms.Button()
         Me.CLBDeviceID9 = New System.Windows.Forms.CheckedListBox()
         Me.txtSigNal9 = New System.Windows.Forms.TextBox()
         Me.Label129 = New System.Windows.Forms.Label()
-        Me.txtTaskBg9 = New System.Windows.Forms.RichTextBox()
         Me.Label134 = New System.Windows.Forms.Label()
         Me.Label136 = New System.Windows.Forms.Label()
         Me.Label137 = New System.Windows.Forms.Label()
@@ -278,6 +277,8 @@ Partial Class AddTaskFrm
         Me.Label148 = New System.Windows.Forms.Label()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.Panel10 = New System.Windows.Forms.Panel()
+        Me.cbDeviceID10 = New System.Windows.Forms.CheckedListBox()
+        Me.txtTaskBg10 = New System.Windows.Forms.TextBox()
         Me.txtWarnNum10 = New System.Windows.Forms.TextBox()
         Me.Label161 = New System.Windows.Forms.Label()
         Me.txtLegal10 = New System.Windows.Forms.RichTextBox()
@@ -288,7 +289,6 @@ Partial Class AddTaskFrm
         Me.Label133 = New System.Windows.Forms.Label()
         Me.txtFucha10 = New System.Windows.Forms.TextBox()
         Me.Label135 = New System.Windows.Forms.Label()
-        Me.txtTaskBg10 = New System.Windows.Forms.RichTextBox()
         Me.Label139 = New System.Windows.Forms.Label()
         Me.Label149 = New System.Windows.Forms.Label()
         Me.Label150 = New System.Windows.Forms.Label()
@@ -299,7 +299,6 @@ Partial Class AddTaskFrm
         Me.Label152 = New System.Windows.Forms.Label()
         Me.Button21 = New System.Windows.Forms.Button()
         Me.Button22 = New System.Windows.Forms.Button()
-        Me.CBDeviceID10 = New System.Windows.Forms.ComboBox()
         Me.txtEmailName10 = New System.Windows.Forms.TextBox()
         Me.Label153 = New System.Windows.Forms.Label()
         Me.txtWechatName10 = New System.Windows.Forms.TextBox()
@@ -315,6 +314,8 @@ Partial Class AddTaskFrm
         Me.Label160 = New System.Windows.Forms.Label()
         Me.TabPage10 = New System.Windows.Forms.TabPage()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.cbDeviceID11 = New System.Windows.Forms.CheckedListBox()
+        Me.txtTaskBg11 = New System.Windows.Forms.TextBox()
         Me.txtWarnNum11 = New System.Windows.Forms.TextBox()
         Me.Label162 = New System.Windows.Forms.Label()
         Me.txtLegal11 = New System.Windows.Forms.RichTextBox()
@@ -325,7 +326,6 @@ Partial Class AddTaskFrm
         Me.Label65 = New System.Windows.Forms.Label()
         Me.txtFucha11 = New System.Windows.Forms.TextBox()
         Me.Label48 = New System.Windows.Forms.Label()
-        Me.txtTaskBg11 = New System.Windows.Forms.RichTextBox()
         Me.Label49 = New System.Windows.Forms.Label()
         Me.Label50 = New System.Windows.Forms.Label()
         Me.Label51 = New System.Windows.Forms.Label()
@@ -336,7 +336,6 @@ Partial Class AddTaskFrm
         Me.Label56 = New System.Windows.Forms.Label()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Button8 = New System.Windows.Forms.Button()
-        Me.CBDeviceID11 = New System.Windows.Forms.ComboBox()
         Me.txtEmailName11 = New System.Windows.Forms.TextBox()
         Me.Label57 = New System.Windows.Forms.Label()
         Me.txtWechatName11 = New System.Windows.Forms.TextBox()
@@ -350,6 +349,16 @@ Partial Class AddTaskFrm
         Me.Label62 = New System.Windows.Forms.Label()
         Me.Label63 = New System.Windows.Forms.Label()
         Me.Label64 = New System.Windows.Forms.Label()
+        Me.PanelCbSelect = New System.Windows.Forms.Panel()
+        Me.PanelCbSelect2 = New System.Windows.Forms.Panel()
+        Me.PanelCbSelect3 = New System.Windows.Forms.Panel()
+        Me.PanelCbSelect5 = New System.Windows.Forms.Panel()
+        Me.PanelCbSelect6 = New System.Windows.Forms.Panel()
+        Me.PanelCbSelect7 = New System.Windows.Forms.Panel()
+        Me.PanelCbSelect8 = New System.Windows.Forms.Panel()
+        Me.PanelCbSelect9 = New System.Windows.Forms.Panel()
+        Me.PanelCbSelect10 = New System.Windows.Forms.Panel()
+        Me.PanelCbSelect11 = New System.Windows.Forms.Panel()
         Me.TabPage2.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -389,6 +398,8 @@ Partial Class AddTaskFrm
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.PanelCbSelect2)
+        Me.Panel2.Controls.Add(Me.cbDeviceID2)
         Me.Panel2.Controls.Add(Me.txtTaskBg2)
         Me.Panel2.Controls.Add(Me.Label70)
         Me.Panel2.Controls.Add(Me.Label28)
@@ -405,7 +416,6 @@ Partial Class AddTaskFrm
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.Button3)
         Me.Panel2.Controls.Add(Me.Button4)
-        Me.Panel2.Controls.Add(Me.cbDeviceID2)
         Me.Panel2.Controls.Add(Me.txtEmailName2)
         Me.Panel2.Controls.Add(Me.Label14)
         Me.Panel2.Controls.Add(Me.txtWechatName2)
@@ -425,18 +435,27 @@ Partial Class AddTaskFrm
         Me.Panel2.Size = New System.Drawing.Size(695, 517)
         Me.Panel2.TabIndex = 1
         '
+        'cbDeviceID2
+        '
+        Me.cbDeviceID2.CheckOnClick = True
+        Me.cbDeviceID2.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.cbDeviceID2.FormattingEnabled = True
+        Me.cbDeviceID2.Location = New System.Drawing.Point(111, 98)
+        Me.cbDeviceID2.Name = "cbDeviceID2"
+        Me.cbDeviceID2.Size = New System.Drawing.Size(179, 130)
+        Me.cbDeviceID2.TabIndex = 72
+        '
         'txtTaskBg2
         '
-        Me.txtTaskBg2.Location = New System.Drawing.Point(111, 326)
+        Me.txtTaskBg2.Location = New System.Drawing.Point(111, 384)
         Me.txtTaskBg2.Name = "txtTaskBg2"
-        Me.txtTaskBg2.Size = New System.Drawing.Size(179, 90)
+        Me.txtTaskBg2.Size = New System.Drawing.Size(179, 26)
         Me.txtTaskBg2.TabIndex = 66
-        Me.txtTaskBg2.Text = ""
         '
         'Label70
         '
         Me.Label70.AutoSize = True
-        Me.Label70.Location = New System.Drawing.Point(44, 329)
+        Me.Label70.Location = New System.Drawing.Point(44, 387)
         Me.Label70.Name = "Label70"
         Me.Label70.Size = New System.Drawing.Size(68, 20)
         Me.Label70.TabIndex = 65
@@ -569,17 +588,9 @@ Partial Class AddTaskFrm
         Me.Button4.Text = "确认"
         Me.Button4.UseVisualStyleBackColor = True
         '
-        'cbDeviceID2
-        '
-        Me.cbDeviceID2.FormattingEnabled = True
-        Me.cbDeviceID2.Location = New System.Drawing.Point(111, 109)
-        Me.cbDeviceID2.Name = "cbDeviceID2"
-        Me.cbDeviceID2.Size = New System.Drawing.Size(179, 28)
-        Me.cbDeviceID2.TabIndex = 47
-        '
         'txtEmailName2
         '
-        Me.txtEmailName2.Location = New System.Drawing.Point(111, 285)
+        Me.txtEmailName2.Location = New System.Drawing.Point(111, 347)
         Me.txtEmailName2.Name = "txtEmailName2"
         Me.txtEmailName2.Size = New System.Drawing.Size(179, 26)
         Me.txtEmailName2.TabIndex = 41
@@ -587,7 +598,7 @@ Partial Class AddTaskFrm
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(44, 288)
+        Me.Label14.Location = New System.Drawing.Point(44, 350)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(68, 20)
         Me.Label14.TabIndex = 40
@@ -595,7 +606,7 @@ Partial Class AddTaskFrm
         '
         'txtWechatName2
         '
-        Me.txtWechatName2.Location = New System.Drawing.Point(111, 241)
+        Me.txtWechatName2.Location = New System.Drawing.Point(111, 310)
         Me.txtWechatName2.Name = "txtWechatName2"
         Me.txtWechatName2.Size = New System.Drawing.Size(179, 26)
         Me.txtWechatName2.TabIndex = 39
@@ -603,7 +614,7 @@ Partial Class AddTaskFrm
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(44, 244)
+        Me.Label15.Location = New System.Drawing.Point(44, 313)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(68, 20)
         Me.Label15.TabIndex = 38
@@ -611,7 +622,7 @@ Partial Class AddTaskFrm
         '
         'txtEndTIme2
         '
-        Me.txtEndTIme2.Location = New System.Drawing.Point(111, 198)
+        Me.txtEndTIme2.Location = New System.Drawing.Point(111, 273)
         Me.txtEndTIme2.Name = "txtEndTIme2"
         Me.txtEndTIme2.Size = New System.Drawing.Size(179, 26)
         Me.txtEndTIme2.TabIndex = 35
@@ -619,7 +630,7 @@ Partial Class AddTaskFrm
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(44, 201)
+        Me.Label16.Location = New System.Drawing.Point(44, 276)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(68, 20)
         Me.Label16.TabIndex = 34
@@ -627,7 +638,7 @@ Partial Class AddTaskFrm
         '
         'txtStartTime2
         '
-        Me.txtStartTime2.Location = New System.Drawing.Point(111, 154)
+        Me.txtStartTime2.Location = New System.Drawing.Point(111, 236)
         Me.txtStartTime2.Name = "txtStartTime2"
         Me.txtStartTime2.Size = New System.Drawing.Size(179, 26)
         Me.txtStartTime2.TabIndex = 33
@@ -635,7 +646,7 @@ Partial Class AddTaskFrm
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(44, 157)
+        Me.Label17.Location = New System.Drawing.Point(44, 239)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(68, 20)
         Me.Label17.TabIndex = 32
@@ -644,7 +655,7 @@ Partial Class AddTaskFrm
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(44, 113)
+        Me.Label18.Location = New System.Drawing.Point(44, 98)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(68, 20)
         Me.Label18.TabIndex = 31
@@ -698,6 +709,8 @@ Partial Class AddTaskFrm
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.PanelCbSelect)
+        Me.Panel1.Controls.Add(Me.cbDeviceID)
         Me.Panel1.Controls.Add(Me.txtTaskBg)
         Me.Panel1.Controls.Add(Me.Label69)
         Me.Panel1.Controls.Add(Me.Label29)
@@ -709,7 +722,6 @@ Partial Class AddTaskFrm
         Me.Panel1.Controls.Add(Me.Label21)
         Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Controls.Add(Me.Button1)
-        Me.Panel1.Controls.Add(Me.cbDeviceID)
         Me.Panel1.Controls.Add(Me.txtEmailName)
         Me.Panel1.Controls.Add(Me.Label9)
         Me.Panel1.Controls.Add(Me.txtWechatName)
@@ -729,18 +741,27 @@ Partial Class AddTaskFrm
         Me.Panel1.Size = New System.Drawing.Size(695, 517)
         Me.Panel1.TabIndex = 0
         '
+        'cbDeviceID
+        '
+        Me.cbDeviceID.CheckOnClick = True
+        Me.cbDeviceID.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.cbDeviceID.FormattingEnabled = True
+        Me.cbDeviceID.Location = New System.Drawing.Point(111, 97)
+        Me.cbDeviceID.Name = "cbDeviceID"
+        Me.cbDeviceID.Size = New System.Drawing.Size(179, 130)
+        Me.cbDeviceID.TabIndex = 71
+        '
         'txtTaskBg
         '
-        Me.txtTaskBg.Location = New System.Drawing.Point(111, 326)
+        Me.txtTaskBg.Location = New System.Drawing.Point(111, 379)
         Me.txtTaskBg.Name = "txtTaskBg"
-        Me.txtTaskBg.Size = New System.Drawing.Size(179, 90)
+        Me.txtTaskBg.Size = New System.Drawing.Size(179, 26)
         Me.txtTaskBg.TabIndex = 64
-        Me.txtTaskBg.Text = ""
         '
         'Label69
         '
         Me.Label69.AutoSize = True
-        Me.Label69.Location = New System.Drawing.Point(44, 329)
+        Me.Label69.Location = New System.Drawing.Point(44, 382)
         Me.Label69.Name = "Label69"
         Me.Label69.Size = New System.Drawing.Size(68, 20)
         Me.Label69.TabIndex = 63
@@ -821,17 +842,9 @@ Partial Class AddTaskFrm
         Me.Button1.Text = "确认"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'cbDeviceID
-        '
-        Me.cbDeviceID.FormattingEnabled = True
-        Me.cbDeviceID.Location = New System.Drawing.Point(111, 109)
-        Me.cbDeviceID.Name = "cbDeviceID"
-        Me.cbDeviceID.Size = New System.Drawing.Size(179, 28)
-        Me.cbDeviceID.TabIndex = 47
-        '
         'txtEmailName
         '
-        Me.txtEmailName.Location = New System.Drawing.Point(111, 285)
+        Me.txtEmailName.Location = New System.Drawing.Point(111, 342)
         Me.txtEmailName.Name = "txtEmailName"
         Me.txtEmailName.Size = New System.Drawing.Size(179, 26)
         Me.txtEmailName.TabIndex = 41
@@ -839,7 +852,7 @@ Partial Class AddTaskFrm
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(44, 288)
+        Me.Label9.Location = New System.Drawing.Point(44, 345)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(68, 20)
         Me.Label9.TabIndex = 40
@@ -847,7 +860,7 @@ Partial Class AddTaskFrm
         '
         'txtWechatName
         '
-        Me.txtWechatName.Location = New System.Drawing.Point(111, 241)
+        Me.txtWechatName.Location = New System.Drawing.Point(111, 305)
         Me.txtWechatName.Name = "txtWechatName"
         Me.txtWechatName.Size = New System.Drawing.Size(179, 26)
         Me.txtWechatName.TabIndex = 39
@@ -855,7 +868,7 @@ Partial Class AddTaskFrm
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(44, 244)
+        Me.Label5.Location = New System.Drawing.Point(44, 308)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(68, 20)
         Me.Label5.TabIndex = 38
@@ -863,7 +876,7 @@ Partial Class AddTaskFrm
         '
         'txtEndTime
         '
-        Me.txtEndTime.Location = New System.Drawing.Point(111, 198)
+        Me.txtEndTime.Location = New System.Drawing.Point(111, 268)
         Me.txtEndTime.Name = "txtEndTime"
         Me.txtEndTime.Size = New System.Drawing.Size(179, 26)
         Me.txtEndTime.TabIndex = 35
@@ -871,7 +884,7 @@ Partial Class AddTaskFrm
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(44, 201)
+        Me.Label7.Location = New System.Drawing.Point(44, 271)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(68, 20)
         Me.Label7.TabIndex = 34
@@ -879,7 +892,7 @@ Partial Class AddTaskFrm
         '
         'txtStartTime
         '
-        Me.txtStartTime.Location = New System.Drawing.Point(111, 154)
+        Me.txtStartTime.Location = New System.Drawing.Point(111, 231)
         Me.txtStartTime.Name = "txtStartTime"
         Me.txtStartTime.Size = New System.Drawing.Size(179, 26)
         Me.txtStartTime.TabIndex = 33
@@ -887,7 +900,7 @@ Partial Class AddTaskFrm
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(44, 157)
+        Me.Label8.Location = New System.Drawing.Point(44, 234)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(68, 20)
         Me.Label8.TabIndex = 32
@@ -896,7 +909,7 @@ Partial Class AddTaskFrm
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(44, 113)
+        Me.Label4.Location = New System.Drawing.Point(44, 97)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(68, 20)
         Me.Label4.TabIndex = 31
@@ -970,7 +983,7 @@ Partial Class AddTaskFrm
         '
         'Panel3
         '
-        Me.Panel3.Controls.Add(Me.Button23)
+        Me.Panel3.Controls.Add(Me.PanelCbSelect3)
         Me.Panel3.Controls.Add(Me.cbDeviceID3)
         Me.Panel3.Controls.Add(Me.txtTaskBg3)
         Me.Panel3.Controls.Add(Me.Panel12)
@@ -1006,15 +1019,6 @@ Partial Class AddTaskFrm
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(695, 517)
         Me.Panel3.TabIndex = 2
-        '
-        'Button23
-        '
-        Me.Button23.Location = New System.Drawing.Point(56, 147)
-        Me.Button23.Name = "Button23"
-        Me.Button23.Size = New System.Drawing.Size(51, 26)
-        Me.Button23.TabIndex = 71
-        Me.Button23.Text = "长安"
-        Me.Button23.UseVisualStyleBackColor = True
         '
         'cbDeviceID3
         '
@@ -1306,7 +1310,7 @@ Partial Class AddTaskFrm
         'Label44
         '
         Me.Label44.AutoSize = True
-        Me.Label44.Location = New System.Drawing.Point(44, 98)
+        Me.Label44.Location = New System.Drawing.Point(44, 56)
         Me.Label44.Name = "Label44"
         Me.Label44.Size = New System.Drawing.Size(68, 20)
         Me.Label44.TabIndex = 31
@@ -1360,6 +1364,8 @@ Partial Class AddTaskFrm
         '
         'Panel5
         '
+        Me.Panel5.Controls.Add(Me.PanelCbSelect5)
+        Me.Panel5.Controls.Add(Me.cbDeviceID5)
         Me.Panel5.Controls.Add(Me.txtTaskBg5)
         Me.Panel5.Controls.Add(Me.Label72)
         Me.Panel5.Controls.Add(Me.txtModuleTime5)
@@ -1372,7 +1378,6 @@ Partial Class AddTaskFrm
         Me.Panel5.Controls.Add(Me.Label71)
         Me.Panel5.Controls.Add(Me.Button9)
         Me.Panel5.Controls.Add(Me.Button10)
-        Me.Panel5.Controls.Add(Me.cbDeviceID5)
         Me.Panel5.Controls.Add(Me.txtEmailName5)
         Me.Panel5.Controls.Add(Me.Label73)
         Me.Panel5.Controls.Add(Me.txtWechatName5)
@@ -1392,18 +1397,27 @@ Partial Class AddTaskFrm
         Me.Panel5.Size = New System.Drawing.Size(695, 517)
         Me.Panel5.TabIndex = 4
         '
+        'cbDeviceID5
+        '
+        Me.cbDeviceID5.CheckOnClick = True
+        Me.cbDeviceID5.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.cbDeviceID5.FormattingEnabled = True
+        Me.cbDeviceID5.Location = New System.Drawing.Point(111, 103)
+        Me.cbDeviceID5.Name = "cbDeviceID5"
+        Me.cbDeviceID5.Size = New System.Drawing.Size(179, 130)
+        Me.cbDeviceID5.TabIndex = 72
+        '
         'txtTaskBg5
         '
-        Me.txtTaskBg5.Location = New System.Drawing.Point(111, 317)
+        Me.txtTaskBg5.Location = New System.Drawing.Point(113, 379)
         Me.txtTaskBg5.Name = "txtTaskBg5"
-        Me.txtTaskBg5.Size = New System.Drawing.Size(179, 90)
+        Me.txtTaskBg5.Size = New System.Drawing.Size(179, 26)
         Me.txtTaskBg5.TabIndex = 70
-        Me.txtTaskBg5.Text = ""
         '
         'Label72
         '
         Me.Label72.AutoSize = True
-        Me.Label72.Location = New System.Drawing.Point(44, 320)
+        Me.Label72.Location = New System.Drawing.Point(46, 382)
         Me.Label72.Name = "Label72"
         Me.Label72.Size = New System.Drawing.Size(68, 20)
         Me.Label72.TabIndex = 69
@@ -1502,17 +1516,9 @@ Partial Class AddTaskFrm
         Me.Button10.Text = "确认"
         Me.Button10.UseVisualStyleBackColor = True
         '
-        'cbDeviceID5
-        '
-        Me.cbDeviceID5.FormattingEnabled = True
-        Me.cbDeviceID5.Location = New System.Drawing.Point(111, 109)
-        Me.cbDeviceID5.Name = "cbDeviceID5"
-        Me.cbDeviceID5.Size = New System.Drawing.Size(179, 28)
-        Me.cbDeviceID5.TabIndex = 47
-        '
         'txtEmailName5
         '
-        Me.txtEmailName5.Location = New System.Drawing.Point(111, 285)
+        Me.txtEmailName5.Location = New System.Drawing.Point(113, 344)
         Me.txtEmailName5.Name = "txtEmailName5"
         Me.txtEmailName5.Size = New System.Drawing.Size(179, 26)
         Me.txtEmailName5.TabIndex = 41
@@ -1520,7 +1526,7 @@ Partial Class AddTaskFrm
         'Label73
         '
         Me.Label73.AutoSize = True
-        Me.Label73.Location = New System.Drawing.Point(44, 288)
+        Me.Label73.Location = New System.Drawing.Point(46, 347)
         Me.Label73.Name = "Label73"
         Me.Label73.Size = New System.Drawing.Size(68, 20)
         Me.Label73.TabIndex = 40
@@ -1528,7 +1534,7 @@ Partial Class AddTaskFrm
         '
         'txtWechatName5
         '
-        Me.txtWechatName5.Location = New System.Drawing.Point(111, 241)
+        Me.txtWechatName5.Location = New System.Drawing.Point(113, 309)
         Me.txtWechatName5.Name = "txtWechatName5"
         Me.txtWechatName5.Size = New System.Drawing.Size(179, 26)
         Me.txtWechatName5.TabIndex = 39
@@ -1536,7 +1542,7 @@ Partial Class AddTaskFrm
         'Label74
         '
         Me.Label74.AutoSize = True
-        Me.Label74.Location = New System.Drawing.Point(44, 244)
+        Me.Label74.Location = New System.Drawing.Point(46, 312)
         Me.Label74.Name = "Label74"
         Me.Label74.Size = New System.Drawing.Size(68, 20)
         Me.Label74.TabIndex = 38
@@ -1544,7 +1550,7 @@ Partial Class AddTaskFrm
         '
         'txtEndTime5
         '
-        Me.txtEndTime5.Location = New System.Drawing.Point(111, 198)
+        Me.txtEndTime5.Location = New System.Drawing.Point(113, 274)
         Me.txtEndTime5.Name = "txtEndTime5"
         Me.txtEndTime5.Size = New System.Drawing.Size(179, 26)
         Me.txtEndTime5.TabIndex = 35
@@ -1552,7 +1558,7 @@ Partial Class AddTaskFrm
         'Label75
         '
         Me.Label75.AutoSize = True
-        Me.Label75.Location = New System.Drawing.Point(44, 201)
+        Me.Label75.Location = New System.Drawing.Point(46, 277)
         Me.Label75.Name = "Label75"
         Me.Label75.Size = New System.Drawing.Size(68, 20)
         Me.Label75.TabIndex = 34
@@ -1560,7 +1566,7 @@ Partial Class AddTaskFrm
         '
         'txtStartTime5
         '
-        Me.txtStartTime5.Location = New System.Drawing.Point(111, 154)
+        Me.txtStartTime5.Location = New System.Drawing.Point(113, 239)
         Me.txtStartTime5.Name = "txtStartTime5"
         Me.txtStartTime5.Size = New System.Drawing.Size(179, 26)
         Me.txtStartTime5.TabIndex = 33
@@ -1568,7 +1574,7 @@ Partial Class AddTaskFrm
         'Label76
         '
         Me.Label76.AutoSize = True
-        Me.Label76.Location = New System.Drawing.Point(44, 157)
+        Me.Label76.Location = New System.Drawing.Point(46, 242)
         Me.Label76.Name = "Label76"
         Me.Label76.Size = New System.Drawing.Size(68, 20)
         Me.Label76.TabIndex = 32
@@ -1577,7 +1583,7 @@ Partial Class AddTaskFrm
         'Label77
         '
         Me.Label77.AutoSize = True
-        Me.Label77.Location = New System.Drawing.Point(44, 113)
+        Me.Label77.Location = New System.Drawing.Point(44, 103)
         Me.Label77.Name = "Label77"
         Me.Label77.Size = New System.Drawing.Size(68, 20)
         Me.Label77.TabIndex = 31
@@ -1630,9 +1636,11 @@ Partial Class AddTaskFrm
         '
         'Panel6
         '
+        Me.Panel6.Controls.Add(Me.PanelCbSelect6)
+        Me.Panel6.Controls.Add(Me.cbDeviceID6)
+        Me.Panel6.Controls.Add(Me.txtTaskBg6)
         Me.Panel6.Controls.Add(Me.txtSaveTimeStep6)
         Me.Panel6.Controls.Add(Me.Label94)
-        Me.Panel6.Controls.Add(Me.txtTaskBg6)
         Me.Panel6.Controls.Add(Me.Label81)
         Me.Panel6.Controls.Add(Me.Label82)
         Me.Panel6.Controls.Add(Me.Label83)
@@ -1643,7 +1651,6 @@ Partial Class AddTaskFrm
         Me.Panel6.Controls.Add(Me.Label85)
         Me.Panel6.Controls.Add(Me.Button11)
         Me.Panel6.Controls.Add(Me.Button12)
-        Me.Panel6.Controls.Add(Me.cbDeviceID6)
         Me.Panel6.Controls.Add(Me.txtEmailName6)
         Me.Panel6.Controls.Add(Me.Label86)
         Me.Panel6.Controls.Add(Me.txtWechatName6)
@@ -1664,6 +1671,23 @@ Partial Class AddTaskFrm
         Me.Panel6.Size = New System.Drawing.Size(695, 517)
         Me.Panel6.TabIndex = 1
         '
+        'cbDeviceID6
+        '
+        Me.cbDeviceID6.CheckOnClick = True
+        Me.cbDeviceID6.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.cbDeviceID6.FormattingEnabled = True
+        Me.cbDeviceID6.Location = New System.Drawing.Point(111, 102)
+        Me.cbDeviceID6.Name = "cbDeviceID6"
+        Me.cbDeviceID6.Size = New System.Drawing.Size(179, 130)
+        Me.cbDeviceID6.TabIndex = 72
+        '
+        'txtTaskBg6
+        '
+        Me.txtTaskBg6.Location = New System.Drawing.Point(111, 370)
+        Me.txtTaskBg6.Name = "txtTaskBg6"
+        Me.txtTaskBg6.Size = New System.Drawing.Size(179, 26)
+        Me.txtTaskBg6.TabIndex = 67
+        '
         'txtSaveTimeStep6
         '
         Me.txtSaveTimeStep6.Location = New System.Drawing.Point(432, 198)
@@ -1680,18 +1704,10 @@ Partial Class AddTaskFrm
         Me.Label94.TabIndex = 65
         Me.Label94.Text = "取样间隔(秒):"
         '
-        'txtTaskBg6
-        '
-        Me.txtTaskBg6.Location = New System.Drawing.Point(111, 326)
-        Me.txtTaskBg6.Name = "txtTaskBg6"
-        Me.txtTaskBg6.Size = New System.Drawing.Size(179, 90)
-        Me.txtTaskBg6.TabIndex = 64
-        Me.txtTaskBg6.Text = ""
-        '
         'Label81
         '
         Me.Label81.AutoSize = True
-        Me.Label81.Location = New System.Drawing.Point(44, 329)
+        Me.Label81.Location = New System.Drawing.Point(44, 373)
         Me.Label81.Name = "Label81"
         Me.Label81.Size = New System.Drawing.Size(68, 20)
         Me.Label81.TabIndex = 63
@@ -1772,17 +1788,9 @@ Partial Class AddTaskFrm
         Me.Button12.Text = "确认"
         Me.Button12.UseVisualStyleBackColor = True
         '
-        'cbDeviceID6
-        '
-        Me.cbDeviceID6.FormattingEnabled = True
-        Me.cbDeviceID6.Location = New System.Drawing.Point(111, 109)
-        Me.cbDeviceID6.Name = "cbDeviceID6"
-        Me.cbDeviceID6.Size = New System.Drawing.Size(179, 28)
-        Me.cbDeviceID6.TabIndex = 47
-        '
         'txtEmailName6
         '
-        Me.txtEmailName6.Location = New System.Drawing.Point(111, 285)
+        Me.txtEmailName6.Location = New System.Drawing.Point(111, 338)
         Me.txtEmailName6.Name = "txtEmailName6"
         Me.txtEmailName6.Size = New System.Drawing.Size(179, 26)
         Me.txtEmailName6.TabIndex = 41
@@ -1790,7 +1798,7 @@ Partial Class AddTaskFrm
         'Label86
         '
         Me.Label86.AutoSize = True
-        Me.Label86.Location = New System.Drawing.Point(44, 288)
+        Me.Label86.Location = New System.Drawing.Point(44, 341)
         Me.Label86.Name = "Label86"
         Me.Label86.Size = New System.Drawing.Size(68, 20)
         Me.Label86.TabIndex = 40
@@ -1798,7 +1806,7 @@ Partial Class AddTaskFrm
         '
         'txtWechatName6
         '
-        Me.txtWechatName6.Location = New System.Drawing.Point(111, 241)
+        Me.txtWechatName6.Location = New System.Drawing.Point(111, 306)
         Me.txtWechatName6.Name = "txtWechatName6"
         Me.txtWechatName6.Size = New System.Drawing.Size(179, 26)
         Me.txtWechatName6.TabIndex = 39
@@ -1806,7 +1814,7 @@ Partial Class AddTaskFrm
         'Label87
         '
         Me.Label87.AutoSize = True
-        Me.Label87.Location = New System.Drawing.Point(44, 244)
+        Me.Label87.Location = New System.Drawing.Point(44, 309)
         Me.Label87.Name = "Label87"
         Me.Label87.Size = New System.Drawing.Size(68, 20)
         Me.Label87.TabIndex = 38
@@ -1814,7 +1822,7 @@ Partial Class AddTaskFrm
         '
         'txtEndTime6
         '
-        Me.txtEndTime6.Location = New System.Drawing.Point(111, 198)
+        Me.txtEndTime6.Location = New System.Drawing.Point(111, 274)
         Me.txtEndTime6.Name = "txtEndTime6"
         Me.txtEndTime6.Size = New System.Drawing.Size(179, 26)
         Me.txtEndTime6.TabIndex = 35
@@ -1822,7 +1830,7 @@ Partial Class AddTaskFrm
         'Label88
         '
         Me.Label88.AutoSize = True
-        Me.Label88.Location = New System.Drawing.Point(44, 201)
+        Me.Label88.Location = New System.Drawing.Point(44, 277)
         Me.Label88.Name = "Label88"
         Me.Label88.Size = New System.Drawing.Size(68, 20)
         Me.Label88.TabIndex = 34
@@ -1830,7 +1838,7 @@ Partial Class AddTaskFrm
         '
         'txtStartTime6
         '
-        Me.txtStartTime6.Location = New System.Drawing.Point(111, 154)
+        Me.txtStartTime6.Location = New System.Drawing.Point(111, 242)
         Me.txtStartTime6.Name = "txtStartTime6"
         Me.txtStartTime6.Size = New System.Drawing.Size(179, 26)
         Me.txtStartTime6.TabIndex = 33
@@ -1838,7 +1846,7 @@ Partial Class AddTaskFrm
         'Label89
         '
         Me.Label89.AutoSize = True
-        Me.Label89.Location = New System.Drawing.Point(44, 157)
+        Me.Label89.Location = New System.Drawing.Point(44, 245)
         Me.Label89.Name = "Label89"
         Me.Label89.Size = New System.Drawing.Size(68, 20)
         Me.Label89.TabIndex = 32
@@ -1847,7 +1855,7 @@ Partial Class AddTaskFrm
         'Label90
         '
         Me.Label90.AutoSize = True
-        Me.Label90.Location = New System.Drawing.Point(44, 113)
+        Me.Label90.Location = New System.Drawing.Point(44, 102)
         Me.Label90.Name = "Label90"
         Me.Label90.Size = New System.Drawing.Size(68, 20)
         Me.Label90.TabIndex = 31
@@ -1900,9 +1908,11 @@ Partial Class AddTaskFrm
         '
         'Panel7
         '
+        Me.Panel7.Controls.Add(Me.PanelCbSelect7)
+        Me.Panel7.Controls.Add(Me.cbDeviceID7)
+        Me.Panel7.Controls.Add(Me.txtTaskBg7)
         Me.Panel7.Controls.Add(Me.txtThreshol7)
         Me.Panel7.Controls.Add(Me.Label95)
-        Me.Panel7.Controls.Add(Me.txtTaskBg7)
         Me.Panel7.Controls.Add(Me.Label96)
         Me.Panel7.Controls.Add(Me.Label97)
         Me.Panel7.Controls.Add(Me.Label98)
@@ -1913,7 +1923,6 @@ Partial Class AddTaskFrm
         Me.Panel7.Controls.Add(Me.Label100)
         Me.Panel7.Controls.Add(Me.Button13)
         Me.Panel7.Controls.Add(Me.Button14)
-        Me.Panel7.Controls.Add(Me.cbDeviceID7)
         Me.Panel7.Controls.Add(Me.txtEmailName7)
         Me.Panel7.Controls.Add(Me.Label101)
         Me.Panel7.Controls.Add(Me.txtWechatName7)
@@ -1934,6 +1943,23 @@ Partial Class AddTaskFrm
         Me.Panel7.Size = New System.Drawing.Size(695, 517)
         Me.Panel7.TabIndex = 2
         '
+        'cbDeviceID7
+        '
+        Me.cbDeviceID7.CheckOnClick = True
+        Me.cbDeviceID7.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.cbDeviceID7.FormattingEnabled = True
+        Me.cbDeviceID7.Location = New System.Drawing.Point(111, 98)
+        Me.cbDeviceID7.Name = "cbDeviceID7"
+        Me.cbDeviceID7.Size = New System.Drawing.Size(179, 130)
+        Me.cbDeviceID7.TabIndex = 72
+        '
+        'txtTaskBg7
+        '
+        Me.txtTaskBg7.Location = New System.Drawing.Point(111, 363)
+        Me.txtTaskBg7.Name = "txtTaskBg7"
+        Me.txtTaskBg7.Size = New System.Drawing.Size(179, 26)
+        Me.txtTaskBg7.TabIndex = 67
+        '
         'txtThreshol7
         '
         Me.txtThreshol7.Location = New System.Drawing.Point(432, 198)
@@ -1951,18 +1977,10 @@ Partial Class AddTaskFrm
         Me.Label95.TabIndex = 65
         Me.Label95.Text = "门限电平(dBm):"
         '
-        'txtTaskBg7
-        '
-        Me.txtTaskBg7.Location = New System.Drawing.Point(111, 326)
-        Me.txtTaskBg7.Name = "txtTaskBg7"
-        Me.txtTaskBg7.Size = New System.Drawing.Size(179, 90)
-        Me.txtTaskBg7.TabIndex = 64
-        Me.txtTaskBg7.Text = ""
-        '
         'Label96
         '
         Me.Label96.AutoSize = True
-        Me.Label96.Location = New System.Drawing.Point(44, 329)
+        Me.Label96.Location = New System.Drawing.Point(44, 366)
         Me.Label96.Name = "Label96"
         Me.Label96.Size = New System.Drawing.Size(68, 20)
         Me.Label96.TabIndex = 63
@@ -2043,17 +2061,9 @@ Partial Class AddTaskFrm
         Me.Button14.Text = "确认"
         Me.Button14.UseVisualStyleBackColor = True
         '
-        'cbDeviceID7
-        '
-        Me.cbDeviceID7.FormattingEnabled = True
-        Me.cbDeviceID7.Location = New System.Drawing.Point(111, 109)
-        Me.cbDeviceID7.Name = "cbDeviceID7"
-        Me.cbDeviceID7.Size = New System.Drawing.Size(179, 28)
-        Me.cbDeviceID7.TabIndex = 47
-        '
         'txtEmailName7
         '
-        Me.txtEmailName7.Location = New System.Drawing.Point(111, 285)
+        Me.txtEmailName7.Location = New System.Drawing.Point(111, 332)
         Me.txtEmailName7.Name = "txtEmailName7"
         Me.txtEmailName7.Size = New System.Drawing.Size(179, 26)
         Me.txtEmailName7.TabIndex = 41
@@ -2061,7 +2071,7 @@ Partial Class AddTaskFrm
         'Label101
         '
         Me.Label101.AutoSize = True
-        Me.Label101.Location = New System.Drawing.Point(44, 288)
+        Me.Label101.Location = New System.Drawing.Point(44, 335)
         Me.Label101.Name = "Label101"
         Me.Label101.Size = New System.Drawing.Size(68, 20)
         Me.Label101.TabIndex = 40
@@ -2069,7 +2079,7 @@ Partial Class AddTaskFrm
         '
         'txtWechatName7
         '
-        Me.txtWechatName7.Location = New System.Drawing.Point(111, 241)
+        Me.txtWechatName7.Location = New System.Drawing.Point(111, 301)
         Me.txtWechatName7.Name = "txtWechatName7"
         Me.txtWechatName7.Size = New System.Drawing.Size(179, 26)
         Me.txtWechatName7.TabIndex = 39
@@ -2077,7 +2087,7 @@ Partial Class AddTaskFrm
         'Label102
         '
         Me.Label102.AutoSize = True
-        Me.Label102.Location = New System.Drawing.Point(44, 244)
+        Me.Label102.Location = New System.Drawing.Point(44, 304)
         Me.Label102.Name = "Label102"
         Me.Label102.Size = New System.Drawing.Size(68, 20)
         Me.Label102.TabIndex = 38
@@ -2085,7 +2095,7 @@ Partial Class AddTaskFrm
         '
         'txtEndTime7
         '
-        Me.txtEndTime7.Location = New System.Drawing.Point(111, 198)
+        Me.txtEndTime7.Location = New System.Drawing.Point(111, 270)
         Me.txtEndTime7.Name = "txtEndTime7"
         Me.txtEndTime7.Size = New System.Drawing.Size(179, 26)
         Me.txtEndTime7.TabIndex = 35
@@ -2093,7 +2103,7 @@ Partial Class AddTaskFrm
         'Label103
         '
         Me.Label103.AutoSize = True
-        Me.Label103.Location = New System.Drawing.Point(44, 201)
+        Me.Label103.Location = New System.Drawing.Point(44, 273)
         Me.Label103.Name = "Label103"
         Me.Label103.Size = New System.Drawing.Size(68, 20)
         Me.Label103.TabIndex = 34
@@ -2101,7 +2111,7 @@ Partial Class AddTaskFrm
         '
         'txtStartTime7
         '
-        Me.txtStartTime7.Location = New System.Drawing.Point(111, 154)
+        Me.txtStartTime7.Location = New System.Drawing.Point(111, 239)
         Me.txtStartTime7.Name = "txtStartTime7"
         Me.txtStartTime7.Size = New System.Drawing.Size(179, 26)
         Me.txtStartTime7.TabIndex = 33
@@ -2109,7 +2119,7 @@ Partial Class AddTaskFrm
         'Label104
         '
         Me.Label104.AutoSize = True
-        Me.Label104.Location = New System.Drawing.Point(44, 157)
+        Me.Label104.Location = New System.Drawing.Point(44, 242)
         Me.Label104.Name = "Label104"
         Me.Label104.Size = New System.Drawing.Size(68, 20)
         Me.Label104.TabIndex = 32
@@ -2118,7 +2128,7 @@ Partial Class AddTaskFrm
         'Label105
         '
         Me.Label105.AutoSize = True
-        Me.Label105.Location = New System.Drawing.Point(44, 113)
+        Me.Label105.Location = New System.Drawing.Point(44, 98)
         Me.Label105.Name = "Label105"
         Me.Label105.Size = New System.Drawing.Size(68, 20)
         Me.Label105.TabIndex = 31
@@ -2171,6 +2181,9 @@ Partial Class AddTaskFrm
         '
         'Panel8
         '
+        Me.Panel8.Controls.Add(Me.PanelCbSelect8)
+        Me.Panel8.Controls.Add(Me.cbDeviceID8)
+        Me.Panel8.Controls.Add(Me.txtTaskBg8)
         Me.Panel8.Controls.Add(Me.txtMinValueSecond8)
         Me.Panel8.Controls.Add(Me.Label128)
         Me.Panel8.Controls.Add(Me.txtMinValue8)
@@ -2181,7 +2194,6 @@ Partial Class AddTaskFrm
         Me.Panel8.Controls.Add(Me.Label125)
         Me.Panel8.Controls.Add(Me.txtMaxPercent8)
         Me.Panel8.Controls.Add(Me.Label124)
-        Me.Panel8.Controls.Add(Me.txtTaskBg8)
         Me.Panel8.Controls.Add(Me.Label109)
         Me.Panel8.Controls.Add(Me.txtModuleTime8)
         Me.Panel8.Controls.Add(Me.Label110)
@@ -2193,7 +2205,6 @@ Partial Class AddTaskFrm
         Me.Panel8.Controls.Add(Me.Label115)
         Me.Panel8.Controls.Add(Me.Button15)
         Me.Panel8.Controls.Add(Me.Button16)
-        Me.Panel8.Controls.Add(Me.CBDeviceID8)
         Me.Panel8.Controls.Add(Me.txtEmailName8)
         Me.Panel8.Controls.Add(Me.Label116)
         Me.Panel8.Controls.Add(Me.txtWechatName8)
@@ -2212,6 +2223,23 @@ Partial Class AddTaskFrm
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(695, 517)
         Me.Panel8.TabIndex = 5
+        '
+        'cbDeviceID8
+        '
+        Me.cbDeviceID8.CheckOnClick = True
+        Me.cbDeviceID8.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.cbDeviceID8.FormattingEnabled = True
+        Me.cbDeviceID8.Location = New System.Drawing.Point(113, 104)
+        Me.cbDeviceID8.Name = "cbDeviceID8"
+        Me.cbDeviceID8.Size = New System.Drawing.Size(179, 130)
+        Me.cbDeviceID8.TabIndex = 82
+        '
+        'txtTaskBg8
+        '
+        Me.txtTaskBg8.Location = New System.Drawing.Point(113, 366)
+        Me.txtTaskBg8.Name = "txtTaskBg8"
+        Me.txtTaskBg8.Size = New System.Drawing.Size(179, 26)
+        Me.txtTaskBg8.TabIndex = 81
         '
         'txtMinValueSecond8
         '
@@ -2298,18 +2326,10 @@ Partial Class AddTaskFrm
         Me.Label124.TabIndex = 71
         Me.Label124.Text = "电平上限(%):"
         '
-        'txtTaskBg8
-        '
-        Me.txtTaskBg8.Location = New System.Drawing.Point(111, 317)
-        Me.txtTaskBg8.Name = "txtTaskBg8"
-        Me.txtTaskBg8.Size = New System.Drawing.Size(179, 90)
-        Me.txtTaskBg8.TabIndex = 70
-        Me.txtTaskBg8.Text = ""
-        '
         'Label109
         '
         Me.Label109.AutoSize = True
-        Me.Label109.Location = New System.Drawing.Point(44, 320)
+        Me.Label109.Location = New System.Drawing.Point(44, 369)
         Me.Label109.Name = "Label109"
         Me.Label109.Size = New System.Drawing.Size(68, 20)
         Me.Label109.TabIndex = 69
@@ -2408,17 +2428,9 @@ Partial Class AddTaskFrm
         Me.Button16.Text = "确认"
         Me.Button16.UseVisualStyleBackColor = True
         '
-        'CBDeviceID8
-        '
-        Me.CBDeviceID8.FormattingEnabled = True
-        Me.CBDeviceID8.Location = New System.Drawing.Point(111, 109)
-        Me.CBDeviceID8.Name = "CBDeviceID8"
-        Me.CBDeviceID8.Size = New System.Drawing.Size(179, 28)
-        Me.CBDeviceID8.TabIndex = 47
-        '
         'txtEmailName8
         '
-        Me.txtEmailName8.Location = New System.Drawing.Point(111, 285)
+        Me.txtEmailName8.Location = New System.Drawing.Point(113, 336)
         Me.txtEmailName8.Name = "txtEmailName8"
         Me.txtEmailName8.Size = New System.Drawing.Size(179, 26)
         Me.txtEmailName8.TabIndex = 41
@@ -2426,7 +2438,7 @@ Partial Class AddTaskFrm
         'Label116
         '
         Me.Label116.AutoSize = True
-        Me.Label116.Location = New System.Drawing.Point(44, 288)
+        Me.Label116.Location = New System.Drawing.Point(44, 339)
         Me.Label116.Name = "Label116"
         Me.Label116.Size = New System.Drawing.Size(68, 20)
         Me.Label116.TabIndex = 40
@@ -2434,7 +2446,7 @@ Partial Class AddTaskFrm
         '
         'txtWechatName8
         '
-        Me.txtWechatName8.Location = New System.Drawing.Point(111, 241)
+        Me.txtWechatName8.Location = New System.Drawing.Point(113, 306)
         Me.txtWechatName8.Name = "txtWechatName8"
         Me.txtWechatName8.Size = New System.Drawing.Size(179, 26)
         Me.txtWechatName8.TabIndex = 39
@@ -2442,7 +2454,7 @@ Partial Class AddTaskFrm
         'Label117
         '
         Me.Label117.AutoSize = True
-        Me.Label117.Location = New System.Drawing.Point(44, 244)
+        Me.Label117.Location = New System.Drawing.Point(44, 309)
         Me.Label117.Name = "Label117"
         Me.Label117.Size = New System.Drawing.Size(68, 20)
         Me.Label117.TabIndex = 38
@@ -2450,7 +2462,7 @@ Partial Class AddTaskFrm
         '
         'txtEndTime8
         '
-        Me.txtEndTime8.Location = New System.Drawing.Point(111, 198)
+        Me.txtEndTime8.Location = New System.Drawing.Point(113, 276)
         Me.txtEndTime8.Name = "txtEndTime8"
         Me.txtEndTime8.Size = New System.Drawing.Size(179, 26)
         Me.txtEndTime8.TabIndex = 35
@@ -2458,7 +2470,7 @@ Partial Class AddTaskFrm
         'Label118
         '
         Me.Label118.AutoSize = True
-        Me.Label118.Location = New System.Drawing.Point(44, 201)
+        Me.Label118.Location = New System.Drawing.Point(44, 279)
         Me.Label118.Name = "Label118"
         Me.Label118.Size = New System.Drawing.Size(68, 20)
         Me.Label118.TabIndex = 34
@@ -2466,7 +2478,7 @@ Partial Class AddTaskFrm
         '
         'txtStartTime8
         '
-        Me.txtStartTime8.Location = New System.Drawing.Point(111, 154)
+        Me.txtStartTime8.Location = New System.Drawing.Point(113, 246)
         Me.txtStartTime8.Name = "txtStartTime8"
         Me.txtStartTime8.Size = New System.Drawing.Size(179, 26)
         Me.txtStartTime8.TabIndex = 33
@@ -2474,7 +2486,7 @@ Partial Class AddTaskFrm
         'Label119
         '
         Me.Label119.AutoSize = True
-        Me.Label119.Location = New System.Drawing.Point(44, 157)
+        Me.Label119.Location = New System.Drawing.Point(44, 249)
         Me.Label119.Name = "Label119"
         Me.Label119.Size = New System.Drawing.Size(68, 20)
         Me.Label119.TabIndex = 32
@@ -2483,7 +2495,7 @@ Partial Class AddTaskFrm
         'Label120
         '
         Me.Label120.AutoSize = True
-        Me.Label120.Location = New System.Drawing.Point(44, 113)
+        Me.Label120.Location = New System.Drawing.Point(44, 104)
         Me.Label120.Name = "Label120"
         Me.Label120.Size = New System.Drawing.Size(68, 20)
         Me.Label120.TabIndex = 31
@@ -2491,7 +2503,7 @@ Partial Class AddTaskFrm
         '
         'txtTaskNickName8
         '
-        Me.txtTaskNickName8.Location = New System.Drawing.Point(111, 69)
+        Me.txtTaskNickName8.Location = New System.Drawing.Point(113, 69)
         Me.txtTaskNickName8.Name = "txtTaskNickName8"
         Me.txtTaskNickName8.Size = New System.Drawing.Size(179, 26)
         Me.txtTaskNickName8.TabIndex = 30
@@ -2536,12 +2548,13 @@ Partial Class AddTaskFrm
         '
         'Panel9
         '
+        Me.Panel9.Controls.Add(Me.PanelCbSelect9)
+        Me.Panel9.Controls.Add(Me.txtTaskBg9)
         Me.Panel9.Controls.Add(Me.Button20)
         Me.Panel9.Controls.Add(Me.Button19)
         Me.Panel9.Controls.Add(Me.CLBDeviceID9)
         Me.Panel9.Controls.Add(Me.txtSigNal9)
         Me.Panel9.Controls.Add(Me.Label129)
-        Me.Panel9.Controls.Add(Me.txtTaskBg9)
         Me.Panel9.Controls.Add(Me.Label134)
         Me.Panel9.Controls.Add(Me.Label136)
         Me.Panel9.Controls.Add(Me.Label137)
@@ -2567,6 +2580,13 @@ Partial Class AddTaskFrm
         Me.Panel9.Name = "Panel9"
         Me.Panel9.Size = New System.Drawing.Size(695, 517)
         Me.Panel9.TabIndex = 6
+        '
+        'txtTaskBg9
+        '
+        Me.txtTaskBg9.Location = New System.Drawing.Point(111, 285)
+        Me.txtTaskBg9.Name = "txtTaskBg9"
+        Me.txtTaskBg9.Size = New System.Drawing.Size(179, 26)
+        Me.txtTaskBg9.TabIndex = 76
         '
         'Button20
         '
@@ -2612,18 +2632,10 @@ Partial Class AddTaskFrm
         Me.Label129.TabIndex = 71
         Me.Label129.Text = "定位频率(MHz):"
         '
-        'txtTaskBg9
-        '
-        Me.txtTaskBg9.Location = New System.Drawing.Point(111, 272)
-        Me.txtTaskBg9.Name = "txtTaskBg9"
-        Me.txtTaskBg9.Size = New System.Drawing.Size(179, 90)
-        Me.txtTaskBg9.TabIndex = 70
-        Me.txtTaskBg9.Text = ""
-        '
         'Label134
         '
         Me.Label134.AutoSize = True
-        Me.Label134.Location = New System.Drawing.Point(44, 275)
+        Me.Label134.Location = New System.Drawing.Point(44, 286)
         Me.Label134.Name = "Label134"
         Me.Label134.Size = New System.Drawing.Size(68, 20)
         Me.Label134.TabIndex = 69
@@ -2806,6 +2818,9 @@ Partial Class AddTaskFrm
         '
         'Panel10
         '
+        Me.Panel10.Controls.Add(Me.PanelCbSelect10)
+        Me.Panel10.Controls.Add(Me.cbDeviceID10)
+        Me.Panel10.Controls.Add(Me.txtTaskBg10)
         Me.Panel10.Controls.Add(Me.txtWarnNum10)
         Me.Panel10.Controls.Add(Me.Label161)
         Me.Panel10.Controls.Add(Me.txtLegal10)
@@ -2816,7 +2831,6 @@ Partial Class AddTaskFrm
         Me.Panel10.Controls.Add(Me.Label133)
         Me.Panel10.Controls.Add(Me.txtFucha10)
         Me.Panel10.Controls.Add(Me.Label135)
-        Me.Panel10.Controls.Add(Me.txtTaskBg10)
         Me.Panel10.Controls.Add(Me.Label139)
         Me.Panel10.Controls.Add(Me.Label149)
         Me.Panel10.Controls.Add(Me.Label150)
@@ -2827,7 +2841,6 @@ Partial Class AddTaskFrm
         Me.Panel10.Controls.Add(Me.Label152)
         Me.Panel10.Controls.Add(Me.Button21)
         Me.Panel10.Controls.Add(Me.Button22)
-        Me.Panel10.Controls.Add(Me.CBDeviceID10)
         Me.Panel10.Controls.Add(Me.txtEmailName10)
         Me.Panel10.Controls.Add(Me.Label153)
         Me.Panel10.Controls.Add(Me.txtWechatName10)
@@ -2847,6 +2860,23 @@ Partial Class AddTaskFrm
         Me.Panel10.Name = "Panel10"
         Me.Panel10.Size = New System.Drawing.Size(695, 517)
         Me.Panel10.TabIndex = 4
+        '
+        'cbDeviceID10
+        '
+        Me.cbDeviceID10.CheckOnClick = True
+        Me.cbDeviceID10.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.cbDeviceID10.FormattingEnabled = True
+        Me.cbDeviceID10.Location = New System.Drawing.Point(111, 103)
+        Me.cbDeviceID10.Name = "cbDeviceID10"
+        Me.cbDeviceID10.Size = New System.Drawing.Size(179, 130)
+        Me.cbDeviceID10.TabIndex = 76
+        '
+        'txtTaskBg10
+        '
+        Me.txtTaskBg10.Location = New System.Drawing.Point(111, 373)
+        Me.txtTaskBg10.Name = "txtTaskBg10"
+        Me.txtTaskBg10.Size = New System.Drawing.Size(179, 26)
+        Me.txtTaskBg10.TabIndex = 75
         '
         'txtWarnNum10
         '
@@ -2933,18 +2963,10 @@ Partial Class AddTaskFrm
         Me.Label135.TabIndex = 65
         Me.Label135.Text = "幅差:"
         '
-        'txtTaskBg10
-        '
-        Me.txtTaskBg10.Location = New System.Drawing.Point(111, 326)
-        Me.txtTaskBg10.Name = "txtTaskBg10"
-        Me.txtTaskBg10.Size = New System.Drawing.Size(179, 90)
-        Me.txtTaskBg10.TabIndex = 64
-        Me.txtTaskBg10.Text = ""
-        '
         'Label139
         '
         Me.Label139.AutoSize = True
-        Me.Label139.Location = New System.Drawing.Point(44, 329)
+        Me.Label139.Location = New System.Drawing.Point(44, 376)
         Me.Label139.Name = "Label139"
         Me.Label139.Size = New System.Drawing.Size(68, 20)
         Me.Label139.TabIndex = 63
@@ -3031,17 +3053,9 @@ Partial Class AddTaskFrm
         Me.Button22.Text = "确认"
         Me.Button22.UseVisualStyleBackColor = True
         '
-        'CBDeviceID10
-        '
-        Me.CBDeviceID10.FormattingEnabled = True
-        Me.CBDeviceID10.Location = New System.Drawing.Point(111, 109)
-        Me.CBDeviceID10.Name = "CBDeviceID10"
-        Me.CBDeviceID10.Size = New System.Drawing.Size(179, 28)
-        Me.CBDeviceID10.TabIndex = 47
-        '
         'txtEmailName10
         '
-        Me.txtEmailName10.Location = New System.Drawing.Point(111, 285)
+        Me.txtEmailName10.Location = New System.Drawing.Point(111, 341)
         Me.txtEmailName10.Name = "txtEmailName10"
         Me.txtEmailName10.Size = New System.Drawing.Size(179, 26)
         Me.txtEmailName10.TabIndex = 41
@@ -3049,7 +3063,7 @@ Partial Class AddTaskFrm
         'Label153
         '
         Me.Label153.AutoSize = True
-        Me.Label153.Location = New System.Drawing.Point(44, 288)
+        Me.Label153.Location = New System.Drawing.Point(44, 344)
         Me.Label153.Name = "Label153"
         Me.Label153.Size = New System.Drawing.Size(68, 20)
         Me.Label153.TabIndex = 40
@@ -3057,7 +3071,7 @@ Partial Class AddTaskFrm
         '
         'txtWechatName10
         '
-        Me.txtWechatName10.Location = New System.Drawing.Point(111, 241)
+        Me.txtWechatName10.Location = New System.Drawing.Point(111, 309)
         Me.txtWechatName10.Name = "txtWechatName10"
         Me.txtWechatName10.Size = New System.Drawing.Size(179, 26)
         Me.txtWechatName10.TabIndex = 39
@@ -3065,7 +3079,7 @@ Partial Class AddTaskFrm
         'Label154
         '
         Me.Label154.AutoSize = True
-        Me.Label154.Location = New System.Drawing.Point(44, 244)
+        Me.Label154.Location = New System.Drawing.Point(44, 312)
         Me.Label154.Name = "Label154"
         Me.Label154.Size = New System.Drawing.Size(68, 20)
         Me.Label154.TabIndex = 38
@@ -3073,7 +3087,7 @@ Partial Class AddTaskFrm
         '
         'txtEndTime10
         '
-        Me.txtEndTime10.Location = New System.Drawing.Point(111, 198)
+        Me.txtEndTime10.Location = New System.Drawing.Point(111, 277)
         Me.txtEndTime10.Name = "txtEndTime10"
         Me.txtEndTime10.Size = New System.Drawing.Size(179, 26)
         Me.txtEndTime10.TabIndex = 35
@@ -3081,7 +3095,7 @@ Partial Class AddTaskFrm
         'Label155
         '
         Me.Label155.AutoSize = True
-        Me.Label155.Location = New System.Drawing.Point(44, 201)
+        Me.Label155.Location = New System.Drawing.Point(44, 280)
         Me.Label155.Name = "Label155"
         Me.Label155.Size = New System.Drawing.Size(68, 20)
         Me.Label155.TabIndex = 34
@@ -3089,7 +3103,7 @@ Partial Class AddTaskFrm
         '
         'txtStartTime10
         '
-        Me.txtStartTime10.Location = New System.Drawing.Point(111, 154)
+        Me.txtStartTime10.Location = New System.Drawing.Point(111, 245)
         Me.txtStartTime10.Name = "txtStartTime10"
         Me.txtStartTime10.Size = New System.Drawing.Size(179, 26)
         Me.txtStartTime10.TabIndex = 33
@@ -3097,7 +3111,7 @@ Partial Class AddTaskFrm
         'Label156
         '
         Me.Label156.AutoSize = True
-        Me.Label156.Location = New System.Drawing.Point(44, 157)
+        Me.Label156.Location = New System.Drawing.Point(44, 248)
         Me.Label156.Name = "Label156"
         Me.Label156.Size = New System.Drawing.Size(68, 20)
         Me.Label156.TabIndex = 32
@@ -3106,7 +3120,7 @@ Partial Class AddTaskFrm
         'Label157
         '
         Me.Label157.AutoSize = True
-        Me.Label157.Location = New System.Drawing.Point(44, 113)
+        Me.Label157.Location = New System.Drawing.Point(44, 103)
         Me.Label157.Name = "Label157"
         Me.Label157.Size = New System.Drawing.Size(68, 20)
         Me.Label157.TabIndex = 31
@@ -3159,6 +3173,9 @@ Partial Class AddTaskFrm
         '
         'Panel4
         '
+        Me.Panel4.Controls.Add(Me.PanelCbSelect11)
+        Me.Panel4.Controls.Add(Me.cbDeviceID11)
+        Me.Panel4.Controls.Add(Me.txtTaskBg11)
         Me.Panel4.Controls.Add(Me.txtWarnNum11)
         Me.Panel4.Controls.Add(Me.Label162)
         Me.Panel4.Controls.Add(Me.txtLegal11)
@@ -3169,7 +3186,6 @@ Partial Class AddTaskFrm
         Me.Panel4.Controls.Add(Me.Label65)
         Me.Panel4.Controls.Add(Me.txtFucha11)
         Me.Panel4.Controls.Add(Me.Label48)
-        Me.Panel4.Controls.Add(Me.txtTaskBg11)
         Me.Panel4.Controls.Add(Me.Label49)
         Me.Panel4.Controls.Add(Me.Label50)
         Me.Panel4.Controls.Add(Me.Label51)
@@ -3180,7 +3196,6 @@ Partial Class AddTaskFrm
         Me.Panel4.Controls.Add(Me.Label56)
         Me.Panel4.Controls.Add(Me.Button7)
         Me.Panel4.Controls.Add(Me.Button8)
-        Me.Panel4.Controls.Add(Me.CBDeviceID11)
         Me.Panel4.Controls.Add(Me.txtEmailName11)
         Me.Panel4.Controls.Add(Me.Label57)
         Me.Panel4.Controls.Add(Me.txtWechatName11)
@@ -3200,6 +3215,23 @@ Partial Class AddTaskFrm
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(695, 517)
         Me.Panel4.TabIndex = 3
+        '
+        'cbDeviceID11
+        '
+        Me.cbDeviceID11.CheckOnClick = True
+        Me.cbDeviceID11.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.cbDeviceID11.FormattingEnabled = True
+        Me.cbDeviceID11.Location = New System.Drawing.Point(111, 104)
+        Me.cbDeviceID11.Name = "cbDeviceID11"
+        Me.cbDeviceID11.Size = New System.Drawing.Size(179, 130)
+        Me.cbDeviceID11.TabIndex = 78
+        '
+        'txtTaskBg11
+        '
+        Me.txtTaskBg11.Location = New System.Drawing.Point(111, 378)
+        Me.txtTaskBg11.Name = "txtTaskBg11"
+        Me.txtTaskBg11.Size = New System.Drawing.Size(179, 26)
+        Me.txtTaskBg11.TabIndex = 77
         '
         'txtWarnNum11
         '
@@ -3286,18 +3318,10 @@ Partial Class AddTaskFrm
         Me.Label48.TabIndex = 65
         Me.Label48.Text = "幅差:"
         '
-        'txtTaskBg11
-        '
-        Me.txtTaskBg11.Location = New System.Drawing.Point(111, 326)
-        Me.txtTaskBg11.Name = "txtTaskBg11"
-        Me.txtTaskBg11.Size = New System.Drawing.Size(179, 90)
-        Me.txtTaskBg11.TabIndex = 64
-        Me.txtTaskBg11.Text = ""
-        '
         'Label49
         '
         Me.Label49.AutoSize = True
-        Me.Label49.Location = New System.Drawing.Point(44, 329)
+        Me.Label49.Location = New System.Drawing.Point(46, 381)
         Me.Label49.Name = "Label49"
         Me.Label49.Size = New System.Drawing.Size(68, 20)
         Me.Label49.TabIndex = 63
@@ -3381,17 +3405,9 @@ Partial Class AddTaskFrm
         Me.Button8.Text = "确认"
         Me.Button8.UseVisualStyleBackColor = True
         '
-        'CBDeviceID11
-        '
-        Me.CBDeviceID11.FormattingEnabled = True
-        Me.CBDeviceID11.Location = New System.Drawing.Point(111, 109)
-        Me.CBDeviceID11.Name = "CBDeviceID11"
-        Me.CBDeviceID11.Size = New System.Drawing.Size(179, 28)
-        Me.CBDeviceID11.TabIndex = 47
-        '
         'txtEmailName11
         '
-        Me.txtEmailName11.Location = New System.Drawing.Point(111, 285)
+        Me.txtEmailName11.Location = New System.Drawing.Point(111, 344)
         Me.txtEmailName11.Name = "txtEmailName11"
         Me.txtEmailName11.Size = New System.Drawing.Size(179, 26)
         Me.txtEmailName11.TabIndex = 41
@@ -3399,7 +3415,7 @@ Partial Class AddTaskFrm
         'Label57
         '
         Me.Label57.AutoSize = True
-        Me.Label57.Location = New System.Drawing.Point(44, 288)
+        Me.Label57.Location = New System.Drawing.Point(46, 347)
         Me.Label57.Name = "Label57"
         Me.Label57.Size = New System.Drawing.Size(68, 20)
         Me.Label57.TabIndex = 40
@@ -3407,7 +3423,7 @@ Partial Class AddTaskFrm
         '
         'txtWechatName11
         '
-        Me.txtWechatName11.Location = New System.Drawing.Point(111, 241)
+        Me.txtWechatName11.Location = New System.Drawing.Point(111, 310)
         Me.txtWechatName11.Name = "txtWechatName11"
         Me.txtWechatName11.Size = New System.Drawing.Size(179, 26)
         Me.txtWechatName11.TabIndex = 39
@@ -3415,7 +3431,7 @@ Partial Class AddTaskFrm
         'Label58
         '
         Me.Label58.AutoSize = True
-        Me.Label58.Location = New System.Drawing.Point(44, 244)
+        Me.Label58.Location = New System.Drawing.Point(46, 313)
         Me.Label58.Name = "Label58"
         Me.Label58.Size = New System.Drawing.Size(68, 20)
         Me.Label58.TabIndex = 38
@@ -3423,7 +3439,7 @@ Partial Class AddTaskFrm
         '
         'txtEndTime11
         '
-        Me.txtEndTime11.Location = New System.Drawing.Point(111, 198)
+        Me.txtEndTime11.Location = New System.Drawing.Point(111, 276)
         Me.txtEndTime11.Name = "txtEndTime11"
         Me.txtEndTime11.Size = New System.Drawing.Size(179, 26)
         Me.txtEndTime11.TabIndex = 35
@@ -3431,7 +3447,7 @@ Partial Class AddTaskFrm
         'Label59
         '
         Me.Label59.AutoSize = True
-        Me.Label59.Location = New System.Drawing.Point(44, 201)
+        Me.Label59.Location = New System.Drawing.Point(46, 279)
         Me.Label59.Name = "Label59"
         Me.Label59.Size = New System.Drawing.Size(68, 20)
         Me.Label59.TabIndex = 34
@@ -3439,7 +3455,7 @@ Partial Class AddTaskFrm
         '
         'txtStartTime11
         '
-        Me.txtStartTime11.Location = New System.Drawing.Point(111, 154)
+        Me.txtStartTime11.Location = New System.Drawing.Point(111, 242)
         Me.txtStartTime11.Name = "txtStartTime11"
         Me.txtStartTime11.Size = New System.Drawing.Size(179, 26)
         Me.txtStartTime11.TabIndex = 33
@@ -3447,7 +3463,7 @@ Partial Class AddTaskFrm
         'Label60
         '
         Me.Label60.AutoSize = True
-        Me.Label60.Location = New System.Drawing.Point(44, 157)
+        Me.Label60.Location = New System.Drawing.Point(46, 245)
         Me.Label60.Name = "Label60"
         Me.Label60.Size = New System.Drawing.Size(68, 20)
         Me.Label60.TabIndex = 32
@@ -3456,7 +3472,7 @@ Partial Class AddTaskFrm
         'Label61
         '
         Me.Label61.AutoSize = True
-        Me.Label61.Location = New System.Drawing.Point(44, 113)
+        Me.Label61.Location = New System.Drawing.Point(44, 104)
         Me.Label61.Name = "Label61"
         Me.Label61.Size = New System.Drawing.Size(68, 20)
         Me.Label61.TabIndex = 31
@@ -3495,6 +3511,76 @@ Partial Class AddTaskFrm
         Me.Label64.Size = New System.Drawing.Size(65, 20)
         Me.Label64.TabIndex = 1
         Me.Label64.Text = "违章捕获"
+        '
+        'PanelCbSelect
+        '
+        Me.PanelCbSelect.Location = New System.Drawing.Point(48, 120)
+        Me.PanelCbSelect.Name = "PanelCbSelect"
+        Me.PanelCbSelect.Size = New System.Drawing.Size(57, 107)
+        Me.PanelCbSelect.TabIndex = 72
+        '
+        'PanelCbSelect2
+        '
+        Me.PanelCbSelect2.Location = New System.Drawing.Point(48, 121)
+        Me.PanelCbSelect2.Name = "PanelCbSelect2"
+        Me.PanelCbSelect2.Size = New System.Drawing.Size(57, 107)
+        Me.PanelCbSelect2.TabIndex = 73
+        '
+        'PanelCbSelect3
+        '
+        Me.PanelCbSelect3.Location = New System.Drawing.Point(48, 79)
+        Me.PanelCbSelect3.Name = "PanelCbSelect3"
+        Me.PanelCbSelect3.Size = New System.Drawing.Size(57, 107)
+        Me.PanelCbSelect3.TabIndex = 73
+        '
+        'PanelCbSelect5
+        '
+        Me.PanelCbSelect5.Location = New System.Drawing.Point(48, 126)
+        Me.PanelCbSelect5.Name = "PanelCbSelect5"
+        Me.PanelCbSelect5.Size = New System.Drawing.Size(57, 107)
+        Me.PanelCbSelect5.TabIndex = 73
+        '
+        'PanelCbSelect6
+        '
+        Me.PanelCbSelect6.Location = New System.Drawing.Point(48, 125)
+        Me.PanelCbSelect6.Name = "PanelCbSelect6"
+        Me.PanelCbSelect6.Size = New System.Drawing.Size(57, 107)
+        Me.PanelCbSelect6.TabIndex = 73
+        '
+        'PanelCbSelect7
+        '
+        Me.PanelCbSelect7.Location = New System.Drawing.Point(48, 121)
+        Me.PanelCbSelect7.Name = "PanelCbSelect7"
+        Me.PanelCbSelect7.Size = New System.Drawing.Size(57, 107)
+        Me.PanelCbSelect7.TabIndex = 73
+        '
+        'PanelCbSelect8
+        '
+        Me.PanelCbSelect8.Location = New System.Drawing.Point(48, 127)
+        Me.PanelCbSelect8.Name = "PanelCbSelect8"
+        Me.PanelCbSelect8.Size = New System.Drawing.Size(57, 107)
+        Me.PanelCbSelect8.TabIndex = 83
+        '
+        'PanelCbSelect9
+        '
+        Me.PanelCbSelect9.Location = New System.Drawing.Point(373, 135)
+        Me.PanelCbSelect9.Name = "PanelCbSelect9"
+        Me.PanelCbSelect9.Size = New System.Drawing.Size(57, 107)
+        Me.PanelCbSelect9.TabIndex = 77
+        '
+        'PanelCbSelect10
+        '
+        Me.PanelCbSelect10.Location = New System.Drawing.Point(48, 126)
+        Me.PanelCbSelect10.Name = "PanelCbSelect10"
+        Me.PanelCbSelect10.Size = New System.Drawing.Size(57, 107)
+        Me.PanelCbSelect10.TabIndex = 77
+        '
+        'PanelCbSelect11
+        '
+        Me.PanelCbSelect11.Location = New System.Drawing.Point(48, 127)
+        Me.PanelCbSelect11.Name = "PanelCbSelect11"
+        Me.PanelCbSelect11.Size = New System.Drawing.Size(57, 107)
+        Me.PanelCbSelect11.TabIndex = 79
         '
         'AddTaskFrm
         '
@@ -3553,7 +3639,6 @@ Partial Class AddTaskFrm
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents Button4 As System.Windows.Forms.Button
-    Friend WithEvents cbDeviceID2 As System.Windows.Forms.ComboBox
     Friend WithEvents txtEmailName2 As System.Windows.Forms.TextBox
     Friend WithEvents Label14 As System.Windows.Forms.Label
     Friend WithEvents txtWechatName2 As System.Windows.Forms.TextBox
@@ -3583,7 +3668,6 @@ Partial Class AddTaskFrm
     Friend WithEvents Label71 As System.Windows.Forms.Label
     Friend WithEvents Button9 As System.Windows.Forms.Button
     Friend WithEvents Button10 As System.Windows.Forms.Button
-    Friend WithEvents cbDeviceID5 As System.Windows.Forms.ComboBox
     Friend WithEvents txtEmailName5 As System.Windows.Forms.TextBox
     Friend WithEvents Label73 As System.Windows.Forms.Label
     Friend WithEvents txtWechatName5 As System.Windows.Forms.TextBox
@@ -3604,15 +3688,12 @@ Partial Class AddTaskFrm
     Friend WithEvents Label52 As System.Windows.Forms.Label
     Friend WithEvents txtModuleTime5 As System.Windows.Forms.TextBox
     Friend WithEvents Label68 As System.Windows.Forms.Label
-    Friend WithEvents txtTaskBg2 As System.Windows.Forms.RichTextBox
     Friend WithEvents Label70 As System.Windows.Forms.Label
-    Friend WithEvents txtTaskBg5 As System.Windows.Forms.RichTextBox
     Friend WithEvents Label72 As System.Windows.Forms.Label
     Friend WithEvents TabPage6 As System.Windows.Forms.TabPage
     Friend WithEvents Panel6 As System.Windows.Forms.Panel
     Friend WithEvents txtSaveTimeStep6 As System.Windows.Forms.TextBox
     Friend WithEvents Label94 As System.Windows.Forms.Label
-    Friend WithEvents txtTaskBg6 As System.Windows.Forms.RichTextBox
     Friend WithEvents Label81 As System.Windows.Forms.Label
     Friend WithEvents Label82 As System.Windows.Forms.Label
     Friend WithEvents Label83 As System.Windows.Forms.Label
@@ -3623,7 +3704,6 @@ Partial Class AddTaskFrm
     Friend WithEvents Label85 As System.Windows.Forms.Label
     Friend WithEvents Button11 As System.Windows.Forms.Button
     Friend WithEvents Button12 As System.Windows.Forms.Button
-    Friend WithEvents cbDeviceID6 As System.Windows.Forms.ComboBox
     Friend WithEvents txtEmailName6 As System.Windows.Forms.TextBox
     Friend WithEvents Label86 As System.Windows.Forms.Label
     Friend WithEvents txtWechatName6 As System.Windows.Forms.TextBox
@@ -3643,7 +3723,6 @@ Partial Class AddTaskFrm
     Friend WithEvents Panel7 As System.Windows.Forms.Panel
     Friend WithEvents txtThreshol7 As System.Windows.Forms.TextBox
     Friend WithEvents Label95 As System.Windows.Forms.Label
-    Friend WithEvents txtTaskBg7 As System.Windows.Forms.RichTextBox
     Friend WithEvents Label96 As System.Windows.Forms.Label
     Friend WithEvents Label97 As System.Windows.Forms.Label
     Friend WithEvents Label98 As System.Windows.Forms.Label
@@ -3654,7 +3733,6 @@ Partial Class AddTaskFrm
     Friend WithEvents Label100 As System.Windows.Forms.Label
     Friend WithEvents Button13 As System.Windows.Forms.Button
     Friend WithEvents Button14 As System.Windows.Forms.Button
-    Friend WithEvents cbDeviceID7 As System.Windows.Forms.ComboBox
     Friend WithEvents txtEmailName7 As System.Windows.Forms.TextBox
     Friend WithEvents Label101 As System.Windows.Forms.Label
     Friend WithEvents txtWechatName7 As System.Windows.Forms.TextBox
@@ -3669,7 +3747,6 @@ Partial Class AddTaskFrm
     Friend WithEvents Label107 As System.Windows.Forms.Label
     Friend WithEvents Label108 As System.Windows.Forms.Label
     Friend WithEvents Panel8 As System.Windows.Forms.Panel
-    Friend WithEvents txtTaskBg8 As System.Windows.Forms.RichTextBox
     Friend WithEvents Label109 As System.Windows.Forms.Label
     Friend WithEvents txtModuleTime8 As System.Windows.Forms.TextBox
     Friend WithEvents Label110 As System.Windows.Forms.Label
@@ -3681,7 +3758,6 @@ Partial Class AddTaskFrm
     Friend WithEvents Label115 As System.Windows.Forms.Label
     Friend WithEvents Button15 As System.Windows.Forms.Button
     Friend WithEvents Button16 As System.Windows.Forms.Button
-    Friend WithEvents CBDeviceID8 As System.Windows.Forms.ComboBox
     Friend WithEvents txtEmailName8 As System.Windows.Forms.TextBox
     Friend WithEvents Label116 As System.Windows.Forms.Label
     Friend WithEvents txtWechatName8 As System.Windows.Forms.TextBox
@@ -3706,7 +3782,6 @@ Partial Class AddTaskFrm
     Friend WithEvents txtMaxPercent8 As System.Windows.Forms.TextBox
     Friend WithEvents Label124 As System.Windows.Forms.Label
     Friend WithEvents Panel9 As System.Windows.Forms.Panel
-    Friend WithEvents txtTaskBg9 As System.Windows.Forms.RichTextBox
     Friend WithEvents Label134 As System.Windows.Forms.Label
     Friend WithEvents Label136 As System.Windows.Forms.Label
     Friend WithEvents Label137 As System.Windows.Forms.Label
@@ -3772,7 +3847,6 @@ Partial Class AddTaskFrm
     Friend WithEvents Label65 As System.Windows.Forms.Label
     Friend WithEvents txtFucha11 As System.Windows.Forms.TextBox
     Friend WithEvents Label48 As System.Windows.Forms.Label
-    Friend WithEvents txtTaskBg11 As System.Windows.Forms.RichTextBox
     Friend WithEvents Label49 As System.Windows.Forms.Label
     Friend WithEvents Label50 As System.Windows.Forms.Label
     Friend WithEvents Label51 As System.Windows.Forms.Label
@@ -3783,7 +3857,6 @@ Partial Class AddTaskFrm
     Friend WithEvents Label56 As System.Windows.Forms.Label
     Friend WithEvents Button7 As System.Windows.Forms.Button
     Friend WithEvents Button8 As System.Windows.Forms.Button
-    Friend WithEvents CBDeviceID11 As System.Windows.Forms.ComboBox
     Friend WithEvents txtEmailName11 As System.Windows.Forms.TextBox
     Friend WithEvents Label57 As System.Windows.Forms.Label
     Friend WithEvents txtWechatName11 As System.Windows.Forms.TextBox
@@ -3806,7 +3879,6 @@ Partial Class AddTaskFrm
     Friend WithEvents Label133 As System.Windows.Forms.Label
     Friend WithEvents txtFucha10 As System.Windows.Forms.TextBox
     Friend WithEvents Label135 As System.Windows.Forms.Label
-    Friend WithEvents txtTaskBg10 As System.Windows.Forms.RichTextBox
     Friend WithEvents Label139 As System.Windows.Forms.Label
     Friend WithEvents Label149 As System.Windows.Forms.Label
     Friend WithEvents Label150 As System.Windows.Forms.Label
@@ -3817,7 +3889,6 @@ Partial Class AddTaskFrm
     Friend WithEvents Label152 As System.Windows.Forms.Label
     Friend WithEvents Button21 As System.Windows.Forms.Button
     Friend WithEvents Button22 As System.Windows.Forms.Button
-    Friend WithEvents CBDeviceID10 As System.Windows.Forms.ComboBox
     Friend WithEvents txtEmailName10 As System.Windows.Forms.TextBox
     Friend WithEvents Label153 As System.Windows.Forms.Label
     Friend WithEvents txtWechatName10 As System.Windows.Forms.TextBox
@@ -3844,7 +3915,6 @@ Partial Class AddTaskFrm
     Friend WithEvents Label165 As System.Windows.Forms.Label
     Friend WithEvents Panel11 As System.Windows.Forms.Panel
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents txtTaskBg As RichTextBox
     Friend WithEvents Label69 As Label
     Friend WithEvents Label29 As Label
     Friend WithEvents Label20 As Label
@@ -3855,7 +3925,6 @@ Partial Class AddTaskFrm
     Friend WithEvents Label21 As Label
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
-    Friend WithEvents cbDeviceID As ComboBox
     Friend WithEvents txtEmailName As TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents txtWechatName As TextBox
@@ -3871,5 +3940,31 @@ Partial Class AddTaskFrm
     Friend WithEvents Label2 As Label
     Friend WithEvents cbDeviceID3 As CheckedListBox
     Friend WithEvents txtTaskBg3 As TextBox
-    Friend WithEvents Button23 As Button
+    Friend WithEvents txtTaskBg2 As TextBox
+    Friend WithEvents cbDeviceID As CheckedListBox
+    Friend WithEvents txtTaskBg As TextBox
+    Friend WithEvents txtTaskBg5 As TextBox
+    Friend WithEvents txtTaskBg6 As TextBox
+    Friend WithEvents txtTaskBg7 As TextBox
+    Friend WithEvents txtTaskBg8 As TextBox
+    Friend WithEvents txtTaskBg9 As TextBox
+    Friend WithEvents txtTaskBg10 As TextBox
+    Friend WithEvents txtTaskBg11 As TextBox
+    Friend WithEvents cbDeviceID2 As CheckedListBox
+    Friend WithEvents cbDeviceID5 As CheckedListBox
+    Friend WithEvents cbDeviceID6 As CheckedListBox
+    Friend WithEvents cbDeviceID7 As CheckedListBox
+    Friend WithEvents cbDeviceID8 As CheckedListBox
+    Friend WithEvents cbDeviceID10 As CheckedListBox
+    Friend WithEvents cbDeviceID11 As CheckedListBox
+    Friend WithEvents PanelCbSelect As Panel
+    Friend WithEvents PanelCbSelect2 As Panel
+    Friend WithEvents PanelCbSelect3 As Panel
+    Friend WithEvents PanelCbSelect5 As Panel
+    Friend WithEvents PanelCbSelect6 As Panel
+    Friend WithEvents PanelCbSelect7 As Panel
+    Friend WithEvents PanelCbSelect8 As Panel
+    Friend WithEvents PanelCbSelect9 As Panel
+    Friend WithEvents PanelCbSelect10 As Panel
+    Friend WithEvents PanelCbSelect11 As Panel
 End Class

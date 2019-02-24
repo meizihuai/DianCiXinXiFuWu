@@ -139,6 +139,12 @@
     <Compile Include="usrPanels\CarHisFreqGis.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="usrPanels\CbDeviceSelectHelper.Designer.vb">
+      <DependentUpon>CbDeviceSelectHelper.vb</DependentUpon>
+    </Compile>
+    <Compile Include="usrPanels\CbDeviceSelectHelper.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="usrPanels\DeviceAllMap.Designer.vb">
       <DependentUpon>DeviceAllMap.vb</DependentUpon>
     </Compile>
@@ -456,6 +462,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="usrPanels\CarHisFreqGis.resx">
       <DependentUpon>CarHisFreqGis.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usrPanels\CbDeviceSelectHelper.resx">
+      <DependentUpon>CbDeviceSelectHelper.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="usrPanels\DeviceAllMap.resx">
       <DependentUpon>DeviceAllMap.vb</DependentUpon>

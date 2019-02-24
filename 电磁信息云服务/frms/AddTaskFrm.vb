@@ -33,8 +33,33 @@ Public Class AddTaskFrm
         Next
         Label6.Text = pdList.Count
     End Sub
-    Private Sub ini()
+    Private Sub iniCbSelect()
+        Dim cbsh, cbsh2, cbsh3, cbsh5, cbsh6, cbsh7, cbsh8, cbsh9, cbsh10, cbsh11 As New CbDeviceSelectHelper
+        cbsh.CbDevice = cbDeviceID
+        cbsh2.CbDevice = cbDeviceID2
+        cbsh3.CbDevice = cbDeviceID3
+        cbsh5.CbDevice = cbDeviceID5
+        cbsh6.CbDevice = cbDeviceID6
+        cbsh7.CbDevice = cbDeviceID7
+        cbsh8.CbDevice = cbDeviceID8
+        cbsh9.CbDevice = CLBDeviceID9
+        cbsh10.CbDevice = cbDeviceID10
+        cbsh11.CbDevice = cbDeviceID11
 
+        PanelCbSelect.Controls.Add(cbsh)
+        PanelCbSelect2.Controls.Add(cbsh2)
+        PanelCbSelect3.Controls.Add(cbsh3)
+        PanelCbSelect5.Controls.Add(cbsh5)
+        PanelCbSelect6.Controls.Add(cbsh6)
+        PanelCbSelect7.Controls.Add(cbsh7)
+        PanelCbSelect8.Controls.Add(cbsh8)
+        PanelCbSelect9.Controls.Add(cbsh9)
+        PanelCbSelect10.Controls.Add(cbsh10)
+        PanelCbSelect11.Controls.Add(cbsh11)
+
+    End Sub
+    Private Sub ini()
+        iniCbSelect()
 
         txtNicName.Text = Label2.Text & Now.ToString("yyyyMMddHHmmss")
         txtNicName2.Text = Label24.Text & Now.ToString("yyyyMMddHHmmss")
@@ -202,101 +227,138 @@ Public Class AddTaskFrm
         Dim WarnNum As Integer
     End Structure
     Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
-        Dim task As NormalTaskStu
-        task.UserName = usr
-        task.TaskName = Label24.Text
-        task.TaskNickName = txtNicName2.Text
-        task.DeviceID = cbDeviceID2.SelectedItem
-        SyncLock alldevlist
-            For Each itm In alldevlist
-                If itm.Name = task.DeviceID Then
-                    task.DeviceID = itm.DeviceID
-                    Exit For
+        Dim list As New List(Of String)
+        For Each itm In cbDeviceID2.CheckedItems
+            list.Add(itm)
+        Next
+        Dim successCount As Integer = 0
+        Dim failCount As Integer = 0
+        Dim failsb As New StringBuilder
+        For Each deviceId In list
+            Dim task As NormalTaskStu
+            task.UserName = usr
+            task.TaskName = Label24.Text
+            task.TaskNickName = txtNicName2.Text & "_" & deviceId
+            task.DeviceID = deviceId
+            SyncLock alldevlist
+                For Each itm In alldevlist
+                    If itm.Name = task.DeviceID Then
+                        task.DeviceID = itm.DeviceID
+                        Exit For
+                    End If
+                Next
+            End SyncLock
+            task.StartTime = txtStartTime2.Text
+            task.EndTime = txtEndTIme2.Text
+            task.TimeStep = 5
+            task.PushWeChartToUserName = txtWechatName2.Text
+            task.PushEmailToUserName = txtEmailName2.Text
+            Dim TaskCode As String = ""
+            Dim pdList As New List(Of Double)
+            For Each itm In RTB.Text.Split(Chr(10))
+                If itm <> "" Then
+                    If IsNumeric(itm) Then
+                        pdList.Add(Val(itm))
+                    End If
                 End If
             Next
-        End SyncLock
-        task.StartTime = txtStartTime2.Text
-        task.EndTime = txtEndTIme2.Text
-        task.TimeStep = 5
-        task.PushWeChartToUserName = txtWechatName2.Text
-        task.PushEmailToUserName = txtEmailName2.Text
-        Dim TaskCode As String = ""
-        Dim pdList As New List(Of Double)
-        For Each itm In RTB.Text.Split(Chr(10))
-            If itm <> "" Then
-                If IsNumeric(itm) Then
-                    pdList.Add(Val(itm))
-                End If
+            TaskCode = JsonConvert.SerializeObject(pdList)
+
+            If TaskCode = "" Or task.TaskNickName = "" Or task.DeviceID = "" Or task.StartTime = "" Or task.EndTime = "" Then
+                MsgBox("请完整配置参数")
+                Exit Sub
+            End If
+            task.TaskCode = TaskCode
+            task.TaskBg = txtTaskBg2.Text
+            Dim msg As String = JsonConvert.SerializeObject(task)
+
+            Dim result As String = GetH(ServerUrl, "func=AddTask&token=" & token & "&TaskJson=" & msg)
+            Dim res As String = GetResultPara("result", result)
+            If res = "success" Then
+                successCount = successCount + 1
+            Else
+                failCount = failCount + 1
+                failsb.AppendLine(result)
             End If
         Next
-        TaskCode = JsonConvert.SerializeObject(pdList)
+        Dim sb As New StringBuilder
+        sb.AppendLine("任务下发完成")
+        sb.AppendLine("成功数量:" & successCount)
+        If failCount > 0 Then sb.AppendLine("失败数量:" & failCount)
+        If failCount > 0 Then sb.AppendLine("失败提示:")
+        If failCount > 0 Then sb.AppendLine(sb.ToString)
+        MsgBox(sb.ToString)
+        Me.Close()
 
-        If TaskCode = "" Or task.TaskNickName = "" Or task.DeviceID = "" Or task.StartTime = "" Or task.EndTime = "" Then
-            MsgBox("请完整配置参数")
-            Exit Sub
-        End If
-        task.TaskCode = TaskCode
-        task.TaskBg = txtTaskBg2.Text
-        Dim msg As String = JsonConvert.SerializeObject(task)
-
-        Dim result As String = GetH(ServerUrl, "func=AddTask&token=" & token & "&TaskJson=" & msg)
-        Dim res As String = GetResultPara("result", result)
-        If res = "success" Then
-            Dim w As New WarnBox("命令下发成功！")
-            w.Show()
-            Me.Close()
-        Else
-            MsgBox(result)
-        End If
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        Dim task As NormalTaskStu
-        task.UserName = usr
-        task.TaskName = Label2.Text
-        task.TaskNickName = txtNicName.Text
-        task.DeviceID = cbDeviceID.SelectedItem
-        SyncLock alldevlist
-            For Each itm In alldevlist
-                If itm.Name = task.DeviceID Then
-                    task.DeviceID = itm.DeviceID
-                    Exit For
-                End If
-            Next
-        End SyncLock
-        task.StartTime = txtStartTime.Text
-        task.EndTime = txtEndTime.Text
-        task.TimeStep = 5
-        task.PushWeChartToUserName = txtWechatName.Text
-        task.PushEmailToUserName = txtEmailName.Text
-        Dim TaskCode As String = ""
-        Dim freqbegin As String = Val(txtFreqStart.Text)
-        Dim freqend As String = Val(txtFreqEnd.Text)
-        Dim freqstep As String = Val(txtFreqStep.Text)
-        Dim p As tssOrder_stu
-        p.freqStart = freqbegin
-        p.freqEnd = freqend
-        p.freqStep = freqstep
-        p.task = "bscan"
-        p.deviceID = task.DeviceID
+        Dim list As New List(Of String)
+        For Each itm In cbDeviceID.CheckedItems
+            list.Add(itm)
+        Next
+        Dim successCount As Integer = 0
+        Dim failCount As Integer = 0
+        Dim failsb As New StringBuilder
+        For Each deviceId In list
+            Dim task As NormalTaskStu
+            task.UserName = usr
+            task.TaskName = Label2.Text
+            task.TaskNickName = txtNicName.Text & "_" & deviceId
+            task.DeviceID = deviceId
+            SyncLock alldevlist
+                For Each itm In alldevlist
+                    If itm.Name = task.DeviceID Then
+                        task.DeviceID = itm.DeviceID
+                        Exit For
+                    End If
+                Next
+            End SyncLock
+            task.StartTime = txtStartTime.Text
+            task.EndTime = txtEndTime.Text
+            task.TimeStep = 5
+            task.PushWeChartToUserName = txtWechatName.Text
+            task.PushEmailToUserName = txtEmailName.Text
+            Dim TaskCode As String = ""
+            Dim freqbegin As String = Val(txtFreqStart.Text)
+            Dim freqend As String = Val(txtFreqEnd.Text)
+            Dim freqstep As String = Val(txtFreqStep.Text)
+            Dim p As tssOrder_stu
+            p.freqStart = freqbegin
+            p.freqEnd = freqend
+            p.freqStep = freqstep
+            p.task = "bscan"
+            p.deviceID = task.DeviceID
 
-        TaskCode = JsonConvert.SerializeObject(p)
-        If TaskCode = "" Or task.TaskNickName = "" Or task.DeviceID = "" Or task.StartTime = "" Or task.EndTime = "" Then
-            MsgBox("请完整配置参数")
-            Exit Sub
-        End If
-        task.TaskCode = TaskCode
-        task.TaskBg = txtTaskBg.Text
-        Dim msg As String = JsonConvert.SerializeObject(task)
-        Dim result As String = GetH(ServerUrl, "func=AddTask&token=" & token & "&TaskJson=" & msg)
-        Dim res As String = GetResultPara("result", result)
-        If res = "success" Then
-            Dim w As New WarnBox("命令下发成功！")
-            w.Show()
-            Me.Close()
-        Else
-            MsgBox(result)
-        End If
+            TaskCode = JsonConvert.SerializeObject(p)
+            If TaskCode = "" Or task.TaskNickName = "" Or task.DeviceID = "" Or task.StartTime = "" Or task.EndTime = "" Then
+                MsgBox("请完整配置参数")
+                Exit Sub
+            End If
+            task.TaskCode = TaskCode
+            task.TaskBg = txtTaskBg.Text
+            Dim msg As String = JsonConvert.SerializeObject(task)
+            Dim result As String = GetH(ServerUrl, "func=AddTask&token=" & token & "&TaskJson=" & msg)
+            Dim res As String = GetResultPara("result", result)
+            If res = "success" Then
+                successCount = successCount + 1
+                'Dim w As New WarnBox("命令下发成功！")
+                'w.Show()
+                'Me.Close()
+            Else
+                failCount = failCount + 1
+                failsb.AppendLine(result)
+                'MsgBox(result)
+            End If
+        Next
+        Dim sb As New StringBuilder
+        sb.AppendLine("任务下发完成")
+        sb.AppendLine("成功数量:" & successCount)
+        If failCount > 0 Then sb.AppendLine("失败数量:" & failCount)
+        If failCount > 0 Then sb.AppendLine("失败提示:")
+        If failCount > 0 Then sb.AppendLine(sb.ToString)
+        MsgBox(sb.ToString)
+        Me.Close()
     End Sub
 
     Private Sub RTB_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RTB.TextChanged
@@ -323,60 +385,77 @@ Public Class AddTaskFrm
         End Sub
     End Structure
     Private Sub Button10_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button10.Click
-        Dim task As NormalTaskStu
-        task.UserName = usr
-        task.TaskName = Label80.Text
-        task.TaskNickName = txtNicName5.Text
-        task.DeviceID = cbDeviceID5.SelectedItem
-        SyncLock alldevlist
-            For Each itm In alldevlist
-                If itm.Name = task.DeviceID Then
-                    task.DeviceID = itm.DeviceID
-                    Exit For
+        Dim list As New List(Of String)
+        For Each itm In cbDeviceID5.CheckedItems
+            list.Add(itm)
+        Next
+        Dim successCount As Integer = 0
+        Dim failCount As Integer = 0
+        Dim failsb As New StringBuilder
+        For Each deviceId In list
+            Dim task As NormalTaskStu
+            task.UserName = usr
+            task.TaskName = Label80.Text
+            task.TaskNickName = txtNicName5.Text & "_" & deviceId
+            task.DeviceID = deviceId
+            SyncLock alldevlist
+                For Each itm In alldevlist
+                    If itm.Name = task.DeviceID Then
+                        task.DeviceID = itm.DeviceID
+                        Exit For
+                    End If
+                Next
+            End SyncLock
+            task.StartTime = txtStartTime5.Text
+            task.EndTime = txtEndTime5.Text
+            task.TimeStep = 5
+            task.PushWeChartToUserName = txtWechatName5.Text
+            task.PushEmailToUserName = txtEmailName5.Text
+            Dim TaskCode As String = ""
+            Dim pdList As New List(Of Double)
+            For Each itm In RTB5.Text.Split(Chr(10))
+                If itm <> "" Then
+                    If IsNumeric(itm) Then
+                        pdList.Add(Val(itm))
+                    End If
                 End If
             Next
-        End SyncLock
-        task.StartTime = txtStartTime5.Text
-        task.EndTime = txtEndTime5.Text
-        task.TimeStep = 5
-        task.PushWeChartToUserName = txtWechatName5.Text
-        task.PushEmailToUserName = txtEmailName5.Text
-        Dim TaskCode As String = ""
-        Dim pdList As New List(Of Double)
-        For Each itm In RTB5.Text.Split(Chr(10))
-            If itm <> "" Then
-                If IsNumeric(itm) Then
-                    pdList.Add(Val(itm))
-                End If
+            If txtModuleTime5.Text = "" Then
+                MsgBox("请完整配置参数")
+                Exit Sub
+            End If
+            Dim moduleTime As Integer = Val(txtModuleTime5.Text)
+            If moduleTime < 10 Then
+                MsgBox("建模时间必须大于或等于10秒")
+                Exit Sub
+            End If
+            Dim yjs As New YuJingStu(pdList, Val(txtModuleTime5.Text))
+            TaskCode = JsonConvert.SerializeObject(yjs)
+            If TaskCode = "" Or task.TaskNickName = "" Or task.DeviceID = "" Or task.StartTime = "" Or task.EndTime = "" Then
+                MsgBox("请完整配置参数")
+                Exit Sub
+            End If
+            task.TaskCode = TaskCode
+            task.TaskBg = txtTaskBg5.Text
+            Dim msg As String = JsonConvert.SerializeObject(task)
+            Dim result As String = GetH(ServerUrl, "func=AddTask&token=" & token & "&TaskJson=" & msg)
+            Dim res As String = GetResultPara("result", result)
+            If res = "success" Then
+                successCount = successCount + 1
+            Else
+                failCount = failCount + 1
+                failsb.AppendLine(result)
             End If
         Next
-        If txtModuleTime5.Text = "" Then
-            MsgBox("请完整配置参数")
-            Exit Sub
-        End If
-        Dim moduleTime As Integer = Val(txtModuleTime5.Text)
-        If moduleTime < 10 Then
-            MsgBox("建模时间必须大于或等于10秒")
-            Exit Sub
-        End If
-        Dim yjs As New YuJingStu(pdList, Val(txtModuleTime5.Text))
-        TaskCode = JsonConvert.SerializeObject(yjs)
-        If TaskCode = "" Or task.TaskNickName = "" Or task.DeviceID = "" Or task.StartTime = "" Or task.EndTime = "" Then
-            MsgBox("请完整配置参数")
-            Exit Sub
-        End If
-        task.TaskCode = TaskCode
-        task.TaskBg = txtTaskBg5.Text
-        Dim msg As String = JsonConvert.SerializeObject(task)
-        Dim result As String = GetH(ServerUrl, "func=AddTask&token=" & token & "&TaskJson=" & msg)
-        Dim res As String = GetResultPara("result", result)
-        If res = "success" Then
-            Dim w As New WarnBox("命令下发成功！")
-            w.Show()
-            Me.Close()
-        Else
-            MsgBox(result)
-        End If
+        Dim sb As New StringBuilder
+        sb.AppendLine("任务下发完成")
+        sb.AppendLine("成功数量:" & successCount)
+        If failCount > 0 Then sb.AppendLine("失败数量:" & failCount)
+        If failCount > 0 Then sb.AppendLine("失败提示:")
+        If failCount > 0 Then sb.AppendLine(sb.ToString)
+        MsgBox(sb.ToString)
+        Me.Close()
+
     End Sub
 
     Private Sub Button9_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button9.Click
@@ -384,54 +463,75 @@ Public Class AddTaskFrm
     End Sub
 
     Private Sub Button12_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button12.Click
-        Dim task As NormalTaskStu
-        task.UserName = usr
-        task.TaskName = "频谱取样"
-        task.TaskNickName = txtTaskNickName6.Text
-        task.DeviceID = cbDeviceID6.SelectedItem
-        SyncLock alldevlist
-            For Each itm In alldevlist
-                If itm.Name = task.DeviceID Then
-                    task.DeviceID = itm.DeviceID
-                    Exit For
-                End If
-            Next
-        End SyncLock
-        task.StartTime = txtStartTime6.Text
-        task.EndTime = txtEndTime6.Text
-        task.TimeStep = 5
-        task.PushWeChartToUserName = txtWechatName6.Text
-        task.PushEmailToUserName = txtEmailName6.Text
-        Dim TaskCode As String = ""
-        Dim freqbegin As String = Val(txtFreqStart6.Text)
-        Dim freqend As String = Val(txtFreqEnd6.Text)
-        Dim freqstep As String = Val(txtFreqStep6.Text)
-        Dim saveFreqStep As String = Val(txtSaveTimeStep6.Text)
-        Dim p As tssOrder_stu
-        p.freqStart = freqbegin
-        p.freqEnd = freqend
-        p.freqStep = freqstep
-        p.task = "bscan"
-        p.deviceID = task.DeviceID
-        p.saveFreqStep = saveFreqStep
-        TaskCode = JsonConvert.SerializeObject(p)
-        If TaskCode = "" Or task.TaskNickName = "" Or task.DeviceID = "" Or task.StartTime = "" Or task.EndTime = "" Then
-            MsgBox("请完整配置参数")
-            Exit Sub
-        End If
-        task.TaskCode = TaskCode
-        task.TaskBg = txtTaskBg.Text
-        Dim msg As String = JsonConvert.SerializeObject(task)
+        Dim list As New List(Of String)
+        For Each itm In cbDeviceID6.CheckedItems
+            list.Add(itm)
+        Next
+        Dim successCount As Integer = 0
+        Dim failCount As Integer = 0
+        Dim failsb As New StringBuilder
+        For Each deviceId In list
+            Dim task As NormalTaskStu
+            task.UserName = usr
+            task.TaskName = "频谱取样"
+            task.TaskNickName = txtTaskNickName6.Text & "_" & deviceId
+            task.DeviceID = deviceId
+            SyncLock alldevlist
+                For Each itm In alldevlist
+                    If itm.Name = task.DeviceID Then
+                        task.DeviceID = itm.DeviceID
+                        Exit For
+                    End If
+                Next
+            End SyncLock
+            task.StartTime = txtStartTime6.Text
+            task.EndTime = txtEndTime6.Text
+            task.TimeStep = 5
+            task.PushWeChartToUserName = txtWechatName6.Text
+            task.PushEmailToUserName = txtEmailName6.Text
+            Dim TaskCode As String = ""
+            Dim freqbegin As String = Val(txtFreqStart6.Text)
+            Dim freqend As String = Val(txtFreqEnd6.Text)
+            Dim freqstep As String = Val(txtFreqStep6.Text)
+            Dim saveFreqStep As String = Val(txtSaveTimeStep6.Text)
+            Dim p As tssOrder_stu
+            p.freqStart = freqbegin
+            p.freqEnd = freqend
+            p.freqStep = freqstep
+            p.task = "bscan"
+            p.deviceID = task.DeviceID
+            p.saveFreqStep = saveFreqStep
+            TaskCode = JsonConvert.SerializeObject(p)
+            If TaskCode = "" Or task.TaskNickName = "" Or task.DeviceID = "" Or task.StartTime = "" Or task.EndTime = "" Then
+                MsgBox("请完整配置参数")
+                Exit Sub
+            End If
+            task.TaskCode = TaskCode
+            task.TaskBg = txtTaskBg.Text
+            Dim msg As String = JsonConvert.SerializeObject(task)
 
-        Dim result As String = GetH(ServerUrl, "func=AddTask&token=" & token & "&TaskJson=" & msg)
-        Dim res As String = GetResultPara("result", result)
-        If res = "success" Then
-            Dim w As New WarnBox("命令下发成功！")
-            w.Show()
-            Me.Close()
-        Else
-            MsgBox(result)
-        End If
+            Dim result As String = GetH(ServerUrl, "func=AddTask&token=" & token & "&TaskJson=" & msg)
+            Dim res As String = GetResultPara("result", result)
+            If res = "success" Then
+                successCount = successCount + 1
+                'Dim w As New WarnBox("命令下发成功！")
+                'w.Show()
+                'Me.Close()
+            Else
+                failCount = failCount + 1
+                failsb.AppendLine(result)
+                'MsgBox(result)
+            End If
+        Next
+        Dim sb As New StringBuilder
+        sb.AppendLine("任务下发完成")
+        sb.AppendLine("成功数量:" & successCount)
+        If failCount > 0 Then sb.AppendLine("失败数量:" & failCount)
+        If failCount > 0 Then sb.AppendLine("失败提示:")
+        If failCount > 0 Then sb.AppendLine(sb.ToString)
+        MsgBox(sb.ToString)
+        Me.Close()
+
     End Sub
 
     Private Sub Button11_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button11.Click
@@ -443,67 +543,71 @@ Public Class AddTaskFrm
     End Sub
 
     Private Sub Button14_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button14.Click
-        Dim task As NormalTaskStu
-        task.UserName = usr
-        task.TaskName = "占用统计"
-        task.TaskNickName = txtTaskNickName7.Text
-        task.DeviceID = cbDeviceID7.SelectedItem
-        SyncLock alldevlist
-            For Each itm In alldevlist
-                If itm.Name = task.DeviceID Then
-                    task.DeviceID = itm.DeviceID
-                    Exit For
-                End If
-            Next
-        End SyncLock
-        task.StartTime = txtStartTime7.Text
-        task.EndTime = txtEndTime7.Text
-        task.TimeStep = 5
-        task.PushWeChartToUserName = txtWechatName7.Text
-        task.PushEmailToUserName = txtEmailName7.Text
-        Dim TaskCode As String = ""
-        Dim freqbegin As String = Val(txtFreqStart7.Text)
-        Dim freqend As String = Val(txtFreqEnd7.Text)
-        Dim freqstep As String = Val(txtFreqStep7.Text)
-        Dim Threshol As String = Val(txtThreshol7.Text)
-        Dim p As tssOrder_stu
-        p.freqStart = freqbegin
-        p.freqEnd = freqend
-        p.freqStep = freqstep
-        p.task = "bscan"
-        p.deviceID = task.DeviceID
-        p.Threshol = Threshol
-        'If RTB0.Text <> "" Then
-        '    Dim pdList As New List(Of Double)
-        '    For Each itm In RTB0.Text.Split(Chr(10))
-        '        If itm <> "" Then
-        '            If IsNumeric(itm) Then
-        '                pdList.Add(Val(itm))
-        '            End If
-        '        End If
-        '    Next
-        '    If pdList.Count > 0 Then
-        '        p.watchPoint = pdList
-        '    End If
-        'End If
-        TaskCode = JsonConvert.SerializeObject(p)
-        If TaskCode = "" Or task.TaskNickName = "" Or task.DeviceID = "" Or task.StartTime = "" Or task.EndTime = "" Then
-            MsgBox("请完整配置参数")
-            Exit Sub
-        End If
-        task.TaskCode = TaskCode
-        task.TaskBg = txtTaskBg.Text
-        Dim msg As String = JsonConvert.SerializeObject(task)
+        Dim list As New List(Of String)
+        For Each itm In cbDeviceID7.CheckedItems
+            list.Add(itm)
+        Next
+        Dim successCount As Integer = 0
+        Dim failCount As Integer = 0
+        Dim failsb As New StringBuilder
+        For Each deviceId In list
 
-        Dim result As String = GetH(ServerUrl, "func=AddTask&token=" & token & "&TaskJson=" & msg)
-        Dim res As String = GetResultPara("result", result)
-        If res = "success" Then
-            Dim w As New WarnBox("命令下发成功！")
-            w.Show()
-            Me.Close()
-        Else
-            MsgBox(result)
-        End If
+            Dim task As NormalTaskStu
+            task.UserName = usr
+            task.TaskName = "占用统计"
+            task.TaskNickName = txtTaskNickName7.Text & "_" & deviceId
+            task.DeviceID = deviceId
+            SyncLock alldevlist
+                For Each itm In alldevlist
+                    If itm.Name = task.DeviceID Then
+                        task.DeviceID = itm.DeviceID
+                        Exit For
+                    End If
+                Next
+            End SyncLock
+            task.StartTime = txtStartTime7.Text
+            task.EndTime = txtEndTime7.Text
+            task.TimeStep = 5
+            task.PushWeChartToUserName = txtWechatName7.Text
+            task.PushEmailToUserName = txtEmailName7.Text
+            Dim TaskCode As String = ""
+            Dim freqbegin As String = Val(txtFreqStart7.Text)
+            Dim freqend As String = Val(txtFreqEnd7.Text)
+            Dim freqstep As String = Val(txtFreqStep7.Text)
+            Dim Threshol As String = Val(txtThreshol7.Text)
+            Dim p As tssOrder_stu
+            p.freqStart = freqbegin
+            p.freqEnd = freqend
+            p.freqStep = freqstep
+            p.task = "bscan"
+            p.deviceID = task.DeviceID
+            p.Threshol = Threshol
+            TaskCode = JsonConvert.SerializeObject(p)
+            If TaskCode = "" Or task.TaskNickName = "" Or task.DeviceID = "" Or task.StartTime = "" Or task.EndTime = "" Then
+                MsgBox("请完整配置参数")
+                Exit Sub
+            End If
+            task.TaskCode = TaskCode
+            task.TaskBg = txtTaskBg.Text
+            Dim msg As String = JsonConvert.SerializeObject(task)
+
+            Dim result As String = GetH(ServerUrl, "func=AddTask&token=" & token & "&TaskJson=" & msg)
+            Dim res As String = GetResultPara("result", result)
+            If res = "success" Then
+                successCount = successCount + 1
+            Else
+                failCount = failCount + 1
+                failsb.AppendLine(result)
+            End If
+        Next
+        Dim sb As New StringBuilder
+        sb.AppendLine("任务下发完成")
+        sb.AppendLine("成功数量:" & successCount)
+        If failCount > 0 Then sb.AppendLine("失败数量:" & failCount)
+        If failCount > 0 Then sb.AppendLine("失败提示:")
+        If failCount > 0 Then sb.AppendLine(sb.ToString)
+        MsgBox(sb.ToString)
+        Me.Close()
     End Sub
 
     Private Sub RichTextBox3_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RTB8.TextChanged
@@ -523,69 +627,87 @@ Public Class AddTaskFrm
     End Sub
 
     Private Sub Button16_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button16.Click
-        Dim task As NormalTaskStu
-        task.UserName = usr
-        task.TaskName = "状态预警"
-        task.TaskNickName = txtTaskNickName8.Text
-        task.DeviceID = CBDeviceID8.SelectedItem
-        SyncLock alldevlist
-            For Each itm In alldevlist
-                If itm.Name = task.DeviceID Then
-                    task.DeviceID = itm.DeviceID
-                    Exit For
+        Dim list As New List(Of String)
+        For Each itm In cbDeviceID8.CheckedItems
+            list.Add(itm)
+        Next
+        Dim successCount As Integer = 0
+        Dim failCount As Integer = 0
+        Dim failsb As New StringBuilder
+        For Each deviceId In list
+            Dim task As NormalTaskStu
+            task.UserName = usr
+            task.TaskName = "状态预警"
+            task.TaskNickName = txtTaskNickName8.Text & "_" & deviceId
+            task.DeviceID = deviceId
+            SyncLock alldevlist
+                For Each itm In alldevlist
+                    If itm.Name = task.DeviceID Then
+                        task.DeviceID = itm.DeviceID
+                        Exit For
+                    End If
+                Next
+            End SyncLock
+            task.StartTime = txtStartTime8.Text
+            task.EndTime = txtEndTime8.Text
+            task.TimeStep = 5
+            task.PushWeChartToUserName = txtWechatName8.Text
+            task.PushEmailToUserName = txtEmailName8.Text
+            Dim TaskCode As String = ""
+            Dim pdList As New List(Of Double)
+            For Each itm In RTB.Text.Split(Chr(10))
+                If itm <> "" Then
+                    If IsNumeric(itm) Then
+                        pdList.Add(Val(itm))
+                    End If
                 End If
             Next
-        End SyncLock
-        task.StartTime = txtStartTime8.Text
-        task.EndTime = txtEndTime8.Text
-        task.TimeStep = 5
-        task.PushWeChartToUserName = txtWechatName8.Text
-        task.PushEmailToUserName = txtEmailName8.Text
-        Dim TaskCode As String = ""
-        Dim pdList As New List(Of Double)
-        For Each itm In RTB.Text.Split(Chr(10))
-            If itm <> "" Then
-                If IsNumeric(itm) Then
-                    pdList.Add(Val(itm))
-                End If
+            Dim MoudleTime As Double = Val(txtModuleTime8.Text)
+            Dim MaxPercent As Double = Val(txtMaxPercent8.Text)
+            Dim MinPercent As Double = Val(txtMinPercent8.Text)
+            Dim HoldSecond As Integer = Val(txtHoldSecond8.Text)
+            Dim MinValue As Double = Val(txtMinValue8.Text)
+            Dim MinValueSecond As Double = Val(txtMinValueSecond8.Text)
+            If task.TaskNickName = "" Or task.DeviceID = "" Or task.StartTime = "" Or task.EndTime = "" Then
+                MsgBox("请完整配置基础参数")
+                Exit Sub
+            End If
+            If MoudleTime = 0 Or MaxPercent = 0 Or MinPercent = 0 Or HoldSecond = 0 Or MinValue = 0 Or MinValueSecond = 0 Then
+                MsgBox("请完整配置技术参数")
+                Exit Sub
+            End If
+            Dim z As ZTYJ_stu
+            z.pdList = pdList
+            z.ModuleTime = MoudleTime
+            z.MaxPercent = MaxPercent
+            z.MinPercent = MinPercent
+            z.HoldSecond = HoldSecond
+            z.MinValue = MinValue
+            z.MinValueSecond = MinValueSecond
+            TaskCode = JsonConvert.SerializeObject(z)
+            task.TaskCode = TaskCode
+            task.TaskBg = txtTaskBg8.Text
+            Dim msg As String = JsonConvert.SerializeObject(task)
+            '  MsgBox(msg)
+            Dim result As String = GetH(ServerUrl, "func=AddTask&token=" & token & "&TaskJson=" & msg)
+            Dim res As String = GetResultPara("result", result)
+            If res = "success" Then
+                successCount = successCount + 1
+            Else
+                failCount = failCount + 1
+                failsb.AppendLine(result)
             End If
         Next
-        Dim MoudleTime As Double = Val(txtModuleTime8.Text)
-        Dim MaxPercent As Double = Val(txtMaxPercent8.Text)
-        Dim MinPercent As Double = Val(txtMinPercent8.Text)
-        Dim HoldSecond As Integer = Val(txtHoldSecond8.Text)
-        Dim MinValue As Double = Val(txtMinValue8.Text)
-        Dim MinValueSecond As Double = Val(txtMinValueSecond8.Text)
-        If task.TaskNickName = "" Or task.DeviceID = "" Or task.StartTime = "" Or task.EndTime = "" Then
-            MsgBox("请完整配置基础参数")
-            Exit Sub
-        End If
-        If MoudleTime = 0 Or MaxPercent = 0 Or MinPercent = 0 Or HoldSecond = 0 Or MinValue = 0 Or MinValueSecond = 0 Then
-            MsgBox("请完整配置技术参数")
-            Exit Sub
-        End If
-        Dim z As ZTYJ_stu
-        z.pdList = pdList
-        z.ModuleTime = MoudleTime
-        z.MaxPercent = MaxPercent
-        z.MinPercent = MinPercent
-        z.HoldSecond = HoldSecond
-        z.MinValue = MinValue
-        z.MinValueSecond = MinValueSecond
-        TaskCode = JsonConvert.SerializeObject(z)
-        task.TaskCode = TaskCode
-        task.TaskBg = txtTaskBg8.Text
-        Dim msg As String = JsonConvert.SerializeObject(task)
-        '  MsgBox(msg)
-        Dim result As String = GetH(ServerUrl, "func=AddTask&token=" & token & "&TaskJson=" & msg)
-        Dim res As String = GetResultPara("result", result)
-        If res = "success" Then
-            Dim w As New WarnBox("命令下发成功！")
-            w.Show()
-            Me.Close()
-        Else
-            MsgBox(result)
-        End If
+        Dim sb As New StringBuilder
+        sb.AppendLine("任务下发完成")
+        sb.AppendLine("成功数量:" & successCount)
+        If failCount > 0 Then sb.AppendLine("失败数量:" & failCount)
+        If failCount > 0 Then sb.AppendLine("失败提示:")
+        If failCount > 0 Then sb.AppendLine(sb.ToString)
+        MsgBox(sb.ToString)
+        Me.Close()
+
+
     End Sub
     Structure ZTYJ_stu
         Dim pdList As List(Of Double)
@@ -799,123 +921,159 @@ Public Class AddTaskFrm
     End Sub
 
     Private Sub Button8_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button8.Click
-        Dim task As NormalTaskStu
-        task.UserName = usr
-        task.TaskName = "违章捕获"
-        task.TaskNickName = txtTaskNickName11.Text
-        task.DeviceID = CBDeviceID11.SelectedItem
-        SyncLock alldevlist
-            For Each itm In alldevlist
-                If itm.Name = task.DeviceID Then
-                    task.DeviceID = itm.DeviceID
-                    Exit For
+        Dim list As New List(Of String)
+        For Each itm In cbDeviceID11.CheckedItems
+            list.Add(itm)
+        Next
+        Dim successCount As Integer = 0
+        Dim failCount As Integer = 0
+        Dim failsb As New StringBuilder
+        For Each deviceId In list
+            Dim task As NormalTaskStu
+            task.UserName = usr
+            task.TaskName = "违章捕获"
+            task.TaskNickName = txtTaskNickName11.Text & "_" & deviceId
+            task.DeviceID = deviceId
+            SyncLock alldevlist
+                For Each itm In alldevlist
+                    If itm.Name = task.DeviceID Then
+                        task.DeviceID = itm.DeviceID
+                        Exit For
+                    End If
+                Next
+            End SyncLock
+            task.StartTime = txtStartTime11.Text
+            task.EndTime = txtEndTime11.Text
+            task.TimeStep = 5
+            task.PushWeChartToUserName = txtWechatName11.Text
+            task.PushEmailToUserName = txtEmailName11.Text
+            Dim TaskCode As String = ""
+            Dim freqbegin As String = Val(txtFreqStart11.Text)
+            Dim freqend As String = Val(txtFreqEnd11.Text)
+            Dim freqstep As String = Val(txtFreqStep11.Text)
+            Dim p As tssOrder_stu
+            p.freqStart = freqbegin
+            p.freqEnd = freqend
+            p.freqStep = freqstep
+            p.task = "bscan"
+            p.deviceID = task.DeviceID
+            p.Fucha = Val(txtFucha11.Text)
+            p.Daikuan = Val(txtDaikuan11.Text)
+            p.MinDValue = Val(txtMinDValue11.Text)
+            p.Legal = New List(Of Double)
+            p.WarnNum = Val(txtWarnNum11.Text)
+            For Each itm In txtLegal11.Text.Split(Chr(10))
+                If itm <> "" Then
+                    If IsNumeric(itm) Then
+                        p.Legal.Add(Val(itm))
+                    End If
                 End If
             Next
-        End SyncLock
-        task.StartTime = txtStartTime11.Text
-        task.EndTime = txtEndTime11.Text
-        task.TimeStep = 5
-        task.PushWeChartToUserName = txtWechatName11.Text
-        task.PushEmailToUserName = txtEmailName11.Text
-        Dim TaskCode As String = ""
-        Dim freqbegin As String = Val(txtFreqStart11.Text)
-        Dim freqend As String = Val(txtFreqEnd11.Text)
-        Dim freqstep As String = Val(txtFreqStep11.Text)
-        Dim p As tssOrder_stu
-        p.freqStart = freqbegin
-        p.freqEnd = freqend
-        p.freqStep = freqstep
-        p.task = "bscan"
-        p.deviceID = task.DeviceID
-        p.Fucha = Val(txtFucha11.Text)
-        p.Daikuan = Val(txtDaikuan11.Text)
-        p.MinDValue = Val(txtMinDValue11.Text)
-        p.Legal = New List(Of Double)
-        p.WarnNum = Val(txtWarnNum11.Text)
-        For Each itm In txtLegal11.Text.Split(Chr(10))
-            If itm <> "" Then
-                If IsNumeric(itm) Then
-                    p.Legal.Add(Val(itm))
-                End If
+            TaskCode = JsonConvert.SerializeObject(p)
+            If TaskCode = "" Or task.TaskNickName = "" Or task.DeviceID = "" Or task.StartTime = "" Or task.EndTime = "" Then
+                MsgBox("请完整配置参数")
+                Exit Sub
+            End If
+            task.TaskCode = TaskCode
+            task.TaskBg = txtTaskBg.Text
+            Dim msg As String = JsonConvert.SerializeObject(task)
+            Dim result As String = GetH(ServerUrl, "func=AddTask&token=" & token & "&TaskJson=" & msg)
+            Dim res As String = GetResultPara("result", result)
+            If res = "success" Then
+                successCount = successCount + 1
+            Else
+                failCount = failCount + 1
+                failsb.AppendLine(result)
             End If
         Next
-        TaskCode = JsonConvert.SerializeObject(p)
-        If TaskCode = "" Or task.TaskNickName = "" Or task.DeviceID = "" Or task.StartTime = "" Or task.EndTime = "" Then
-            MsgBox("请完整配置参数")
-            Exit Sub
-        End If
-        task.TaskCode = TaskCode
-        task.TaskBg = txtTaskBg.Text
-        Dim msg As String = JsonConvert.SerializeObject(task)
-        Dim result As String = GetH(ServerUrl, "func=AddTask&token=" & token & "&TaskJson=" & msg)
-        Dim res As String = GetResultPara("result", result)
-        If res = "success" Then
-            Dim w As New WarnBox("命令下发成功！")
-            w.Show()
-            Me.Close()
-        Else
-            MsgBox(result)
-        End If
+        Dim sb As New StringBuilder
+        sb.AppendLine("任务下发完成")
+        sb.AppendLine("成功数量:" & successCount)
+        If failCount > 0 Then sb.AppendLine("失败数量:" & failCount)
+        If failCount > 0 Then sb.AppendLine("失败提示:")
+        If failCount > 0 Then sb.AppendLine(sb.ToString)
+        MsgBox(sb.ToString)
+        Me.Close()
+
+
     End Sub
 
     Private Sub Button22_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button22.Click
-        Dim task As NormalTaskStu
-        task.UserName = usr
-        task.TaskName = "黑广播捕获"
-        task.TaskNickName = txtTaskNickName10.Text
-        task.DeviceID = CBDeviceID10.SelectedItem
-        SyncLock alldevlist
-            For Each itm In alldevlist
-                If itm.Name = task.DeviceID Then
-                    task.DeviceID = itm.DeviceID
-                    Exit For
+        Dim list As New List(Of String)
+        For Each itm In cbDeviceID10.CheckedItems
+            list.Add(itm)
+        Next
+        Dim successCount As Integer = 0
+        Dim failCount As Integer = 0
+        Dim failsb As New StringBuilder
+        For Each deviceId In list
+            Dim task As NormalTaskStu
+            task.UserName = usr
+            task.TaskName = "黑广播捕获"
+            task.TaskNickName = txtTaskNickName10.Text & "_" & deviceId
+            task.DeviceID = deviceId
+            SyncLock alldevlist
+                For Each itm In alldevlist
+                    If itm.Name = task.DeviceID Then
+                        task.DeviceID = itm.DeviceID
+                        Exit For
+                    End If
+                Next
+            End SyncLock
+            task.StartTime = txtStartTime10.Text
+            task.EndTime = txtEndTime10.Text
+            task.TimeStep = 5
+            task.PushWeChartToUserName = txtWechatName10.Text
+            task.PushEmailToUserName = txtEmailName10.Text
+            Dim TaskCode As String = ""
+            Dim freqbegin As String = Val(txtFreqStart10.Text)
+            Dim freqend As String = Val(txtFreqEnd10.Text)
+            Dim freqstep As String = Val(txtFreqStep10.Text)
+            Dim p As tssOrder_stu
+            p.freqStart = freqbegin
+            p.freqEnd = freqend
+            p.freqStep = freqstep
+            p.task = "bscan"
+            p.deviceID = task.DeviceID
+            p.Fucha = Val(txtFucha10.Text)
+            p.Daikuan = Val(txtDaikuan10.Text)
+            p.MinDValue = Val(txtMinDValue10.Text)
+            p.Legal = New List(Of Double)
+            p.WarnNum = Val(txtWarnNum10.Text)
+            For Each itm In txtLegal10.Text.Split(Chr(10))
+                If itm <> "" Then
+                    If IsNumeric(itm) Then
+                        p.Legal.Add(Val(itm))
+                    End If
                 End If
             Next
-        End SyncLock
-        task.StartTime = txtStartTime10.Text
-        task.EndTime = txtEndTime10.Text
-        task.TimeStep = 5
-        task.PushWeChartToUserName = txtWechatName10.Text
-        task.PushEmailToUserName = txtEmailName10.Text
-        Dim TaskCode As String = ""
-        Dim freqbegin As String = Val(txtFreqStart10.Text)
-        Dim freqend As String = Val(txtFreqEnd10.Text)
-        Dim freqstep As String = Val(txtFreqStep10.Text)
-        Dim p As tssOrder_stu
-        p.freqStart = freqbegin
-        p.freqEnd = freqend
-        p.freqStep = freqstep
-        p.task = "bscan"
-        p.deviceID = task.DeviceID
-        p.Fucha = Val(txtFucha10.Text)
-        p.Daikuan = Val(txtDaikuan10.Text)
-        p.MinDValue = Val(txtMinDValue10.Text)
-        p.Legal = New List(Of Double)
-        p.WarnNum = Val(txtWarnNum10.Text)
-        For Each itm In txtLegal10.Text.Split(Chr(10))
-            If itm <> "" Then
-                If IsNumeric(itm) Then
-                    p.Legal.Add(Val(itm))
-                End If
+            TaskCode = JsonConvert.SerializeObject(p)
+            If TaskCode = "" Or task.TaskNickName = "" Or task.DeviceID = "" Or task.StartTime = "" Or task.EndTime = "" Then
+                MsgBox("请完整配置参数")
+                Exit Sub
+            End If
+            task.TaskCode = TaskCode
+            task.TaskBg = txtTaskBg.Text
+            Dim msg As String = JsonConvert.SerializeObject(task)
+            Dim result As String = GetH(ServerUrl, "func=AddTask&token=" & token & "&TaskJson=" & msg)
+            Dim res As String = GetResultPara("result", result)
+            If res = "success" Then
+                successCount = successCount + 1
+            Else
+                failCount = failCount + 1
+                failsb.AppendLine(result)
             End If
         Next
-        TaskCode = JsonConvert.SerializeObject(p)
-        If TaskCode = "" Or task.TaskNickName = "" Or task.DeviceID = "" Or task.StartTime = "" Or task.EndTime = "" Then
-            MsgBox("请完整配置参数")
-            Exit Sub
-        End If
-        task.TaskCode = TaskCode
-        task.TaskBg = txtTaskBg.Text
-        Dim msg As String = JsonConvert.SerializeObject(task)
-        Dim result As String = GetH(ServerUrl, "func=AddTask&token=" & token & "&TaskJson=" & msg)
-        Dim res As String = GetResultPara("result", result)
-        If res = "success" Then
-            Dim w As New WarnBox("命令下发成功！")
-            w.Show()
-            Me.Close()
-        Else
-            MsgBox(result)
-        End If
+        Dim sb As New StringBuilder
+        sb.AppendLine("任务下发完成")
+        sb.AppendLine("成功数量:" & successCount)
+        If failCount > 0 Then sb.AppendLine("失败数量:" & failCount)
+        If failCount > 0 Then sb.AppendLine("失败提示:")
+        If failCount > 0 Then sb.AppendLine(sb.ToString)
+        MsgBox(sb.ToString)
+        Me.Close()
+
+
     End Sub
 
     Private Sub cbDeviceID3_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -972,7 +1130,7 @@ Public Class AddTaskFrm
 
     End Sub
 
-    Private Sub Button23_Click(sender As Object, e As EventArgs) Handles Button23.Click
+    Private Sub Button23_Click(sender As Object, e As EventArgs)
         For i = 0 To cbDeviceID3.Items.Count - 1
             Dim itm As String = cbDeviceID3.Items(i).ToString
             Dim str As String = itm
@@ -981,5 +1139,9 @@ Public Class AddTaskFrm
                 cbDeviceID3.SetItemChecked(i, True)
             End If
         Next
+    End Sub
+
+    Private Sub Panel7_Paint(sender As Object, e As PaintEventArgs) Handles Panel7.Paint
+
     End Sub
 End Class
