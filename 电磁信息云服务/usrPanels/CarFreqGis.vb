@@ -474,22 +474,7 @@ Public Class CarFreqGis
         Label4.Text = str
     End Sub
 
-    Structure runLocation
-        Dim lng As String
-        Dim lat As String
-        Dim time As String
-    End Structure
-    Structure json_PPSJ
-        Dim freqStart As Double
-        Dim freqStep As Double
-        Dim freqEnd As Double
-        Dim deviceID As String
-        Dim dataCount As Integer
-        Dim runLocation As runLocation
-        Dim value() As Double
-        Dim isDSGFreq As Boolean
-        Dim DSGFreqBase64 As String
-    End Structure
+
     Private Sub WebGis_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebGis.DocumentCompleted
         GetCarList()
     End Sub

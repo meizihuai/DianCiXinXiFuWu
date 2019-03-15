@@ -30,22 +30,12 @@ Public Class OnlineFreq
     Dim freqStartTimeStr As String = ""
     Dim showTabIndex As Integer = 1
     Dim TimeFreqPoint As Double = -88
-    Structure runLocation
-        Dim lng As String
-        Dim lat As String
-        Dim time As String
-    End Structure
-    Structure json_PPSJ
-        Dim freqStart As Double
-        Dim freqStep As Double
-        Dim freqEnd As Double
-        Dim deviceID As String
-        Dim dataCount As Integer
-        Dim runLocation As runLocation
-        Dim value() As Double
-        Dim isDSGFreq As Boolean
-        Dim DSGFreqBase64 As String
-    End Structure
+    Class runLocation
+        Public lng As String
+        Public lat As String
+        Public time As String
+    End Class
+
     Structure JSON_Msg
         Dim func As String
         Dim msg As String
@@ -518,6 +508,7 @@ Public Class OnlineFreq
                 End If
             Next
         Catch ex As Exception
+            ' MsgBox(ex.ToString)
             Exit Sub
         End Try
 
@@ -644,7 +635,7 @@ Public Class OnlineFreq
 
                     'End If
                 Catch ex As Exception
-
+                    ' MsgBox(ex.ToString)
                 End Try
                 If i <> count - 1 Then
                     Sleep(sleepCount)

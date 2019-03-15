@@ -307,22 +307,7 @@ Public Class HisFreqGis
         Dim freqStep As Double
         Dim realPPSJ As json_PPSJ
     End Structure
-    Structure json_PPSJ
-        Dim freqStart As Double
-        Dim freqStep As Double
-        Dim freqEnd As Double
-        Dim deviceID As String
-        Dim dataCount As Integer
-        Dim runLocation As runLocation
-        Dim value() As Double
-        Dim isDSGFreq As Boolean
-        Dim DSGFreqBase64 As String
-    End Structure
-    Structure runLocation
-        Dim lng As String
-        Dim lat As String
-        Dim time As String
-    End Structure
+
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
         Dim th As New Thread(AddressOf TH_GetHisFreqGis)
         th.Start()

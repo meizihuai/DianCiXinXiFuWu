@@ -493,22 +493,7 @@ Public Class POAPanel
             '  MsgBox(ex.ToString)
         End Try
     End Function
-    Structure runLocation
-        Dim lng As String
-        Dim lat As String
-        Dim time As String
-    End Structure
-    Structure json_PPSJ
-        Dim freqStart As Double
-        Dim freqStep As Double
-        Dim freqEnd As Double
-        Dim deviceID As String
-        Dim dataCount As Integer
-        Dim runLocation As runLocation
-        Dim value() As Double
-        Dim isDSGFreq As Boolean
-        Dim DSGFreqBase64 As String
-    End Structure
+
     Private Sub HandleHttpMsg(ByVal HttpMsg As String, cp As ChartPointAndGisInfo)
         Dim PPSJList As New List(Of json_PPSJ)
         Try

@@ -469,22 +469,7 @@ Public Class CarHisFreqGis
             '  MsgBox(ex.ToString)
         End Try
     End Sub
-    Structure runLocation
-        Dim lng As String
-        Dim lat As String
-        Dim time As String
-    End Structure
-    Structure json_PPSJ
-        Dim freqStart As Double
-        Dim freqStep As Double
-        Dim freqEnd As Double
-        Dim deviceID As String
-        Dim dataCount As Integer
-        Dim runLocation As runLocation
-        Dim value() As Double
-        Dim isDSGFreq As Boolean
-        Dim DSGFreqBase64 As String
-    End Structure
+
     Private Sub GetBusHisFreqData(ByVal msgid As String, ByVal time As String, index As Integer, sumCount As Integer, lng As Double, lat As Double)
         If msgid = "" Then Return
         If IsNumeric(msgid) = False Then Return
