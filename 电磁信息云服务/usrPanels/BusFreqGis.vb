@@ -463,11 +463,11 @@ Public Class BusFreqGis
             For i = 0 To Plist.Count - 1
                 Try
                     Dim itm As json_PPSJ = Plist(i)
-                    Console.WriteLine(itm.runLocation.lng & "," & itm.runLocation.lat)
+                    If IsNothing(itm.runLocation) = False Then Console.WriteLine(itm.runLocation.lng & "," & itm.runLocation.lat)
                     Console.WriteLine(itm.freqStart & "," & itm.freqStep & "," & itm.dataCount)
                     Me.Invoke(Sub() handlePinPuFenXi(itm))
                 Catch ex As Exception
-
+                    MsgBox(ex.ToString)
                 End Try
                 If i <> count - 1 Then
                     Sleep(sleepCount)
