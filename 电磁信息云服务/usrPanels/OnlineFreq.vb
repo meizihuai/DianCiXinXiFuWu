@@ -19,6 +19,11 @@ Imports System.Web
 Imports System.Web.HttpUtility
 Imports WavePlayer
 Public Class OnlineFreq
+    Public isLiSanSaoMiao As Boolean = False
+    Public lisanFreqStart As Double
+    Public lisanFreqEnd As Double
+    Public lisanFreqList As List(Of Double)
+    Public lisanTime As Date
     Public selectDeviceID As String
     Public realDeviceID As String
     Dim th_ReciveHttpMsg As Thread
@@ -131,7 +136,7 @@ Public Class OnlineFreq
         ComboBox1.Items.Add("应急通信频率(ITU)")
         ComboBox1.Items.Add("铁路通信频率")
         ComboBox1.Items.Add("国际遇险求救频率")
-        ComboBox1.SelectedIndex = 0
+        ComboBox1.SelectedIndex = 2
 
         ComboBox2.Items.Add("8")
         ComboBox2.Items.Add("16")
@@ -424,7 +429,7 @@ Public Class OnlineFreq
             End If
         End If
         HttpMsgUrl = HttpMsgUrl.Replace("123.207.31.37", ServerIP)
-        Console.WriteLine("HttpMsgUrl=" & HttpMsgUrl)
+        Console.WriteLine("HttpMsgUrl=" & HttpMsgUrl & "?func=GetDevMsg")
         Dim th As New Thread(AddressOf GetControlerVersion)
         th.Start()
         While True
@@ -436,7 +441,8 @@ Public Class OnlineFreq
     Private Function GetHttpMsg() As String
         Try
             Dim req As HttpWebRequest = WebRequest.Create(HttpMsgUrl & "?func=GetDevMsg")
-            ' Me.Invoke(Sub() MsgBox(HttpMsgUrl & "?func=GetDevMsg"))
+
+
             req.Accept = "*/*"
             req.UserAgent = "Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.9.2.13) Gecko/20101203 Firefox/3.6.13"
             req.KeepAlive = True
@@ -444,11 +450,12 @@ Public Class OnlineFreq
             req.ReadWriteTimeout = 5000
             req.ContentType = "application/x-www-form-urlencoded"
             req.Method = "GET"
-            
+
             Dim rp As HttpWebResponse = req.GetResponse
             Dim str As String = New StreamReader(rp.GetResponseStream(), Encoding.UTF8).ReadToEnd
             Dim b() As Byte = Encoding.Default.GetBytes(str)
             dowload = dowload + b.Length
+            '  Console.WriteLine(str)
             Return str
         Catch ex As Exception
             '  MsgBox(ex.ToString)
@@ -471,8 +478,10 @@ Public Class OnlineFreq
 
         Dim PPSJList As New List(Of json_PPSJ)
         Dim AudioList As New List(Of json_Audio)
+        Dim lsinfo As LisanInfo
         Try
             Dim p As JArray = JArray.Parse(HttpMsg)
+
             For Each itm As JValue In p
                 Dim jMsg As String = itm.Value
                 Dim JObj As Object = JObject.Parse(jMsg)
@@ -482,6 +491,15 @@ Public Class OnlineFreq
                     Dim msg As String = JObj("msg").ToString
                     Dim ppsj As json_PPSJ = JsonConvert.DeserializeObject(msg, GetType(json_PPSJ))
                     PPSJList.Add(ppsj)
+                End If
+                If func = "lisan" Then
+                    Dim msg As String = JObj("msg").ToString
+                    Try
+                        lsinfo = JsonConvert.DeserializeObject(Of LisanInfo)(msg)
+                    Catch ex As Exception
+
+                    End Try
+                    ' File.WriteAllText("C:\Users\meizi\Desktop\lisan.txt", msg)
                 End If
                 If func = "ifscan_wav" Then
                     Dim msg As String = JObj("msg").ToString
@@ -537,7 +555,9 @@ Public Class OnlineFreq
             Dim th2 As New Thread(AddressOf HandleAudioList)
             th2.Start(AudioList)
         End If
-
+        If IsNothing(lsinfo) = False Then
+            LisanData2Lv20(lsinfo)
+        End If
 
     End Sub
     Dim AudioPlayLock As Object
@@ -816,10 +836,10 @@ Public Class OnlineFreq
                 'ser.Name = "illegalsignal"
                 If isTongJi Then
                     If TongJiCiShu < 60 Then
-                        Label23.Visible = True
+                        'Label23.Visible = True
                         TongJiCiShu = TongJiCiShu + 1
-                        XinHao2LV(result)
-                        Label24.Text = "正在搜索与统计"
+                        XinHao2LV(result, xx, yy)
+                        ' Label24.Text = "正在搜索与统计"
                         If Chart2.Series.Count >= 2 Then
                             Chart2.Series(1).Points.Clear()
                         End If
@@ -828,44 +848,26 @@ Public Class OnlineFreq
                                 Chart5.Series(1).Points.Clear()
                             End If
                         End If
+
                         For Each itm As ListViewItem In LV20.Items
                             Dim pl As String = itm.SubItems(2).Text
                             Dim count As String = itm.SubItems(7 + 3).Text
                             Dim cq As String = itm.SubItems(6 + 3).Text
                             If IsNumeric(count) Then
-                                If Val(count) >= 10 Then
+                                If Val(count) >= 0 Then
                                     If Chart2.Series.Count >= 2 Then
-                                        'Chart2.Series(1).Points.AddXY(pl - 0.05, cq)
-                                        'Chart2.Series(1).Points.AddXY(pl, cq)
-                                        'Chart2.Series(1).Points.AddXY(pl + 0.05, cq)
-                                        For j = 0 To xx.Count - 1 - jieti
+                                        For j = 0 To xx.Count - 1
                                             If xx(j) = pl Then
-                                                If j >= jieti Then
-                                                    For m = j - jieti To j + jieti
+                                                For m = j - jieti To j + jieti
+                                                    If m >= 0 And m <= xx.Count - 1 Then
                                                         Dim value As Double = yy(m)
                                                         Me.Invoke(Sub() Chart2.Series(1).Points.AddXY(xx(m), value))
-                                                    Next
-                                                End If
+                                                    End If
+
+                                                Next
                                                 Exit For
                                             End If
                                         Next
-                                        'MsgBox(sh)
-                                        'MsgBox(pl & "," & cq)
-                                        'If IsNothing(result) = False Then
-                                        '    For i = 0 To result.Length / 2 - 1
-                                        '        Dim rx As Double = result(i, 0)
-                                        '        For j = 0 To xx.Count - 1 - jieti
-                                        '            If xx(j) = rx Then
-                                        '                If j >= jieti Then
-                                        '                    For m = j - jieti To j + jieti
-                                        '                        Chart2.Series(1).Points.AddXY(xx(m), yy(m))
-                                        '                    Next
-                                        '                End If
-                                        '                Exit For
-                                        '            End If
-                                        '        Next
-                                        '    Next
-                                        'End If
                                     End If
                                     If freqStart = 88 And jieshu = 108 Then
                                         If Chart5.Series.Count >= 2 Then
@@ -887,7 +889,7 @@ Public Class OnlineFreq
                             End If
                         Next
                     Else
-                        Label23.Visible = False
+                        'Label23.Visible = False
                         Label24.Text = "搜索统计完毕"
                     End If
                 Else
@@ -1151,7 +1153,7 @@ Public Class OnlineFreq
         End Try
 
     End Sub
-    Private Sub XinHao2LV(ByVal result(,) As Double)
+    Private Sub XinHao2LV(ByVal result(,) As Double, xx() As Double, yy() As Double)
         If IsNothing(result) Then Exit Sub
         If IsNothing(itmList) Then
             itmList = New List(Of ListViewItem)
@@ -1249,18 +1251,141 @@ Public Class OnlineFreq
                 plist.Add(itm)
             End If
         Next
-        LV20.Items.Clear()
+
 
         Dim cnt As Integer = plist.Count
-        For i = 0 To cnt - 1
-            Dim itm As ListViewItem = plist(i)
-            itm.Text = i + 1
-            Dim CBInt As Integer = Val(itm.SubItems(12 + 3).Text)
-            Dim SumInt As Integer = Val(itm.SubItems(11 + 3).Text)
-            Dim str As String = GetPerPic(CBInt / SumInt)
-            itm.SubItems.Add(str)
-            LV20.Items.Add(itm)
-        Next
+        'If isLiSanSaoMiao Then
+        '    Dim isNeedReload As Boolean = False
+        '    If LV20.Items.Count = 0 Then
+        '        isNeedReload = True
+        '    Else
+        '        Dim lvFreqlist As New List(Of String)
+        '        For Each itm As ListViewItem In LV20.Items
+        '            Dim freq As Double = itm.SubItems(2).Text
+        '            lvFreqlist.Add(freq)
+        '        Next
+        '        For Each itm In lvFreqlist
+        '            If lisanFreqList.Contains(itm) = False Then
+        '                isNeedReload = True
+        '                Exit For
+        '            End If
+        '        Next
+        '        If isNeedReload Then
+        '            For Each itm In lisanFreqList
+        '                If lvFreqlist.Contains(itm) = False Then
+        '                    isNeedReload = True
+        '                    Exit For
+        '                End If
+        '            Next
+        '        End If
+        '    End If
+        '    If isNeedReload Then
+        '        LV20.Items.Clear()
+        '    End If
+        '    Dim nowstr As String = Now.ToString("yyyy-MM-dd HH:mm:ss")
+        '    Dim newItmlist As New List(Of ListViewItem)
+        '    Dim runIndex As Integer = 0
+        '    Dim ts As TimeSpan = Now - lisanTime
+        '    Dim watchTime As String = $"{ts.Hours.ToString("00")}:{ts.Minutes.ToString("00")}:{ts.Seconds.ToString("00")}"
+        '    Dim chaobiaoMax As Double = -70
+        '    If isNeedReload Then
+        '        For Each freq In lisanFreqList
+        '            Dim changqiang As Double = 0
+        '            For i = runIndex To xx.Length - 2
+        '                Dim leftd As Double = Math.Abs(xx(i) - freq)
+        '                Dim rightd As Double = Math.Abs(xx(i + 1) - freq)
+        '                If leftd < rightd Then
+        '                    changqiang = yy(i)
+        '                Else
+        '                    changqiang = yy(i + 1)
+        '                End If
+        '            Next
+        '            Dim itm As New ListViewItem(newItmlist.Count + 1) '0
+        '            itm.SubItems.Add(nowstr)  '1 时间
+        '            itm.SubItems.Add(freq) '2  频点
+        '            itm.SubItems.Add(DeviceAddress) '3  地点
+        '            itm.SubItems.Add("")  '信号属性  '4  信号属性
+        '            itm.SubItems.Add("")  '状态属性  '5  状态属性
+        '            itm.SubItems.Add("")  '可用评估  '6  可用评估
+        '            itm.SubItems.Add(changqiang) '7  信号电平
+        '            itm.SubItems.Add(changqiang) '8  最小值
+        '            itm.SubItems.Add(changqiang) '9  最大值
+        '            itm.SubItems.Add(0) '10  出现次数
+        '            itm.SubItems.Add(changqiang) '11 平均值
+        '            itm.SubItems.Add(watchTime) '12 统计时长
+        '            itm.SubItems.Add(0) '13  占用度
+        '            itm.SubItems.Add(1) '14  监测次数
+        '            itm.SubItems.Add(0) '15 超标次数
+        '            Dim CBInt As Integer = Val(itm.SubItems(12 + 3).Text)
+        '            Dim SumInt As Integer = Val(itm.SubItems(11 + 3).Text)
+        '            Dim str As String = GetPerPic(CBInt / SumInt)
+        '            itm.SubItems.Add(str) '占用度直方图
+        '            newItmlist.Add(itm)
+        '        Next
+        '        LV20.Items.AddRange(newItmlist.ToArray())
+        '    Else
+        '        For Each freq In lisanFreqList
+        '            Dim changqiang As Double = 0
+        '            For i = runIndex To xx.Length - 2
+        '                Dim leftd As Double = Math.Abs(xx(i) - freq)
+        '                Dim rightd As Double = Math.Abs(xx(i + 1) - freq)
+        '                If leftd < rightd Then
+        '                    changqiang = yy(i)
+        '                Else
+        '                    changqiang = yy(i + 1)
+        '                End If
+        '            Next
+        '            Dim itm As ListViewItem
+        '            If isNeedReload = False Then
+        '                For i = 0 To LV20.Items.Count - 1
+        '                    If LV20.Items(i).SubItems(2).Text = freq.ToString() Then
+        '                        itm = LV20.Items(i)
+        '                        Exit For
+        '                    End If
+        '                Next
+        '            End If
+        '            If IsNothing(itm) Then Continue For
+
+
+        '            itm.SubItems(1).Text = nowstr
+        '            itm.SubItems(4).Text = "" '4  信号属性
+        '            itm.SubItems(5).Text = "" '5  状态属性
+        '            itm.SubItems(6).Text = "" '6  可用评估
+        '            itm.SubItems(7).Text = changqiang
+        '            itm.SubItems(8).Text = IIf(itm.SubItems(8).Text > changqiang, changqiang, itm.SubItems(8).Text)
+        '            itm.SubItems(9).Text = IIf(itm.SubItems(9).Text < changqiang, changqiang, itm.SubItems(9).Text)
+        '            itm.SubItems(11).Text = (Double.Parse(itm.SubItems(11).Text) + changqiang) / 2
+        '            Dim ischaobiao As Boolean = changqiang > chaobiaoMax
+        '            If ischaobiao Then
+        '                itm.SubItems(10).Text += 1
+        '                itm.SubItems(15).Text += 1
+        '            End If
+        '            itm.SubItems(14).Text += 1
+        '            Dim CBInt As Integer = Val(itm.SubItems(15).Text)
+        '            Dim SumInt As Integer = Val(itm.SubItems(14).Text)
+        '            Dim zyd As String = (100 * CBInt / SumInt).ToString("0.0")
+        '            itm.SubItems(13).Text = zyd
+        '            Dim str As String = GetPerPic(CBInt / SumInt)
+        '            itm.SubItems(16).Text = str
+
+        '        Next
+
+        '    End If
+
+
+        'Else
+        '    LV20.Items.Clear()
+        '    For i = 0 To cnt - 1
+        '        Dim itm As ListViewItem = plist(i)
+        '        itm.Text = i + 1
+        '        Dim CBInt As Integer = Val(itm.SubItems(12 + 3).Text)
+        '        Dim SumInt As Integer = Val(itm.SubItems(11 + 3).Text)
+        '        Dim str As String = GetPerPic(CBInt / SumInt)
+        '        itm.SubItems.Add(str)
+        '        LV20.Items.Add(itm)
+        '    Next
+        'End If
+
         LV27.Items.Clear()
         For i = 0 To cnt - 1
             Dim itm As ListViewItem = plist(i).Clone
@@ -1269,6 +1394,41 @@ Public Class OnlineFreq
         Next
 
         Label145.Text = "信号数量: " & plist.Count
+    End Sub
+    Private Sub LisanData2Lv20(lsinfo As LisanInfo)
+        If IsNothing(lsinfo) Then Return
+        If IsNothing(lsinfo.pointlist) Then Return
+        Dim newItmlist As New List(Of ListViewItem)
+        Dim nowstr As String = Now.ToString("yyyy-MM-dd HH:mm:ss")
+        Dim ts As TimeSpan = Now - lsinfo.startTime
+        Dim ws As String = $"{ts.Hours.ToString("0.00")}:{ts.Minutes.ToString("0.00")}:{ts.Seconds.ToString("0.00")}"
+        For Each freq In lsinfo.pointlist
+            Dim itm As New ListViewItem(newItmlist.Count + 1) '0
+            itm.SubItems.Add(nowstr)  '1 时间
+            itm.SubItems.Add(freq.freq) '2  频点
+            itm.SubItems.Add(DeviceAddress) '3  地点
+            itm.SubItems.Add(freq.sigNalInfo)  '信号属性  '4  信号属性
+            itm.SubItems.Add(freq.sigNalStatus)  '状态属性  '5  状态属性
+            itm.SubItems.Add(IIf(freq.isFree, "可用", "不可用"))  '可用评估  '6  可用评估
+            itm.SubItems.Add(freq.dbm) '7  信号电平
+            itm.SubItems.Add(freq.dbm_min) '8  最小值
+            itm.SubItems.Add(freq.dbm_max) '9  最大值
+            itm.SubItems.Add(freq.overCount) '10  出现次数
+            itm.SubItems.Add(freq.dbm_avg) '11 平均值
+            itm.SubItems.Add(ws) '12 统计时长
+            itm.SubItems.Add(freq.overPercent) '13  占用度
+            itm.SubItems.Add(lsinfo.watchTime) '14  监测次数
+            itm.SubItems.Add(freq.overCount) '15 超标次数
+            Dim CBInt As Integer = Val(itm.SubItems(12 + 3).Text)
+            Dim SumInt As Integer = Val(itm.SubItems(11 + 3).Text)
+            Dim str As String = GetPerPic(CBInt / SumInt)
+            itm.SubItems.Add(str) '占用度直方图
+            newItmlist.Add(itm)
+        Next
+        Me.Invoke(Sub()
+                      LV20.Items.Clear()
+                      LV20.Items.AddRange(newItmlist.ToArray())
+                  End Sub)
     End Sub
     Private Function GetPerPic(ByVal v As Double) As String
         If v >= 1 Then v = 1
@@ -1399,11 +1559,9 @@ Public Class OnlineFreq
         End Try
     End Sub
 
-    Private Sub StartFreq()
+    Private Sub StartFreq(freqbegin As Double, freqend As Double, freqstep As Double)
         Dim msg As String = ""
-        Dim freqbegin As Double = Val(TextBox1.Text)
-        Dim freqend As Double = Val(TextBox2.Text)
-        Dim freqstep As Double = Val(TextBox3.Text)
+
         Dim gcValue As Double = 8
         If ComboBox2.SelectedIndex = 1 Then
             gcValue = 16
@@ -1480,6 +1638,7 @@ Public Class OnlineFreq
         PBXRight.Image = Nothing
     End Sub
     Private Sub PictureBox3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PictureBox3.Click
+        isLiSanSaoMiao = False
         freqStartTimeStr = ""
         TongJiCiShu = 0
         sigNalCount = 0
@@ -1489,14 +1648,17 @@ Public Class OnlineFreq
         iniChart1()
         iniChart2()
         iniChart3()
-        StartFreq()
+        Dim freqbegin As Double = Val(TextBox1.Text)
+        Dim freqend As Double = Val(TextBox2.Text)
+        Dim freqstep As Double = Val(TextBox3.Text)
+        StartFreq(freqbegin, freqend, freqstep)
     End Sub
 
     Private Sub PictureBox1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PictureBox1.Click
         StopDevice()
     End Sub
 
-    Private Sub CheckBox1_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBox1.CheckedChanged
+    Private Sub CheckBox1_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
         isTongJi = CheckBox1.Checked
 
     End Sub
@@ -1701,6 +1863,7 @@ Public Class OnlineFreq
     End Sub
 
     Private Sub PictureBox10_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PictureBox10.Click
+        isLiSanSaoMiao = False
         Dim text As String = Label18.Text
         text = text.Replace("MHz", "")
         PlayAudio(text)
@@ -1823,7 +1986,7 @@ Public Class OnlineFreq
         End If
     End Sub
 
-    Private Sub PictureBox4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PictureBox4.Click
+    Private Sub PictureBox4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
     End Sub
 
@@ -1866,7 +2029,7 @@ Public Class OnlineFreq
 
     End Sub
 
-    Private Sub LV20_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LV20.SelectedIndexChanged
+    Private Sub LV20_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
     End Sub
 
@@ -1937,6 +2100,7 @@ Public Class OnlineFreq
         End If
         If ComboBox1.SelectedItem = "对讲机频率(开放)" Then
             TextBox5.Text = "409.75,409.625,409.775,409.7875,409.8,409.8125,409.8250,409.8375,409.8500,409.8625,409.8750,409.8875,409.9000,409.9125,409.9250,409.9375,409.9500,409.9625,409.9750,409.9875"
+            TextBox5.Text = "400,410.125,420.150,430.175"
         End If
         If ComboBox1.SelectedItem = "营救器信标频率" Then
             TextBox5.Text = "121.5,123.1"
@@ -2431,12 +2595,112 @@ Public Class OnlineFreq
         End If
     End Sub
 
-    Private Sub Label23_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label23.Click
+    Private Sub Label23_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
     End Sub
 
     Private Sub PictureBox8_Click(sender As Object, e As EventArgs) Handles PictureBox8.Click
 
+    End Sub
+
+    Private Sub PictureBox4_Click_1(sender As Object, e As EventArgs) Handles PictureBox4.Click
+
+    End Sub
+
+    Private Sub PictureBox2_Click_1(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub PictureBox5_Click_1(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub PictureBox14_Click(sender As Object, e As EventArgs) Handles PictureBox14.Click
+        isLiSanSaoMiao = True
+        Label45.Visible = True
+        LV20.Items.Clear()
+        lisanTime = Now
+        Dim str As String = TextBox5.Text
+        If str = "" Then
+            MsgBox("请输入频点列表")
+            Return
+        End If
+        Dim list As List(Of String) = str.Split(",").ToList()
+        Dim dlist As New List(Of Double)
+        For Each itm In list
+            If IsNumeric(itm) = False Then
+                MsgBox(itm & " 值无效")
+                Return
+            Else
+                dlist.Add(Double.Parse(itm))
+            End If
+        Next
+        dlist.Sort()
+        Dim freqstart As Double = dlist(0)
+        Dim freqEnd As Double = dlist(dlist.Count - 1)
+        'If freqstart < 30 Then
+        '    MsgBox("频点值不能小于30")
+        '    Return
+        'End If
+        'If freqEnd > 6000 Then
+        '    MsgBox("频点值不能大于6000")
+        '    Return
+        'End If
+
+        freqStartTimeStr = ""
+        TongJiCiShu = 0
+        sigNalCount = 0
+        iniPBX()
+        signalStartTime = Nothing
+        itmList = Nothing
+        iniChart1()
+        iniChart2()
+        iniChart3()
+        'StartFreq(freqstart, freqEnd, 25)
+        'lisanFreqList = New List(Of Double)
+        'For Each itm In list
+        '    Dim d As Double = Double.Parse(itm)
+        '    lisanFreqList.Add(d)
+        'Next
+        Dim th As New Thread(AddressOf SendLisanToServer)
+        th.Start(dlist)
+    End Sub
+    Private Sub SendLisanToServer(list As List(Of Double))
+
+        Dim p As New tssOrder_stu
+        p.task = "lisan"
+        p.data = JsonConvert.SerializeObject(list)
+        Dim orderMsg As String = JsonConvert.SerializeObject(p)
+        Label31.Visible = True
+        Dim str As String = "?func=tssOrder&datamsg=" & orderMsg & "&token=" & token
+        Dim result As String = GetH(HttpMsgUrl, str)
+
+        Try
+            Dim np As normalResponse = JsonConvert.DeserializeObject(Of normalResponse)(result)
+            Label45.Visible = False
+            Me.Invoke(Sub()
+                          If np.result Then
+                              Dim w As New WarnBox("命令下发成功！")
+                              w.Show()
+                          Else
+                              If np.msg.Contains("Please login") Then
+                                  Login()
+                                  SendMsgToDev(orderMsg)
+                              Else
+                                  Dim sb As New StringBuilder
+                                  sb.AppendLine("命令下发失败")
+                                  sb.AppendLine(np.msg)
+                                  MsgBox(sb.ToString)
+                              End If
+                          End If
+                      End Sub)
+
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub PictureBox13_Click(sender As Object, e As EventArgs) Handles PictureBox13.Click
+        StopDevice()
     End Sub
 End Class
 

@@ -44,5 +44,25 @@
         Next
     End Sub
 
+    Private Sub LKChangAn_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LKChangAn.LinkClicked
+        If Not isSetedCheckBox Then Return
+        For i = 0 To CbDevice.Items.Count - 1
+            If CbDevice.Items(i).ToString().Contains("长安") Then
+                CbDevice.SetItemChecked(i, True)
+            Else
+                CbDevice.SetItemChecked(i, False)
+            End If
+        Next
+    End Sub
 
+    Private Sub LkHuMen_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LkHuMen.LinkClicked
+        If Not isSetedCheckBox Then Return
+        For i = 0 To CbDevice.Items.Count - 1
+            If CbDevice.Items(i).ToString().Contains("虎门") Then
+                CbDevice.SetItemChecked(i, True)
+            Else
+                CbDevice.SetItemChecked(i, False)
+            End If
+        Next
+    End Sub
 End Class

@@ -440,11 +440,11 @@ Public Class AllDeviceList
                     itm.SubItems.Add(row("Lat").ToString)
                     If kind = "TSS" Then
                         itm.SubItems(2).Text = "频谱传感器"
-                        If isLoadGis Then AddNewIco(row("Lng"), row("Lat"), DeviceName, TssIco, WebGis)
+                        If isLoadGis Then AddNewIco(row("Lng").ToString(), row("Lat").ToString(), DeviceName, TssIco, WebGis)
                     End If
                     If kind = "TZBQ" Then
                         itm.SubItems(2).Text = "微型传感器"
-                        If isLoadGis Then AddNewIco(row("Lng"), row("Lat"), DeviceName, TZBQIco, WebGis)
+                        If isLoadGis Then AddNewIco(row("Lng").ToString(), row("Lat").ToString(), DeviceName, TZBQIco, WebGis)
                     End If
                     itm.SubItems.Add(row("IP").ToString)
                     itm.SubItems.Add(row("Port").ToString)

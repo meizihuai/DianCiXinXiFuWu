@@ -25,6 +25,7 @@ Partial Class AddTaskFrm
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AddTaskFrm))
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.PanelCbSelect2 = New System.Windows.Forms.Panel()
         Me.cbDeviceID2 = New System.Windows.Forms.CheckedListBox()
         Me.txtTaskBg2 = New System.Windows.Forms.TextBox()
         Me.Label70 = New System.Windows.Forms.Label()
@@ -57,6 +58,7 @@ Partial Class AddTaskFrm
         Me.Label24 = New System.Windows.Forms.Label()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PanelCbSelect = New System.Windows.Forms.Panel()
         Me.cbDeviceID = New System.Windows.Forms.CheckedListBox()
         Me.txtTaskBg = New System.Windows.Forms.TextBox()
         Me.Label69 = New System.Windows.Forms.Label()
@@ -85,6 +87,7 @@ Partial Class AddTaskFrm
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.PanelCbSelect3 = New System.Windows.Forms.Panel()
         Me.cbDeviceID3 = New System.Windows.Forms.CheckedListBox()
         Me.txtTaskBg3 = New System.Windows.Forms.TextBox()
         Me.Panel12 = New System.Windows.Forms.Panel()
@@ -125,6 +128,7 @@ Partial Class AddTaskFrm
         Me.Label47 = New System.Windows.Forms.Label()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.PanelCbSelect5 = New System.Windows.Forms.Panel()
         Me.cbDeviceID5 = New System.Windows.Forms.CheckedListBox()
         Me.txtTaskBg5 = New System.Windows.Forms.TextBox()
         Me.Label72 = New System.Windows.Forms.Label()
@@ -153,6 +157,7 @@ Partial Class AddTaskFrm
         Me.Label80 = New System.Windows.Forms.Label()
         Me.TabPage6 = New System.Windows.Forms.TabPage()
         Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.PanelCbSelect6 = New System.Windows.Forms.Panel()
         Me.cbDeviceID6 = New System.Windows.Forms.CheckedListBox()
         Me.txtTaskBg6 = New System.Windows.Forms.TextBox()
         Me.txtSaveTimeStep6 = New System.Windows.Forms.TextBox()
@@ -182,6 +187,7 @@ Partial Class AddTaskFrm
         Me.Label93 = New System.Windows.Forms.Label()
         Me.TabPage7 = New System.Windows.Forms.TabPage()
         Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.PanelCbSelect7 = New System.Windows.Forms.Panel()
         Me.cbDeviceID7 = New System.Windows.Forms.CheckedListBox()
         Me.txtTaskBg7 = New System.Windows.Forms.TextBox()
         Me.txtThreshol7 = New System.Windows.Forms.TextBox()
@@ -211,6 +217,7 @@ Partial Class AddTaskFrm
         Me.Label108 = New System.Windows.Forms.Label()
         Me.TabPage9 = New System.Windows.Forms.TabPage()
         Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.PanelCbSelect8 = New System.Windows.Forms.Panel()
         Me.cbDeviceID8 = New System.Windows.Forms.CheckedListBox()
         Me.txtTaskBg8 = New System.Windows.Forms.TextBox()
         Me.txtMinValueSecond8 = New System.Windows.Forms.TextBox()
@@ -249,6 +256,7 @@ Partial Class AddTaskFrm
         Me.Label123 = New System.Windows.Forms.Label()
         Me.TabPage8 = New System.Windows.Forms.TabPage()
         Me.Panel9 = New System.Windows.Forms.Panel()
+        Me.PanelCbSelect9 = New System.Windows.Forms.Panel()
         Me.txtTaskBg9 = New System.Windows.Forms.TextBox()
         Me.Button20 = New System.Windows.Forms.Button()
         Me.Button19 = New System.Windows.Forms.Button()
@@ -277,6 +285,7 @@ Partial Class AddTaskFrm
         Me.Label148 = New System.Windows.Forms.Label()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.Panel10 = New System.Windows.Forms.Panel()
+        Me.PanelCbSelect10 = New System.Windows.Forms.Panel()
         Me.cbDeviceID10 = New System.Windows.Forms.CheckedListBox()
         Me.txtTaskBg10 = New System.Windows.Forms.TextBox()
         Me.txtWarnNum10 = New System.Windows.Forms.TextBox()
@@ -314,6 +323,7 @@ Partial Class AddTaskFrm
         Me.Label160 = New System.Windows.Forms.Label()
         Me.TabPage10 = New System.Windows.Forms.TabPage()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.PanelCbSelect11 = New System.Windows.Forms.Panel()
         Me.cbDeviceID11 = New System.Windows.Forms.CheckedListBox()
         Me.txtTaskBg11 = New System.Windows.Forms.TextBox()
         Me.txtWarnNum11 = New System.Windows.Forms.TextBox()
@@ -349,16 +359,6 @@ Partial Class AddTaskFrm
         Me.Label62 = New System.Windows.Forms.Label()
         Me.Label63 = New System.Windows.Forms.Label()
         Me.Label64 = New System.Windows.Forms.Label()
-        Me.PanelCbSelect = New System.Windows.Forms.Panel()
-        Me.PanelCbSelect2 = New System.Windows.Forms.Panel()
-        Me.PanelCbSelect3 = New System.Windows.Forms.Panel()
-        Me.PanelCbSelect5 = New System.Windows.Forms.Panel()
-        Me.PanelCbSelect6 = New System.Windows.Forms.Panel()
-        Me.PanelCbSelect7 = New System.Windows.Forms.Panel()
-        Me.PanelCbSelect8 = New System.Windows.Forms.Panel()
-        Me.PanelCbSelect9 = New System.Windows.Forms.Panel()
-        Me.PanelCbSelect10 = New System.Windows.Forms.Panel()
-        Me.PanelCbSelect11 = New System.Windows.Forms.Panel()
         Me.TabPage2.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -434,6 +434,13 @@ Partial Class AddTaskFrm
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(695, 517)
         Me.Panel2.TabIndex = 1
+        '
+        'PanelCbSelect2
+        '
+        Me.PanelCbSelect2.Location = New System.Drawing.Point(31, 121)
+        Me.PanelCbSelect2.Name = "PanelCbSelect2"
+        Me.PanelCbSelect2.Size = New System.Drawing.Size(73, 107)
+        Me.PanelCbSelect2.TabIndex = 73
         '
         'cbDeviceID2
         '
@@ -741,6 +748,13 @@ Partial Class AddTaskFrm
         Me.Panel1.Size = New System.Drawing.Size(695, 517)
         Me.Panel1.TabIndex = 0
         '
+        'PanelCbSelect
+        '
+        Me.PanelCbSelect.Location = New System.Drawing.Point(32, 120)
+        Me.PanelCbSelect.Name = "PanelCbSelect"
+        Me.PanelCbSelect.Size = New System.Drawing.Size(73, 107)
+        Me.PanelCbSelect.TabIndex = 72
+        '
         'cbDeviceID
         '
         Me.cbDeviceID.CheckOnClick = True
@@ -1019,6 +1033,13 @@ Partial Class AddTaskFrm
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(695, 517)
         Me.Panel3.TabIndex = 2
+        '
+        'PanelCbSelect3
+        '
+        Me.PanelCbSelect3.Location = New System.Drawing.Point(31, 79)
+        Me.PanelCbSelect3.Name = "PanelCbSelect3"
+        Me.PanelCbSelect3.Size = New System.Drawing.Size(73, 107)
+        Me.PanelCbSelect3.TabIndex = 73
         '
         'cbDeviceID3
         '
@@ -1397,6 +1418,13 @@ Partial Class AddTaskFrm
         Me.Panel5.Size = New System.Drawing.Size(695, 517)
         Me.Panel5.TabIndex = 4
         '
+        'PanelCbSelect5
+        '
+        Me.PanelCbSelect5.Location = New System.Drawing.Point(31, 126)
+        Me.PanelCbSelect5.Name = "PanelCbSelect5"
+        Me.PanelCbSelect5.Size = New System.Drawing.Size(73, 107)
+        Me.PanelCbSelect5.TabIndex = 73
+        '
         'cbDeviceID5
         '
         Me.cbDeviceID5.CheckOnClick = True
@@ -1671,6 +1699,13 @@ Partial Class AddTaskFrm
         Me.Panel6.Size = New System.Drawing.Size(695, 517)
         Me.Panel6.TabIndex = 1
         '
+        'PanelCbSelect6
+        '
+        Me.PanelCbSelect6.Location = New System.Drawing.Point(32, 125)
+        Me.PanelCbSelect6.Name = "PanelCbSelect6"
+        Me.PanelCbSelect6.Size = New System.Drawing.Size(73, 107)
+        Me.PanelCbSelect6.TabIndex = 73
+        '
         'cbDeviceID6
         '
         Me.cbDeviceID6.CheckOnClick = True
@@ -1942,6 +1977,13 @@ Partial Class AddTaskFrm
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(695, 517)
         Me.Panel7.TabIndex = 2
+        '
+        'PanelCbSelect7
+        '
+        Me.PanelCbSelect7.Location = New System.Drawing.Point(32, 121)
+        Me.PanelCbSelect7.Name = "PanelCbSelect7"
+        Me.PanelCbSelect7.Size = New System.Drawing.Size(73, 107)
+        Me.PanelCbSelect7.TabIndex = 73
         '
         'cbDeviceID7
         '
@@ -2223,6 +2265,13 @@ Partial Class AddTaskFrm
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(695, 517)
         Me.Panel8.TabIndex = 5
+        '
+        'PanelCbSelect8
+        '
+        Me.PanelCbSelect8.Location = New System.Drawing.Point(34, 127)
+        Me.PanelCbSelect8.Name = "PanelCbSelect8"
+        Me.PanelCbSelect8.Size = New System.Drawing.Size(73, 107)
+        Me.PanelCbSelect8.TabIndex = 83
         '
         'cbDeviceID8
         '
@@ -2581,6 +2630,13 @@ Partial Class AddTaskFrm
         Me.Panel9.Size = New System.Drawing.Size(695, 517)
         Me.Panel9.TabIndex = 6
         '
+        'PanelCbSelect9
+        '
+        Me.PanelCbSelect9.Location = New System.Drawing.Point(358, 135)
+        Me.PanelCbSelect9.Name = "PanelCbSelect9"
+        Me.PanelCbSelect9.Size = New System.Drawing.Size(73, 107)
+        Me.PanelCbSelect9.TabIndex = 77
+        '
         'txtTaskBg9
         '
         Me.txtTaskBg9.Location = New System.Drawing.Point(111, 285)
@@ -2860,6 +2916,13 @@ Partial Class AddTaskFrm
         Me.Panel10.Name = "Panel10"
         Me.Panel10.Size = New System.Drawing.Size(695, 517)
         Me.Panel10.TabIndex = 4
+        '
+        'PanelCbSelect10
+        '
+        Me.PanelCbSelect10.Location = New System.Drawing.Point(48, 126)
+        Me.PanelCbSelect10.Name = "PanelCbSelect10"
+        Me.PanelCbSelect10.Size = New System.Drawing.Size(57, 107)
+        Me.PanelCbSelect10.TabIndex = 77
         '
         'cbDeviceID10
         '
@@ -3216,6 +3279,13 @@ Partial Class AddTaskFrm
         Me.Panel4.Size = New System.Drawing.Size(695, 517)
         Me.Panel4.TabIndex = 3
         '
+        'PanelCbSelect11
+        '
+        Me.PanelCbSelect11.Location = New System.Drawing.Point(31, 127)
+        Me.PanelCbSelect11.Name = "PanelCbSelect11"
+        Me.PanelCbSelect11.Size = New System.Drawing.Size(73, 107)
+        Me.PanelCbSelect11.TabIndex = 79
+        '
         'cbDeviceID11
         '
         Me.cbDeviceID11.CheckOnClick = True
@@ -3511,76 +3581,6 @@ Partial Class AddTaskFrm
         Me.Label64.Size = New System.Drawing.Size(65, 20)
         Me.Label64.TabIndex = 1
         Me.Label64.Text = "违章捕获"
-        '
-        'PanelCbSelect
-        '
-        Me.PanelCbSelect.Location = New System.Drawing.Point(48, 120)
-        Me.PanelCbSelect.Name = "PanelCbSelect"
-        Me.PanelCbSelect.Size = New System.Drawing.Size(57, 107)
-        Me.PanelCbSelect.TabIndex = 72
-        '
-        'PanelCbSelect2
-        '
-        Me.PanelCbSelect2.Location = New System.Drawing.Point(48, 121)
-        Me.PanelCbSelect2.Name = "PanelCbSelect2"
-        Me.PanelCbSelect2.Size = New System.Drawing.Size(57, 107)
-        Me.PanelCbSelect2.TabIndex = 73
-        '
-        'PanelCbSelect3
-        '
-        Me.PanelCbSelect3.Location = New System.Drawing.Point(48, 79)
-        Me.PanelCbSelect3.Name = "PanelCbSelect3"
-        Me.PanelCbSelect3.Size = New System.Drawing.Size(57, 107)
-        Me.PanelCbSelect3.TabIndex = 73
-        '
-        'PanelCbSelect5
-        '
-        Me.PanelCbSelect5.Location = New System.Drawing.Point(48, 126)
-        Me.PanelCbSelect5.Name = "PanelCbSelect5"
-        Me.PanelCbSelect5.Size = New System.Drawing.Size(57, 107)
-        Me.PanelCbSelect5.TabIndex = 73
-        '
-        'PanelCbSelect6
-        '
-        Me.PanelCbSelect6.Location = New System.Drawing.Point(48, 125)
-        Me.PanelCbSelect6.Name = "PanelCbSelect6"
-        Me.PanelCbSelect6.Size = New System.Drawing.Size(57, 107)
-        Me.PanelCbSelect6.TabIndex = 73
-        '
-        'PanelCbSelect7
-        '
-        Me.PanelCbSelect7.Location = New System.Drawing.Point(48, 121)
-        Me.PanelCbSelect7.Name = "PanelCbSelect7"
-        Me.PanelCbSelect7.Size = New System.Drawing.Size(57, 107)
-        Me.PanelCbSelect7.TabIndex = 73
-        '
-        'PanelCbSelect8
-        '
-        Me.PanelCbSelect8.Location = New System.Drawing.Point(48, 127)
-        Me.PanelCbSelect8.Name = "PanelCbSelect8"
-        Me.PanelCbSelect8.Size = New System.Drawing.Size(57, 107)
-        Me.PanelCbSelect8.TabIndex = 83
-        '
-        'PanelCbSelect9
-        '
-        Me.PanelCbSelect9.Location = New System.Drawing.Point(373, 135)
-        Me.PanelCbSelect9.Name = "PanelCbSelect9"
-        Me.PanelCbSelect9.Size = New System.Drawing.Size(57, 107)
-        Me.PanelCbSelect9.TabIndex = 77
-        '
-        'PanelCbSelect10
-        '
-        Me.PanelCbSelect10.Location = New System.Drawing.Point(48, 126)
-        Me.PanelCbSelect10.Name = "PanelCbSelect10"
-        Me.PanelCbSelect10.Size = New System.Drawing.Size(57, 107)
-        Me.PanelCbSelect10.TabIndex = 77
-        '
-        'PanelCbSelect11
-        '
-        Me.PanelCbSelect11.Location = New System.Drawing.Point(48, 127)
-        Me.PanelCbSelect11.Name = "PanelCbSelect11"
-        Me.PanelCbSelect11.Size = New System.Drawing.Size(57, 107)
-        Me.PanelCbSelect11.TabIndex = 79
         '
         'AddTaskFrm
         '

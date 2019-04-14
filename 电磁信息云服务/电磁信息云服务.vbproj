@@ -99,6 +99,7 @@
   <ItemGroup>
     <Compile Include="classes\json_PPSJ.vb" />
     <Compile Include="classes\runLocation.vb" />
+    <Compile Include="LisanInfo.vb" />
     <Compile Include="usrPanels\CarFreqGis.Designer.vb">
       <DependentUpon>CarFreqGis.vb</DependentUpon>
     </Compile>

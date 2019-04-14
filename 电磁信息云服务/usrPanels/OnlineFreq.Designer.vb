@@ -23,25 +23,25 @@ Partial Class OnlineFreq
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ChartArea7 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend7 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series7 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea8 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend8 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series8 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea9 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend9 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series9 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
         Dim Legend3 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
         Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(OnlineFreq))
         Dim ChartArea4 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
         Dim Legend4 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
         Dim Series4 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea10 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend10 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series10 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(OnlineFreq))
+        Dim ChartArea5 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend5 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series5 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea6 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend6 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series6 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
@@ -128,21 +128,6 @@ Partial Class OnlineFreq
         Me.LV20 = New System.Windows.Forms.ListView()
         Me.ContextMenuStrip2 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Panel15 = New System.Windows.Forms.Panel()
-        Me.Panel50 = New System.Windows.Forms.Panel()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.Panel49 = New System.Windows.Forms.Panel()
-        Me.RadioButton8 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton7 = New System.Windows.Forms.RadioButton()
-        Me.Panel23 = New System.Windows.Forms.Panel()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.Panel17 = New System.Windows.Forms.Panel()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Panel16 = New System.Windows.Forms.Panel()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Panel14 = New System.Windows.Forms.Panel()
-        Me.Chart2 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.Panel11 = New System.Windows.Forms.Panel()
         Me.Label23 = New System.Windows.Forms.Label()
@@ -152,6 +137,23 @@ Partial Class OnlineFreq
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.Panel14 = New System.Windows.Forms.Panel()
+        Me.Chart2 = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.Panel15 = New System.Windows.Forms.Panel()
+        Me.Panel50 = New System.Windows.Forms.Panel()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.Panel49 = New System.Windows.Forms.Panel()
+        Me.Panel60 = New System.Windows.Forms.Panel()
+        Me.Label45 = New System.Windows.Forms.Label()
+        Me.PictureBox13 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox14 = New System.Windows.Forms.PictureBox()
+        Me.Panel23 = New System.Windows.Forms.Panel()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Panel17 = New System.Windows.Forms.Panel()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.Panel16 = New System.Windows.Forms.Panel()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.Panel21 = New System.Windows.Forms.Panel()
         Me.Panel26 = New System.Windows.Forms.Panel()
@@ -285,20 +287,23 @@ Partial Class OnlineFreq
         Me.TabPage3.SuspendLayout()
         Me.Panel13.SuspendLayout()
         Me.ContextMenuStrip2.SuspendLayout()
-        Me.Panel15.SuspendLayout()
-        Me.Panel50.SuspendLayout()
-        Me.Panel49.SuspendLayout()
-        Me.Panel23.SuspendLayout()
-        Me.Panel17.SuspendLayout()
-        Me.Panel16.SuspendLayout()
-        Me.Panel14.SuspendLayout()
-        CType(Me.Chart2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel10.SuspendLayout()
         Me.Panel11.SuspendLayout()
         Me.Panel12.SuspendLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel14.SuspendLayout()
+        CType(Me.Chart2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel15.SuspendLayout()
+        Me.Panel50.SuspendLayout()
+        Me.Panel49.SuspendLayout()
+        Me.Panel60.SuspendLayout()
+        CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox14, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel23.SuspendLayout()
+        Me.Panel17.SuspendLayout()
+        Me.Panel16.SuspendLayout()
         Me.TabPage5.SuspendLayout()
         Me.Panel21.SuspendLayout()
         Me.Panel26.SuspendLayout()
@@ -392,20 +397,20 @@ Partial Class OnlineFreq
         '
         'Chart5
         '
-        ChartArea7.Name = "ChartArea1"
-        ChartArea7.Position.Auto = False
-        ChartArea7.Position.Height = 100.0!
-        ChartArea7.Position.Width = 98.0!
-        Me.Chart5.ChartAreas.Add(ChartArea7)
+        ChartArea1.Name = "ChartArea1"
+        ChartArea1.Position.Auto = False
+        ChartArea1.Position.Height = 100.0!
+        ChartArea1.Position.Width = 98.0!
+        Me.Chart5.ChartAreas.Add(ChartArea1)
         Me.Chart5.Dock = System.Windows.Forms.DockStyle.Fill
-        Legend7.Name = "Legend1"
-        Me.Chart5.Legends.Add(Legend7)
+        Legend1.Name = "Legend1"
+        Me.Chart5.Legends.Add(Legend1)
         Me.Chart5.Location = New System.Drawing.Point(0, 0)
         Me.Chart5.Name = "Chart5"
-        Series7.ChartArea = "ChartArea1"
-        Series7.Legend = "Legend1"
-        Series7.Name = "Series1"
-        Me.Chart5.Series.Add(Series7)
+        Series1.ChartArea = "ChartArea1"
+        Series1.Legend = "Legend1"
+        Series1.Name = "Series1"
+        Me.Chart5.Series.Add(Series1)
         Me.Chart5.Size = New System.Drawing.Size(993, 107)
         Me.Chart5.TabIndex = 89
         Me.Chart5.Text = "Chart5"
@@ -445,20 +450,20 @@ Partial Class OnlineFreq
         '
         'Chart4
         '
-        ChartArea8.Name = "ChartArea1"
-        ChartArea8.Position.Auto = False
-        ChartArea8.Position.Height = 100.0!
-        ChartArea8.Position.Width = 98.0!
-        Me.Chart4.ChartAreas.Add(ChartArea8)
+        ChartArea2.Name = "ChartArea1"
+        ChartArea2.Position.Auto = False
+        ChartArea2.Position.Height = 100.0!
+        ChartArea2.Position.Width = 98.0!
+        Me.Chart4.ChartAreas.Add(ChartArea2)
         Me.Chart4.Dock = System.Windows.Forms.DockStyle.Fill
-        Legend8.Name = "Legend1"
-        Me.Chart4.Legends.Add(Legend8)
+        Legend2.Name = "Legend1"
+        Me.Chart4.Legends.Add(Legend2)
         Me.Chart4.Location = New System.Drawing.Point(0, 40)
         Me.Chart4.Name = "Chart4"
-        Series8.ChartArea = "ChartArea1"
-        Series8.Legend = "Legend1"
-        Series8.Name = "Series1"
-        Me.Chart4.Series.Add(Series8)
+        Series2.ChartArea = "ChartArea1"
+        Series2.Legend = "Legend1"
+        Series2.Name = "Series1"
+        Me.Chart4.Series.Add(Series2)
         Me.Chart4.Size = New System.Drawing.Size(991, 144)
         Me.Chart4.TabIndex = 92
         Me.Chart4.Text = "Chart4"
@@ -732,27 +737,27 @@ Partial Class OnlineFreq
         '
         'Chart1
         '
-        ChartArea9.AlignmentStyle = System.Windows.Forms.DataVisualization.Charting.AreaAlignmentStyles.Position
-        ChartArea9.InnerPlotPosition.Auto = False
-        ChartArea9.InnerPlotPosition.Height = 86.0!
-        ChartArea9.InnerPlotPosition.Width = 96.0!
-        ChartArea9.InnerPlotPosition.X = 4.0!
-        ChartArea9.InnerPlotPosition.Y = 4.0!
-        ChartArea9.Name = "ChartArea1"
-        ChartArea9.Position.Auto = False
-        ChartArea9.Position.Height = 100.0!
-        ChartArea9.Position.Width = 98.0!
-        Me.Chart1.ChartAreas.Add(ChartArea9)
+        ChartArea3.AlignmentStyle = System.Windows.Forms.DataVisualization.Charting.AreaAlignmentStyles.Position
+        ChartArea3.InnerPlotPosition.Auto = False
+        ChartArea3.InnerPlotPosition.Height = 86.0!
+        ChartArea3.InnerPlotPosition.Width = 96.0!
+        ChartArea3.InnerPlotPosition.X = 4.0!
+        ChartArea3.InnerPlotPosition.Y = 4.0!
+        ChartArea3.Name = "ChartArea1"
+        ChartArea3.Position.Auto = False
+        ChartArea3.Position.Height = 100.0!
+        ChartArea3.Position.Width = 98.0!
+        Me.Chart1.ChartAreas.Add(ChartArea3)
         Me.Chart1.ContextMenuStrip = Me.ContextMenuStrip4
         Me.Chart1.Dock = System.Windows.Forms.DockStyle.Fill
-        Legend9.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend9)
+        Legend3.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend3)
         Me.Chart1.Location = New System.Drawing.Point(0, 0)
         Me.Chart1.Name = "Chart1"
-        Series9.ChartArea = "ChartArea1"
-        Series9.Legend = "Legend1"
-        Series9.Name = "Series1"
-        Me.Chart1.Series.Add(Series9)
+        Series3.ChartArea = "ChartArea1"
+        Series3.Legend = "Legend1"
+        Series3.Name = "Series1"
+        Me.Chart1.Series.Add(Series3)
         Me.Chart1.Size = New System.Drawing.Size(993, 101)
         Me.Chart1.TabIndex = 2
         Me.Chart1.Text = "Chart1"
@@ -946,27 +951,27 @@ Partial Class OnlineFreq
         '
         'Chart6
         '
-        ChartArea3.AlignmentStyle = System.Windows.Forms.DataVisualization.Charting.AreaAlignmentStyles.Position
-        ChartArea3.InnerPlotPosition.Auto = False
-        ChartArea3.InnerPlotPosition.Height = 82.0!
-        ChartArea3.InnerPlotPosition.Width = 96.0!
-        ChartArea3.InnerPlotPosition.X = 4.0!
-        ChartArea3.InnerPlotPosition.Y = 4.0!
-        ChartArea3.Name = "ChartArea1"
-        ChartArea3.Position.Auto = False
-        ChartArea3.Position.Height = 100.0!
-        ChartArea3.Position.Width = 98.0!
-        Me.Chart6.ChartAreas.Add(ChartArea3)
+        ChartArea4.AlignmentStyle = System.Windows.Forms.DataVisualization.Charting.AreaAlignmentStyles.Position
+        ChartArea4.InnerPlotPosition.Auto = False
+        ChartArea4.InnerPlotPosition.Height = 82.0!
+        ChartArea4.InnerPlotPosition.Width = 96.0!
+        ChartArea4.InnerPlotPosition.X = 4.0!
+        ChartArea4.InnerPlotPosition.Y = 4.0!
+        ChartArea4.Name = "ChartArea1"
+        ChartArea4.Position.Auto = False
+        ChartArea4.Position.Height = 100.0!
+        ChartArea4.Position.Width = 98.0!
+        Me.Chart6.ChartAreas.Add(ChartArea4)
         Me.Chart6.ContextMenuStrip = Me.ContextMenuStrip4
         Me.Chart6.Dock = System.Windows.Forms.DockStyle.Fill
-        Legend3.Name = "Legend1"
-        Me.Chart6.Legends.Add(Legend3)
+        Legend4.Name = "Legend1"
+        Me.Chart6.Legends.Add(Legend4)
         Me.Chart6.Location = New System.Drawing.Point(0, 0)
         Me.Chart6.Name = "Chart6"
-        Series3.ChartArea = "ChartArea1"
-        Series3.Legend = "Legend1"
-        Series3.Name = "Series1"
-        Me.Chart6.Series.Add(Series3)
+        Series4.ChartArea = "ChartArea1"
+        Series4.Legend = "Legend1"
+        Series4.Name = "Series1"
+        Me.Chart6.Series.Add(Series4)
         Me.Chart6.Size = New System.Drawing.Size(250, 184)
         Me.Chart6.TabIndex = 3
         Me.Chart6.Text = "Chart6"
@@ -1218,8 +1223,6 @@ Partial Class OnlineFreq
         Me.TabPage3.BackColor = System.Drawing.SystemColors.Control
         Me.TabPage3.Controls.Add(Me.Panel13)
         Me.TabPage3.Controls.Add(Me.Panel15)
-        Me.TabPage3.Controls.Add(Me.Panel14)
-        Me.TabPage3.Controls.Add(Me.Panel10)
         Me.TabPage3.Location = New System.Drawing.Point(4, 26)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(5)
@@ -1230,10 +1233,12 @@ Partial Class OnlineFreq
         'Panel13
         '
         Me.Panel13.Controls.Add(Me.LV20)
+        Me.Panel13.Controls.Add(Me.Panel10)
+        Me.Panel13.Controls.Add(Me.Panel14)
         Me.Panel13.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel13.Location = New System.Drawing.Point(5, 45)
         Me.Panel13.Name = "Panel13"
-        Me.Panel13.Size = New System.Drawing.Size(995, 299)
+        Me.Panel13.Size = New System.Drawing.Size(995, 528)
         Me.Panel13.TabIndex = 85
         '
         'LV20
@@ -1242,10 +1247,10 @@ Partial Class OnlineFreq
         Me.LV20.ContextMenuStrip = Me.ContextMenuStrip2
         Me.LV20.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LV20.ForeColor = System.Drawing.SystemColors.Desktop
-        Me.LV20.Location = New System.Drawing.Point(0, 0)
+        Me.LV20.Location = New System.Drawing.Point(0, 229)
         Me.LV20.Name = "LV20"
         Me.LV20.Size = New System.Drawing.Size(995, 299)
-        Me.LV20.TabIndex = 10
+        Me.LV20.TabIndex = 35
         Me.LV20.UseCompatibleStateImageBehavior = False
         '
         'ContextMenuStrip2
@@ -1260,169 +1265,6 @@ Partial Class OnlineFreq
         Me.ToolStripMenuItem1.Size = New System.Drawing.Size(100, 22)
         Me.ToolStripMenuItem1.Text = "侦听"
         '
-        'Panel15
-        '
-        Me.Panel15.BackColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(73, Byte), Integer))
-        Me.Panel15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel15.Controls.Add(Me.Panel50)
-        Me.Panel15.Controls.Add(Me.Panel49)
-        Me.Panel15.Controls.Add(Me.Panel23)
-        Me.Panel15.Controls.Add(Me.Panel17)
-        Me.Panel15.Controls.Add(Me.Panel16)
-        Me.Panel15.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel15.Location = New System.Drawing.Point(5, 344)
-        Me.Panel15.Name = "Panel15"
-        Me.Panel15.Size = New System.Drawing.Size(995, 40)
-        Me.Panel15.TabIndex = 84
-        '
-        'Panel50
-        '
-        Me.Panel50.Controls.Add(Me.TextBox5)
-        Me.Panel50.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel50.Location = New System.Drawing.Point(340, 0)
-        Me.Panel50.Name = "Panel50"
-        Me.Panel50.Padding = New System.Windows.Forms.Padding(0, 7, 0, 0)
-        Me.Panel50.Size = New System.Drawing.Size(491, 38)
-        Me.Panel50.TabIndex = 47
-        '
-        'TextBox5
-        '
-        Me.TextBox5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TextBox5.Location = New System.Drawing.Point(0, 7)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(491, 23)
-        Me.TextBox5.TabIndex = 41
-        '
-        'Panel49
-        '
-        Me.Panel49.Controls.Add(Me.RadioButton8)
-        Me.Panel49.Controls.Add(Me.RadioButton7)
-        Me.Panel49.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel49.Location = New System.Drawing.Point(831, 0)
-        Me.Panel49.Name = "Panel49"
-        Me.Panel49.Size = New System.Drawing.Size(162, 38)
-        Me.Panel49.TabIndex = 46
-        '
-        'RadioButton8
-        '
-        Me.RadioButton8.AutoSize = True
-        Me.RadioButton8.ForeColor = System.Drawing.Color.White
-        Me.RadioButton8.Location = New System.Drawing.Point(84, 9)
-        Me.RadioButton8.Name = "RadioButton8"
-        Me.RadioButton8.Size = New System.Drawing.Size(74, 21)
-        Me.RadioButton8.TabIndex = 3
-        Me.RadioButton8.Text = "离散扫描"
-        Me.RadioButton8.UseVisualStyleBackColor = True
-        '
-        'RadioButton7
-        '
-        Me.RadioButton7.AutoSize = True
-        Me.RadioButton7.Checked = True
-        Me.RadioButton7.ForeColor = System.Drawing.Color.White
-        Me.RadioButton7.Location = New System.Drawing.Point(6, 9)
-        Me.RadioButton7.Name = "RadioButton7"
-        Me.RadioButton7.Size = New System.Drawing.Size(74, 21)
-        Me.RadioButton7.TabIndex = 2
-        Me.RadioButton7.TabStop = True
-        Me.RadioButton7.Text = "频段扫描"
-        Me.RadioButton7.UseVisualStyleBackColor = True
-        '
-        'Panel23
-        '
-        Me.Panel23.Controls.Add(Me.Label15)
-        Me.Panel23.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel23.Location = New System.Drawing.Point(284, 0)
-        Me.Panel23.Name = "Panel23"
-        Me.Panel23.Size = New System.Drawing.Size(56, 38)
-        Me.Panel23.TabIndex = 45
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.ForeColor = System.Drawing.SystemColors.HighlightText
-        Me.Label15.Location = New System.Drawing.Point(1, 11)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(47, 17)
-        Me.Label15.TabIndex = 40
-        Me.Label15.Text = "频点值:"
-        '
-        'Panel17
-        '
-        Me.Panel17.Controls.Add(Me.Label8)
-        Me.Panel17.Controls.Add(Me.ComboBox1)
-        Me.Panel17.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel17.Location = New System.Drawing.Point(59, 0)
-        Me.Panel17.Name = "Panel17"
-        Me.Panel17.Size = New System.Drawing.Size(225, 38)
-        Me.Panel17.TabIndex = 44
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.ForeColor = System.Drawing.SystemColors.HighlightText
-        Me.Label8.Location = New System.Drawing.Point(6, 11)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(47, 17)
-        Me.Label8.TabIndex = 38
-        Me.Label8.Text = "频点库:"
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(59, 7)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(151, 25)
-        Me.ComboBox1.TabIndex = 39
-        '
-        'Panel16
-        '
-        Me.Panel16.Controls.Add(Me.Label7)
-        Me.Panel16.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel16.Location = New System.Drawing.Point(0, 0)
-        Me.Panel16.Name = "Panel16"
-        Me.Panel16.Size = New System.Drawing.Size(59, 38)
-        Me.Panel16.TabIndex = 43
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.ForeColor = System.Drawing.SystemColors.HighlightText
-        Me.Label7.Location = New System.Drawing.Point(9, 11)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(44, 17)
-        Me.Label7.TabIndex = 37
-        Me.Label7.Text = "直方图"
-        '
-        'Panel14
-        '
-        Me.Panel14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel14.Controls.Add(Me.Chart2)
-        Me.Panel14.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel14.Location = New System.Drawing.Point(5, 384)
-        Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(995, 189)
-        Me.Panel14.TabIndex = 83
-        '
-        'Chart2
-        '
-        ChartArea4.Name = "ChartArea1"
-        ChartArea4.Position.Auto = False
-        ChartArea4.Position.Height = 100.0!
-        ChartArea4.Position.Width = 98.0!
-        Me.Chart2.ChartAreas.Add(ChartArea4)
-        Me.Chart2.Dock = System.Windows.Forms.DockStyle.Fill
-        Legend4.Name = "Legend1"
-        Me.Chart2.Legends.Add(Legend4)
-        Me.Chart2.Location = New System.Drawing.Point(0, 0)
-        Me.Chart2.Name = "Chart2"
-        Series4.ChartArea = "ChartArea1"
-        Series4.Legend = "Legend1"
-        Series4.Name = "Series1"
-        Me.Chart2.Series.Add(Series4)
-        Me.Chart2.Size = New System.Drawing.Size(993, 187)
-        Me.Chart2.TabIndex = 3
-        Me.Chart2.Text = "Chart2"
-        '
         'Panel10
         '
         Me.Panel10.BackColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(73, Byte), Integer))
@@ -1430,10 +1272,10 @@ Partial Class OnlineFreq
         Me.Panel10.Controls.Add(Me.Panel11)
         Me.Panel10.Controls.Add(Me.Panel12)
         Me.Panel10.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel10.Location = New System.Drawing.Point(5, 5)
+        Me.Panel10.Location = New System.Drawing.Point(0, 189)
         Me.Panel10.Name = "Panel10"
         Me.Panel10.Size = New System.Drawing.Size(995, 40)
-        Me.Panel10.TabIndex = 78
+        Me.Panel10.TabIndex = 85
         '
         'Panel11
         '
@@ -1523,6 +1365,188 @@ Partial Class OnlineFreq
         Me.PictureBox4.TabIndex = 38
         Me.PictureBox4.TabStop = False
         '
+        'Panel14
+        '
+        Me.Panel14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel14.Controls.Add(Me.Chart2)
+        Me.Panel14.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel14.Location = New System.Drawing.Point(0, 0)
+        Me.Panel14.Name = "Panel14"
+        Me.Panel14.Size = New System.Drawing.Size(995, 189)
+        Me.Panel14.TabIndex = 84
+        '
+        'Chart2
+        '
+        ChartArea5.Name = "ChartArea1"
+        ChartArea5.Position.Auto = False
+        ChartArea5.Position.Height = 100.0!
+        ChartArea5.Position.Width = 98.0!
+        Me.Chart2.ChartAreas.Add(ChartArea5)
+        Me.Chart2.Dock = System.Windows.Forms.DockStyle.Fill
+        Legend5.Name = "Legend1"
+        Me.Chart2.Legends.Add(Legend5)
+        Me.Chart2.Location = New System.Drawing.Point(0, 0)
+        Me.Chart2.Name = "Chart2"
+        Series5.ChartArea = "ChartArea1"
+        Series5.Legend = "Legend1"
+        Series5.Name = "Series1"
+        Me.Chart2.Series.Add(Series5)
+        Me.Chart2.Size = New System.Drawing.Size(993, 187)
+        Me.Chart2.TabIndex = 3
+        Me.Chart2.Text = "Chart2"
+        '
+        'Panel15
+        '
+        Me.Panel15.BackColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(73, Byte), Integer))
+        Me.Panel15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel15.Controls.Add(Me.Panel50)
+        Me.Panel15.Controls.Add(Me.Panel49)
+        Me.Panel15.Controls.Add(Me.Panel23)
+        Me.Panel15.Controls.Add(Me.Panel17)
+        Me.Panel15.Controls.Add(Me.Panel16)
+        Me.Panel15.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel15.Location = New System.Drawing.Point(5, 5)
+        Me.Panel15.Name = "Panel15"
+        Me.Panel15.Size = New System.Drawing.Size(995, 40)
+        Me.Panel15.TabIndex = 84
+        '
+        'Panel50
+        '
+        Me.Panel50.Controls.Add(Me.TextBox5)
+        Me.Panel50.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel50.Location = New System.Drawing.Point(340, 0)
+        Me.Panel50.Name = "Panel50"
+        Me.Panel50.Padding = New System.Windows.Forms.Padding(0, 7, 0, 0)
+        Me.Panel50.Size = New System.Drawing.Size(456, 38)
+        Me.Panel50.TabIndex = 47
+        '
+        'TextBox5
+        '
+        Me.TextBox5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TextBox5.Location = New System.Drawing.Point(0, 7)
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.Size = New System.Drawing.Size(456, 23)
+        Me.TextBox5.TabIndex = 41
+        '
+        'Panel49
+        '
+        Me.Panel49.Controls.Add(Me.Panel60)
+        Me.Panel49.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel49.Location = New System.Drawing.Point(796, 0)
+        Me.Panel49.Name = "Panel49"
+        Me.Panel49.Size = New System.Drawing.Size(197, 38)
+        Me.Panel49.TabIndex = 46
+        '
+        'Panel60
+        '
+        Me.Panel60.Controls.Add(Me.Label45)
+        Me.Panel60.Controls.Add(Me.PictureBox13)
+        Me.Panel60.Controls.Add(Me.PictureBox14)
+        Me.Panel60.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel60.Location = New System.Drawing.Point(0, 0)
+        Me.Panel60.Name = "Panel60"
+        Me.Panel60.Size = New System.Drawing.Size(197, 38)
+        Me.Panel60.TabIndex = 1
+        '
+        'Label45
+        '
+        Me.Label45.AutoSize = True
+        Me.Label45.ForeColor = System.Drawing.Color.White
+        Me.Label45.Location = New System.Drawing.Point(4, 11)
+        Me.Label45.Name = "Label45"
+        Me.Label45.Size = New System.Drawing.Size(100, 17)
+        Me.Label45.TabIndex = 40
+        Me.Label45.Text = "正在下发命令……"
+        Me.Label45.Visible = False
+        '
+        'PictureBox13
+        '
+        Me.PictureBox13.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox13.Image = Global.电磁信息云服务.My.Resources.Resources.停止
+        Me.PictureBox13.Location = New System.Drawing.Point(158, 3)
+        Me.PictureBox13.Name = "PictureBox13"
+        Me.PictureBox13.Size = New System.Drawing.Size(30, 30)
+        Me.PictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox13.TabIndex = 39
+        Me.PictureBox13.TabStop = False
+        '
+        'PictureBox14
+        '
+        Me.PictureBox14.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox14.Image = Global.电磁信息云服务.My.Resources.Resources.播放
+        Me.PictureBox14.Location = New System.Drawing.Point(115, 3)
+        Me.PictureBox14.Name = "PictureBox14"
+        Me.PictureBox14.Size = New System.Drawing.Size(30, 30)
+        Me.PictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox14.TabIndex = 38
+        Me.PictureBox14.TabStop = False
+        '
+        'Panel23
+        '
+        Me.Panel23.Controls.Add(Me.Label15)
+        Me.Panel23.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel23.Location = New System.Drawing.Point(284, 0)
+        Me.Panel23.Name = "Panel23"
+        Me.Panel23.Size = New System.Drawing.Size(56, 38)
+        Me.Panel23.TabIndex = 45
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.ForeColor = System.Drawing.SystemColors.HighlightText
+        Me.Label15.Location = New System.Drawing.Point(1, 11)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(47, 17)
+        Me.Label15.TabIndex = 40
+        Me.Label15.Text = "频点值:"
+        '
+        'Panel17
+        '
+        Me.Panel17.Controls.Add(Me.Label8)
+        Me.Panel17.Controls.Add(Me.ComboBox1)
+        Me.Panel17.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel17.Location = New System.Drawing.Point(59, 0)
+        Me.Panel17.Name = "Panel17"
+        Me.Panel17.Size = New System.Drawing.Size(225, 38)
+        Me.Panel17.TabIndex = 44
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.ForeColor = System.Drawing.SystemColors.HighlightText
+        Me.Label8.Location = New System.Drawing.Point(6, 11)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(47, 17)
+        Me.Label8.TabIndex = 38
+        Me.Label8.Text = "频点库:"
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(59, 7)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(151, 25)
+        Me.ComboBox1.TabIndex = 39
+        '
+        'Panel16
+        '
+        Me.Panel16.Controls.Add(Me.Label7)
+        Me.Panel16.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel16.Location = New System.Drawing.Point(0, 0)
+        Me.Panel16.Name = "Panel16"
+        Me.Panel16.Size = New System.Drawing.Size(59, 38)
+        Me.Panel16.TabIndex = 43
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.ForeColor = System.Drawing.SystemColors.HighlightText
+        Me.Label7.Location = New System.Drawing.Point(9, 11)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(44, 17)
+        Me.Label7.TabIndex = 37
+        Me.Label7.Text = "直方图"
+        '
         'TabPage5
         '
         Me.TabPage5.BackColor = System.Drawing.SystemColors.Control
@@ -1559,20 +1583,20 @@ Partial Class OnlineFreq
         '
         'Chart3
         '
-        ChartArea10.Name = "ChartArea1"
-        ChartArea10.Position.Auto = False
-        ChartArea10.Position.Height = 100.0!
-        ChartArea10.Position.Width = 98.0!
-        Me.Chart3.ChartAreas.Add(ChartArea10)
+        ChartArea6.Name = "ChartArea1"
+        ChartArea6.Position.Auto = False
+        ChartArea6.Position.Height = 100.0!
+        ChartArea6.Position.Width = 98.0!
+        Me.Chart3.ChartAreas.Add(ChartArea6)
         Me.Chart3.Dock = System.Windows.Forms.DockStyle.Fill
-        Legend10.Name = "Legend1"
-        Me.Chart3.Legends.Add(Legend10)
+        Legend6.Name = "Legend1"
+        Me.Chart3.Legends.Add(Legend6)
         Me.Chart3.Location = New System.Drawing.Point(0, 40)
         Me.Chart3.Name = "Chart3"
-        Series10.ChartArea = "ChartArea1"
-        Series10.Legend = "Legend1"
-        Series10.Name = "Series1"
-        Me.Chart3.Series.Add(Series10)
+        Series6.ChartArea = "ChartArea1"
+        Series6.Legend = "Legend1"
+        Series6.Name = "Series1"
+        Me.Chart3.Series.Add(Series6)
         Me.Chart3.Size = New System.Drawing.Size(993, 326)
         Me.Chart3.TabIndex = 81
         Me.Chart3.Text = "Chart3"
@@ -2489,19 +2513,6 @@ Partial Class OnlineFreq
         Me.TabPage3.ResumeLayout(False)
         Me.Panel13.ResumeLayout(False)
         Me.ContextMenuStrip2.ResumeLayout(False)
-        Me.Panel15.ResumeLayout(False)
-        Me.Panel50.ResumeLayout(False)
-        Me.Panel50.PerformLayout()
-        Me.Panel49.ResumeLayout(False)
-        Me.Panel49.PerformLayout()
-        Me.Panel23.ResumeLayout(False)
-        Me.Panel23.PerformLayout()
-        Me.Panel17.ResumeLayout(False)
-        Me.Panel17.PerformLayout()
-        Me.Panel16.ResumeLayout(False)
-        Me.Panel16.PerformLayout()
-        Me.Panel14.ResumeLayout(False)
-        CType(Me.Chart2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel10.ResumeLayout(False)
         Me.Panel11.ResumeLayout(False)
         Me.Panel11.PerformLayout()
@@ -2510,6 +2521,22 @@ Partial Class OnlineFreq
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel14.ResumeLayout(False)
+        CType(Me.Chart2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel15.ResumeLayout(False)
+        Me.Panel50.ResumeLayout(False)
+        Me.Panel50.PerformLayout()
+        Me.Panel49.ResumeLayout(False)
+        Me.Panel60.ResumeLayout(False)
+        Me.Panel60.PerformLayout()
+        CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox14, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel23.ResumeLayout(False)
+        Me.Panel23.PerformLayout()
+        Me.Panel17.ResumeLayout(False)
+        Me.Panel17.PerformLayout()
+        Me.Panel16.ResumeLayout(False)
+        Me.Panel16.PerformLayout()
         Me.TabPage5.ResumeLayout(False)
         Me.Panel21.ResumeLayout(False)
         Me.Panel26.ResumeLayout(False)
@@ -2571,19 +2598,8 @@ Partial Class OnlineFreq
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-    Friend WithEvents Panel10 As System.Windows.Forms.Panel
-    Friend WithEvents Panel11 As System.Windows.Forms.Panel
-    Friend WithEvents Label145 As System.Windows.Forms.Label
-    Friend WithEvents Panel12 As System.Windows.Forms.Panel
-    Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox4 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox5 As System.Windows.Forms.PictureBox
     Friend WithEvents Panel13 As System.Windows.Forms.Panel
-    Friend WithEvents LV20 As System.Windows.Forms.ListView
     Friend WithEvents Panel15 As System.Windows.Forms.Panel
-    Friend WithEvents Panel14 As System.Windows.Forms.Panel
-    Friend WithEvents Chart2 As System.Windows.Forms.DataVisualization.Charting.Chart
-    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
     Friend WithEvents Panel18 As System.Windows.Forms.Panel
     Friend WithEvents Panel19 As System.Windows.Forms.Panel
     Friend WithEvents Panel20 As System.Windows.Forms.Panel
@@ -2652,7 +2668,6 @@ Partial Class OnlineFreq
     Friend WithEvents Label21 As System.Windows.Forms.Label
     Friend WithEvents Panel36 As System.Windows.Forms.Panel
     Friend WithEvents CheckBox3 As System.Windows.Forms.CheckBox
-    Friend WithEvents Label23 As System.Windows.Forms.Label
     Friend WithEvents Chart3 As System.Windows.Forms.DataVisualization.Charting.Chart
     Friend WithEvents Panel46 As System.Windows.Forms.Panel
     Friend WithEvents Panel47 As System.Windows.Forms.Panel
@@ -2668,8 +2683,6 @@ Partial Class OnlineFreq
     Friend WithEvents Panel49 As System.Windows.Forms.Panel
     Friend WithEvents Panel50 As System.Windows.Forms.Panel
     Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
-    Friend WithEvents RadioButton8 As System.Windows.Forms.RadioButton
-    Friend WithEvents RadioButton7 As System.Windows.Forms.RadioButton
     Friend WithEvents ContextMenuStrip4 As System.Windows.Forms.ContextMenuStrip
     Friend WithEvents 选中作为时序Mark点ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Button5 As System.Windows.Forms.Button
@@ -2746,4 +2759,20 @@ Partial Class OnlineFreq
     Private WithEvents ShapeContainer2 As PowerPacks.ShapeContainer
     Private WithEvents ShapeContainer1 As PowerPacks.ShapeContainer
     Private WithEvents LSP As PowerPacks.LineShape
+    Friend WithEvents LV20 As ListView
+    Friend WithEvents Panel10 As Panel
+    Friend WithEvents Panel11 As Panel
+    Friend WithEvents Label23 As Label
+    Friend WithEvents Label145 As Label
+    Friend WithEvents Panel12 As Panel
+    Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents Panel14 As Panel
+    Friend WithEvents Chart2 As DataVisualization.Charting.Chart
+    Friend WithEvents Panel60 As Panel
+    Friend WithEvents Label45 As Label
+    Friend WithEvents PictureBox13 As PictureBox
+    Friend WithEvents PictureBox14 As PictureBox
 End Class

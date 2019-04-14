@@ -367,7 +367,6 @@ Public Class BusFreqGis
                     lbl_Lat.Text = bus.lat
                     lbl_Time.Text = bus.time
                 End If
-
             End If
         End If
         If IsNothing(ReciveDevMsgThread) = False Then
@@ -377,6 +376,8 @@ Public Class BusFreqGis
 
             End Try
         End If
+        OldLng = 0
+        OldLat = 0
         CleanGis(WebGis)
         ReciveDevMsgThread = New Thread(AddressOf ReviceDevMsg)
         ReciveDevMsgThread.Start()

@@ -85,13 +85,13 @@ Public Class AddTaskFrm
             Form1.GetOnlineDevice()
         End If
         For Each d In alldevlist
-            If d.Kind = "TSS" Then
+            If d.Kind = "TSS" And d.Name.Contains("长安") Then
                 cbDeviceID.Items.Add(d.Name)
                 cbDeviceID3.Items.Add(d.Name)
                 cbDeviceID6.Items.Add(d.Name)
                 cbDeviceID7.Items.Add(d.Name)
-                CBDeviceID10.Items.Add(d.Name)
-                CBDeviceID11.Items.Add(d.Name)
+                cbDeviceID10.Items.Add(d.Name)
+                cbDeviceID11.Items.Add(d.Name)
             End If
             If d.Kind = "TZBQ" Then
                 cbDeviceID2.Items.Add(d.Name)
@@ -99,6 +99,26 @@ Public Class AddTaskFrm
                 cbDeviceID5.Items.Add(d.Name)
                 CBDeviceID8.Items.Add(d.Name)
                 CLBDeviceID9.Items.Add(d.Name)
+            End If
+        Next
+        For Each d In alldevlist
+            If d.Kind = "TSS" And d.Name.Contains("虎门") Then
+                cbDeviceID.Items.Add(d.Name)
+                cbDeviceID3.Items.Add(d.Name)
+                cbDeviceID6.Items.Add(d.Name)
+                cbDeviceID7.Items.Add(d.Name)
+                cbDeviceID10.Items.Add(d.Name)
+                cbDeviceID11.Items.Add(d.Name)
+            End If
+        Next
+        For Each d In alldevlist
+            If d.Kind = "TSS" And Not d.Name.Contains("虎门") And Not d.Name.Contains("长安") Then
+                cbDeviceID.Items.Add(d.Name)
+                cbDeviceID3.Items.Add(d.Name)
+                cbDeviceID6.Items.Add(d.Name)
+                cbDeviceID7.Items.Add(d.Name)
+                cbDeviceID10.Items.Add(d.Name)
+                cbDeviceID11.Items.Add(d.Name)
             End If
         Next
         If cbDeviceID.Items.Count > 0 Then cbDeviceID.SelectedIndex = 0

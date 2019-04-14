@@ -12,7 +12,7 @@ Imports Newtonsoft.Json
 Imports Newtonsoft.Json.Linq
 Module Module1
     Public exeName As String = "电磁信息云服务.exe"
-    Public Version As String = "1.4.3.9"
+    Public Version As String = "1.4.4.5"
     Public hasaki As String = "mac"
     Public hero As String = "zed"
     Public uiOpenImg As Image = Image.FromFile("./img/展开.png")
@@ -103,6 +103,7 @@ Module Module1
         Dim freqStep As Double
         Dim gcValue As Double
         Dim DHDevice As String
+        Dim data As String
     End Structure
     Structure notifyStu
         Dim Time As String
