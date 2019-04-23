@@ -8,4 +8,5 @@
     Public value() As Double
     Public isDSGFreq As Boolean
     Public DSGFreqBase64 As String
+    Public grid As GridInfo
 End Class

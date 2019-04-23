@@ -97,6 +97,7 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="classes\GridInfo.vb" />
     <Compile Include="classes\json_PPSJ.vb" />
     <Compile Include="classes\runLocation.vb" />
     <Compile Include="LisanInfo.vb" />

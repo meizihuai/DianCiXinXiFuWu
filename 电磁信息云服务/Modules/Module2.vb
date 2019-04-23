@@ -143,6 +143,25 @@ Module Module2
         End Try
         Return Nothing
     End Function
+    Public Function CI2EnbIdCellId(cistr As String) As String
+        Try
+            If cistr = "" Then Return ""
+            Dim ci As Long = Long.Parse(cistr)
+            If ci = 0 Then Return ""
+            Dim enbId As Long
+            Dim cellid As Long
+            If ci < 100 Then Return ""
+            Dim hx As String = Convert.ToString(ci, 16)
+            Dim tail As String = hx.Substring(hx.Length - 2, 2)
+            Dim head As String = hx.Substring(0, hx.Length - 2)
+            cellid = Convert.ToInt32(tail, 16)
+            enbId = Convert.ToInt32(head, 16)
+            Return enbId & "_" & cellid
+        Catch ex As Exception
+
+        End Try
+
+    End Function
 
     Public Sub SetWebBrowserFeatures(ByVal ieVersion As Integer)
         If LicenseManager.UsageMode = LicenseUsageMode.Runtime Then

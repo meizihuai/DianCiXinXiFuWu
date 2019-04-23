@@ -553,6 +553,16 @@ Public Class BusHisFreqGis
         If IsNothing(yy) Then
             Exit Sub
         End If
+        'If Date.Parse(p.runLocation.time) > Date.Parse("2019-04-22 15:14:00") Then
+        '    Dim tmp As String = jstmp
+        '    Console.WriteLine(tmp)
+        'End If
+        If IsNothing(p.grid) = False Then
+            lbl_grid.Text = p.grid.id
+            lbl_cm.Text = p.grid.cm & " " & CI2EnbIdCellId(p.grid.cm)
+            lbl_cu.Text = p.grid.cu & " " & CI2EnbIdCellId(p.grid.cu)
+            lbl_ct.Text = p.grid.ct & " " & CI2EnbIdCellId(p.grid.ct)
+        End If
         Dim runLocationTime As String = ""
         Dim lngTmp As Double
         Dim latTmp As Double
@@ -565,6 +575,7 @@ Public Class BusHisFreqGis
             lbl_Lng.Text = lngTmp
             lbl_Lat.Text = latTmp
             lbl_Time.Text = time
+
         End If
         Dim dataCount As Integer = yy.Count
         Dim deviceID As String = p.deviceID

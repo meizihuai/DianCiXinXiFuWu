@@ -825,15 +825,7 @@ Public Class OnlineFreq
                 Dim du As Integer = AutoFenXiDu
                 Dim result(,) As Double = XinHaoFenLi(xx, yy, du, AutoFenXiFuCha)
                 Dim jieti As Integer = (du - 1) / 2
-                'ChaFen(xx, yy)
-                'ZuiDaZhiBaoChi(xx, yy)
                 HandleMuBan(xx, yy)
-                'Dim ser As New Series("illegalsignal")
-                'ser.ChartType = SeriesChartType.Column
-                'ser("PointWidth") = 0.1
-                'ser.Color = Color.Gold
-                'ser.IsVisibleInLegend = False
-                'ser.Name = "illegalsignal"
                 If isTongJi Then
                     If TongJiCiShu < 60 Then
                         'Label23.Visible = True
@@ -848,7 +840,20 @@ Public Class OnlineFreq
                                 Chart5.Series(1).Points.Clear()
                             End If
                         End If
-
+                        For j = 0 To result.GetLength(0) - 1
+                            Dim freq As Double = result(j, 0)
+                            For i = 0 To xx.Length - 1
+                                If xx(i) = freq Then
+                                    For m = i - jieti To i + jieti
+                                        If m >= 0 And m <= xx.Count - 1 Then
+                                            Dim value As Double = yy(m)
+                                            Me.Invoke(Sub() Chart5.Series(1).Points.AddXY(xx(m), value))
+                                        End If
+                                    Next
+                                    Exit For
+                                End If
+                            Next
+                        Next
                         For Each itm As ListViewItem In LV20.Items
                             Dim pl As String = itm.SubItems(2).Text
                             Dim count As String = itm.SubItems(7 + 3).Text
@@ -1235,7 +1240,7 @@ Public Class OnlineFreq
         For Each itm In itmList
             Dim isadd As Boolean = False
             Dim count As Integer = Val(itm.SubItems(7 + 3).Text)
-            If count < 10 Then
+            If count < 5 Then
                 Continue For
             End If
             For i = 0 To plist.Count - 1
@@ -1254,6 +1259,15 @@ Public Class OnlineFreq
 
 
         Dim cnt As Integer = plist.Count
+        LV27.Items.Clear()
+        For i = 0 To cnt - 1
+            Dim itm As ListViewItem = plist(i).Clone
+            itm.Text = i + 1
+            LV27.Items.Add(itm)
+        Next
+
+        Label145.Text = "信号数量: " & plist.Count
+
         'If isLiSanSaoMiao Then
         '    Dim isNeedReload As Boolean = False
         '    If LV20.Items.Count = 0 Then
@@ -1386,14 +1400,7 @@ Public Class OnlineFreq
         '    Next
         'End If
 
-        LV27.Items.Clear()
-        For i = 0 To cnt - 1
-            Dim itm As ListViewItem = plist(i).Clone
-            itm.Text = i + 1
-            LV27.Items.Add(itm)
-        Next
 
-        Label145.Text = "信号数量: " & plist.Count
     End Sub
     Private Sub LisanData2Lv20(lsinfo As LisanInfo)
         If IsNothing(lsinfo) Then Return
@@ -2701,6 +2708,62 @@ Public Class OnlineFreq
 
     Private Sub PictureBox13_Click(sender As Object, e As EventArgs) Handles PictureBox13.Click
         StopDevice()
+    End Sub
+
+    Private Sub 全部导出ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 全部导出ToolStripMenuItem.Click
+        Dim list As New List(Of ListViewItem)
+        For Each itm In LV20.Items
+            list.Add(itm)
+        Next
+        Dim excel As New ExcelPackage
+        Dim exSheet As ExcelWorksheet = excel.Workbook.Worksheets.Add("信号表")
+        Dim colCount As Integer = LV20.Columns.Count
+        For i = 0 To colCount - 1
+            exSheet.Cells(1, i + 1).Value = LV20.Columns(i).Text
+        Next
+        For i = 0 To list.Count - 1
+            Dim itm As ListViewItem = list(i)
+            For j = 0 To colCount - 1
+                exSheet.Cells(i + 2, j + 1).Value = itm.SubItems(j).Text
+            Next
+        Next
+        Dim SFD As New SaveFileDialog
+        SFD.Filter = "*.xlsx|*.xlsx"
+        Dim result = SFD.ShowDialog
+        If result = DialogResult.OK Or result = DialogResult.Yes Then
+            Dim path As String = SFD.FileName
+            If File.Exists(path) Then File.Delete(path)
+            excel.SaveAs(New FileInfo(path))
+            MsgBox("已导出为Excel文件")
+        End If
+    End Sub
+
+    Private Sub 全部导出ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles 全部导出ToolStripMenuItem1.Click
+        Dim list As New List(Of ListViewItem)
+        For Each itm In LV27.Items
+            list.Add(itm)
+        Next
+        Dim excel As New ExcelPackage
+        Dim exSheet As ExcelWorksheet = excel.Workbook.Worksheets.Add("信号表")
+        Dim colCount As Integer = LV27.Columns.Count
+        For i = 0 To colCount - 1
+            exSheet.Cells(1, i + 1).Value = LV27.Columns(i).Text
+        Next
+        For i = 0 To list.Count - 1
+            Dim itm As ListViewItem = list(i)
+            For j = 0 To colCount - 1
+                exSheet.Cells(i + 2, j + 1).Value = itm.SubItems(j).Text
+            Next
+        Next
+        Dim SFD As New SaveFileDialog
+        SFD.Filter = "*.xlsx|*.xlsx"
+        Dim result = SFD.ShowDialog
+        If result = DialogResult.OK Or result = DialogResult.Yes Then
+            Dim path As String = SFD.FileName
+            If File.Exists(path) Then File.Delete(path)
+            excel.SaveAs(New FileInfo(path))
+            MsgBox("已导出为Excel文件")
+        End If
     End Sub
 End Class
 

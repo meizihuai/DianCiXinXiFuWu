@@ -560,6 +560,17 @@ Public Class BusFreqGis
         Dim freqStart As Double = p.freqStart
         Dim freqStep As Double = p.freqStep
         Dim yy() As Double = p.value
+        Dim strTmp As String = ""
+        If IsNothing(p.grid) = False Then
+            lbl_grid.Text = p.grid.id
+            Me.Invoke(Sub()
+
+                          lbl_cm.Text = p.grid.cm & " " & CI2EnbIdCellId(p.grid.cm)
+                          lbl_cu.Text = p.grid.cu & " " & CI2EnbIdCellId(p.grid.cu)
+                          lbl_ct.Text = p.grid.ct & " " & CI2EnbIdCellId(p.grid.ct)
+                      End Sub)
+
+        End If
         Dim isDSGFreq As Boolean = False
         If p.isDSGFreq Then
             isDSGFreq = True

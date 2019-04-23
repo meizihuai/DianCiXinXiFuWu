@@ -23,25 +23,25 @@ Partial Class OnlineFreq
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend3 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea4 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend4 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series4 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea15 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend15 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series15 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea16 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend16 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series16 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea17 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend17 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series17 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea13 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend13 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series13 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(OnlineFreq))
-        Dim ChartArea5 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend5 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series5 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea6 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend6 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series6 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea9 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend9 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series9 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea18 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend18 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series18 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
@@ -239,6 +239,8 @@ Partial Class OnlineFreq
         Me.Label36 = New System.Windows.Forms.Label()
         Me.Label37 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.全部导出ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.全部导出ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -397,20 +399,20 @@ Partial Class OnlineFreq
         '
         'Chart5
         '
-        ChartArea1.Name = "ChartArea1"
-        ChartArea1.Position.Auto = False
-        ChartArea1.Position.Height = 100.0!
-        ChartArea1.Position.Width = 98.0!
-        Me.Chart5.ChartAreas.Add(ChartArea1)
+        ChartArea15.Name = "ChartArea1"
+        ChartArea15.Position.Auto = False
+        ChartArea15.Position.Height = 100.0!
+        ChartArea15.Position.Width = 98.0!
+        Me.Chart5.ChartAreas.Add(ChartArea15)
         Me.Chart5.Dock = System.Windows.Forms.DockStyle.Fill
-        Legend1.Name = "Legend1"
-        Me.Chart5.Legends.Add(Legend1)
+        Legend15.Name = "Legend1"
+        Me.Chart5.Legends.Add(Legend15)
         Me.Chart5.Location = New System.Drawing.Point(0, 0)
         Me.Chart5.Name = "Chart5"
-        Series1.ChartArea = "ChartArea1"
-        Series1.Legend = "Legend1"
-        Series1.Name = "Series1"
-        Me.Chart5.Series.Add(Series1)
+        Series15.ChartArea = "ChartArea1"
+        Series15.Legend = "Legend1"
+        Series15.Name = "Series1"
+        Me.Chart5.Series.Add(Series15)
         Me.Chart5.Size = New System.Drawing.Size(993, 107)
         Me.Chart5.TabIndex = 89
         Me.Chart5.Text = "Chart5"
@@ -427,9 +429,9 @@ Partial Class OnlineFreq
         '
         'ContextMenuStrip3
         '
-        Me.ContextMenuStrip3.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2})
+        Me.ContextMenuStrip3.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2, Me.全部导出ToolStripMenuItem1})
         Me.ContextMenuStrip3.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip3.Size = New System.Drawing.Size(101, 26)
+        Me.ContextMenuStrip3.Size = New System.Drawing.Size(125, 48)
         '
         'ToolStripMenuItem2
         '
@@ -450,20 +452,20 @@ Partial Class OnlineFreq
         '
         'Chart4
         '
-        ChartArea2.Name = "ChartArea1"
-        ChartArea2.Position.Auto = False
-        ChartArea2.Position.Height = 100.0!
-        ChartArea2.Position.Width = 98.0!
-        Me.Chart4.ChartAreas.Add(ChartArea2)
+        ChartArea16.Name = "ChartArea1"
+        ChartArea16.Position.Auto = False
+        ChartArea16.Position.Height = 100.0!
+        ChartArea16.Position.Width = 98.0!
+        Me.Chart4.ChartAreas.Add(ChartArea16)
         Me.Chart4.Dock = System.Windows.Forms.DockStyle.Fill
-        Legend2.Name = "Legend1"
-        Me.Chart4.Legends.Add(Legend2)
+        Legend16.Name = "Legend1"
+        Me.Chart4.Legends.Add(Legend16)
         Me.Chart4.Location = New System.Drawing.Point(0, 40)
         Me.Chart4.Name = "Chart4"
-        Series2.ChartArea = "ChartArea1"
-        Series2.Legend = "Legend1"
-        Series2.Name = "Series1"
-        Me.Chart4.Series.Add(Series2)
+        Series16.ChartArea = "ChartArea1"
+        Series16.Legend = "Legend1"
+        Series16.Name = "Series1"
+        Me.Chart4.Series.Add(Series16)
         Me.Chart4.Size = New System.Drawing.Size(991, 144)
         Me.Chart4.TabIndex = 92
         Me.Chart4.Text = "Chart4"
@@ -737,27 +739,27 @@ Partial Class OnlineFreq
         '
         'Chart1
         '
-        ChartArea3.AlignmentStyle = System.Windows.Forms.DataVisualization.Charting.AreaAlignmentStyles.Position
-        ChartArea3.InnerPlotPosition.Auto = False
-        ChartArea3.InnerPlotPosition.Height = 86.0!
-        ChartArea3.InnerPlotPosition.Width = 96.0!
-        ChartArea3.InnerPlotPosition.X = 4.0!
-        ChartArea3.InnerPlotPosition.Y = 4.0!
-        ChartArea3.Name = "ChartArea1"
-        ChartArea3.Position.Auto = False
-        ChartArea3.Position.Height = 100.0!
-        ChartArea3.Position.Width = 98.0!
-        Me.Chart1.ChartAreas.Add(ChartArea3)
+        ChartArea17.AlignmentStyle = System.Windows.Forms.DataVisualization.Charting.AreaAlignmentStyles.Position
+        ChartArea17.InnerPlotPosition.Auto = False
+        ChartArea17.InnerPlotPosition.Height = 86.0!
+        ChartArea17.InnerPlotPosition.Width = 96.0!
+        ChartArea17.InnerPlotPosition.X = 4.0!
+        ChartArea17.InnerPlotPosition.Y = 4.0!
+        ChartArea17.Name = "ChartArea1"
+        ChartArea17.Position.Auto = False
+        ChartArea17.Position.Height = 100.0!
+        ChartArea17.Position.Width = 98.0!
+        Me.Chart1.ChartAreas.Add(ChartArea17)
         Me.Chart1.ContextMenuStrip = Me.ContextMenuStrip4
         Me.Chart1.Dock = System.Windows.Forms.DockStyle.Fill
-        Legend3.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend3)
+        Legend17.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend17)
         Me.Chart1.Location = New System.Drawing.Point(0, 0)
         Me.Chart1.Name = "Chart1"
-        Series3.ChartArea = "ChartArea1"
-        Series3.Legend = "Legend1"
-        Series3.Name = "Series1"
-        Me.Chart1.Series.Add(Series3)
+        Series17.ChartArea = "ChartArea1"
+        Series17.Legend = "Legend1"
+        Series17.Name = "Series1"
+        Me.Chart1.Series.Add(Series17)
         Me.Chart1.Size = New System.Drawing.Size(993, 101)
         Me.Chart1.TabIndex = 2
         Me.Chart1.Text = "Chart1"
@@ -951,27 +953,27 @@ Partial Class OnlineFreq
         '
         'Chart6
         '
-        ChartArea4.AlignmentStyle = System.Windows.Forms.DataVisualization.Charting.AreaAlignmentStyles.Position
-        ChartArea4.InnerPlotPosition.Auto = False
-        ChartArea4.InnerPlotPosition.Height = 82.0!
-        ChartArea4.InnerPlotPosition.Width = 96.0!
-        ChartArea4.InnerPlotPosition.X = 4.0!
-        ChartArea4.InnerPlotPosition.Y = 4.0!
-        ChartArea4.Name = "ChartArea1"
-        ChartArea4.Position.Auto = False
-        ChartArea4.Position.Height = 100.0!
-        ChartArea4.Position.Width = 98.0!
-        Me.Chart6.ChartAreas.Add(ChartArea4)
+        ChartArea13.AlignmentStyle = System.Windows.Forms.DataVisualization.Charting.AreaAlignmentStyles.Position
+        ChartArea13.InnerPlotPosition.Auto = False
+        ChartArea13.InnerPlotPosition.Height = 82.0!
+        ChartArea13.InnerPlotPosition.Width = 96.0!
+        ChartArea13.InnerPlotPosition.X = 4.0!
+        ChartArea13.InnerPlotPosition.Y = 4.0!
+        ChartArea13.Name = "ChartArea1"
+        ChartArea13.Position.Auto = False
+        ChartArea13.Position.Height = 100.0!
+        ChartArea13.Position.Width = 98.0!
+        Me.Chart6.ChartAreas.Add(ChartArea13)
         Me.Chart6.ContextMenuStrip = Me.ContextMenuStrip4
         Me.Chart6.Dock = System.Windows.Forms.DockStyle.Fill
-        Legend4.Name = "Legend1"
-        Me.Chart6.Legends.Add(Legend4)
+        Legend13.Name = "Legend1"
+        Me.Chart6.Legends.Add(Legend13)
         Me.Chart6.Location = New System.Drawing.Point(0, 0)
         Me.Chart6.Name = "Chart6"
-        Series4.ChartArea = "ChartArea1"
-        Series4.Legend = "Legend1"
-        Series4.Name = "Series1"
-        Me.Chart6.Series.Add(Series4)
+        Series13.ChartArea = "ChartArea1"
+        Series13.Legend = "Legend1"
+        Series13.Name = "Series1"
+        Me.Chart6.Series.Add(Series13)
         Me.Chart6.Size = New System.Drawing.Size(250, 184)
         Me.Chart6.TabIndex = 3
         Me.Chart6.Text = "Chart6"
@@ -1255,14 +1257,14 @@ Partial Class OnlineFreq
         '
         'ContextMenuStrip2
         '
-        Me.ContextMenuStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1})
+        Me.ContextMenuStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.全部导出ToolStripMenuItem})
         Me.ContextMenuStrip2.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip2.Size = New System.Drawing.Size(101, 26)
+        Me.ContextMenuStrip2.Size = New System.Drawing.Size(125, 48)
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(100, 22)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
         Me.ToolStripMenuItem1.Text = "侦听"
         '
         'Panel10
@@ -1377,20 +1379,20 @@ Partial Class OnlineFreq
         '
         'Chart2
         '
-        ChartArea5.Name = "ChartArea1"
-        ChartArea5.Position.Auto = False
-        ChartArea5.Position.Height = 100.0!
-        ChartArea5.Position.Width = 98.0!
-        Me.Chart2.ChartAreas.Add(ChartArea5)
+        ChartArea9.Name = "ChartArea1"
+        ChartArea9.Position.Auto = False
+        ChartArea9.Position.Height = 100.0!
+        ChartArea9.Position.Width = 98.0!
+        Me.Chart2.ChartAreas.Add(ChartArea9)
         Me.Chart2.Dock = System.Windows.Forms.DockStyle.Fill
-        Legend5.Name = "Legend1"
-        Me.Chart2.Legends.Add(Legend5)
+        Legend9.Name = "Legend1"
+        Me.Chart2.Legends.Add(Legend9)
         Me.Chart2.Location = New System.Drawing.Point(0, 0)
         Me.Chart2.Name = "Chart2"
-        Series5.ChartArea = "ChartArea1"
-        Series5.Legend = "Legend1"
-        Series5.Name = "Series1"
-        Me.Chart2.Series.Add(Series5)
+        Series9.ChartArea = "ChartArea1"
+        Series9.Legend = "Legend1"
+        Series9.Name = "Series1"
+        Me.Chart2.Series.Add(Series9)
         Me.Chart2.Size = New System.Drawing.Size(993, 187)
         Me.Chart2.TabIndex = 3
         Me.Chart2.Text = "Chart2"
@@ -1583,20 +1585,20 @@ Partial Class OnlineFreq
         '
         'Chart3
         '
-        ChartArea6.Name = "ChartArea1"
-        ChartArea6.Position.Auto = False
-        ChartArea6.Position.Height = 100.0!
-        ChartArea6.Position.Width = 98.0!
-        Me.Chart3.ChartAreas.Add(ChartArea6)
+        ChartArea18.Name = "ChartArea1"
+        ChartArea18.Position.Auto = False
+        ChartArea18.Position.Height = 100.0!
+        ChartArea18.Position.Width = 98.0!
+        Me.Chart3.ChartAreas.Add(ChartArea18)
         Me.Chart3.Dock = System.Windows.Forms.DockStyle.Fill
-        Legend6.Name = "Legend1"
-        Me.Chart3.Legends.Add(Legend6)
+        Legend18.Name = "Legend1"
+        Me.Chart3.Legends.Add(Legend18)
         Me.Chart3.Location = New System.Drawing.Point(0, 40)
         Me.Chart3.Name = "Chart3"
-        Series6.ChartArea = "ChartArea1"
-        Series6.Legend = "Legend1"
-        Series6.Name = "Series1"
-        Me.Chart3.Series.Add(Series6)
+        Series18.ChartArea = "ChartArea1"
+        Series18.Legend = "Legend1"
+        Series18.Name = "Series1"
+        Me.Chart3.Series.Add(Series18)
         Me.Chart3.Size = New System.Drawing.Size(993, 326)
         Me.Chart3.TabIndex = 81
         Me.Chart3.Text = "Chart3"
@@ -2446,6 +2448,18 @@ Partial Class OnlineFreq
         '
         Me.Timer1.Interval = 1500
         '
+        '全部导出ToolStripMenuItem
+        '
+        Me.全部导出ToolStripMenuItem.Name = "全部导出ToolStripMenuItem"
+        Me.全部导出ToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.全部导出ToolStripMenuItem.Text = "全部导出"
+        '
+        '全部导出ToolStripMenuItem1
+        '
+        Me.全部导出ToolStripMenuItem1.Name = "全部导出ToolStripMenuItem1"
+        Me.全部导出ToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.全部导出ToolStripMenuItem1.Text = "全部导出"
+        '
         'OnlineFreq
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
@@ -2775,4 +2789,6 @@ Partial Class OnlineFreq
     Friend WithEvents Label45 As Label
     Friend WithEvents PictureBox13 As PictureBox
     Friend WithEvents PictureBox14 As PictureBox
+    Friend WithEvents 全部导出ToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents 全部导出ToolStripMenuItem1 As ToolStripMenuItem
 End Class

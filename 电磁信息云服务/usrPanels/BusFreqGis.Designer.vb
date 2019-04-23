@@ -61,6 +61,14 @@ Partial Class BusFreqGis
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.lbl_grid = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.lbl_cm = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.lbl_cu = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.lbl_ct = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
@@ -100,9 +108,9 @@ Partial Class BusFreqGis
         '
         Me.LVDetail.ContextMenuStrip = Me.ContextMenuStrip1
         Me.LVDetail.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LVDetail.Location = New System.Drawing.Point(0, 211)
+        Me.LVDetail.Location = New System.Drawing.Point(0, 254)
         Me.LVDetail.Name = "LVDetail"
-        Me.LVDetail.Size = New System.Drawing.Size(306, 458)
+        Me.LVDetail.Size = New System.Drawing.Size(306, 415)
         Me.LVDetail.TabIndex = 1
         Me.LVDetail.UseCompatibleStateImageBehavior = False
         '
@@ -120,6 +128,14 @@ Partial Class BusFreqGis
         '
         'Panel9
         '
+        Me.Panel9.Controls.Add(Me.lbl_ct)
+        Me.Panel9.Controls.Add(Me.Label19)
+        Me.Panel9.Controls.Add(Me.lbl_cu)
+        Me.Panel9.Controls.Add(Me.Label17)
+        Me.Panel9.Controls.Add(Me.lbl_cm)
+        Me.Panel9.Controls.Add(Me.Label15)
+        Me.Panel9.Controls.Add(Me.lbl_grid)
+        Me.Panel9.Controls.Add(Me.Label13)
         Me.Panel9.Controls.Add(Me.LinkLabel1)
         Me.Panel9.Controls.Add(Me.Label12)
         Me.Panel9.Controls.Add(Me.lbl_Time)
@@ -135,13 +151,13 @@ Partial Class BusFreqGis
         Me.Panel9.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel9.Location = New System.Drawing.Point(0, 0)
         Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(306, 211)
+        Me.Panel9.Size = New System.Drawing.Size(306, 254)
         Me.Panel9.TabIndex = 0
         '
         'LinkLabel1
         '
         Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Location = New System.Drawing.Point(117, 167)
+        Me.LinkLabel1.Location = New System.Drawing.Point(117, 216)
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(128, 17)
         Me.LinkLabel1.TabIndex = 15
@@ -151,7 +167,7 @@ Partial Class BusFreqGis
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(67, 167)
+        Me.Label12.Location = New System.Drawing.Point(67, 216)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(44, 17)
         Me.Label12.TabIndex = 14
@@ -160,7 +176,7 @@ Partial Class BusFreqGis
         'lbl_Time
         '
         Me.lbl_Time.AutoSize = True
-        Me.lbl_Time.Location = New System.Drawing.Point(117, 138)
+        Me.lbl_Time.Location = New System.Drawing.Point(117, 106)
         Me.lbl_Time.Name = "lbl_Time"
         Me.lbl_Time.Size = New System.Drawing.Size(44, 17)
         Me.lbl_Time.TabIndex = 12
@@ -169,7 +185,7 @@ Partial Class BusFreqGis
         'lbl_Lat
         '
         Me.lbl_Lat.AutoSize = True
-        Me.lbl_Lat.Location = New System.Drawing.Point(117, 108)
+        Me.lbl_Lat.Location = New System.Drawing.Point(117, 84)
         Me.lbl_Lat.Name = "lbl_Lat"
         Me.lbl_Lat.Size = New System.Drawing.Size(44, 17)
         Me.lbl_Lat.TabIndex = 11
@@ -178,7 +194,7 @@ Partial Class BusFreqGis
         'lbl_Lng
         '
         Me.lbl_Lng.AutoSize = True
-        Me.lbl_Lng.Location = New System.Drawing.Point(117, 78)
+        Me.lbl_Lng.Location = New System.Drawing.Point(117, 62)
         Me.lbl_Lng.Name = "lbl_Lng"
         Me.lbl_Lng.Size = New System.Drawing.Size(44, 17)
         Me.lbl_Lng.TabIndex = 10
@@ -187,7 +203,7 @@ Partial Class BusFreqGis
         'lbl_DeviceName
         '
         Me.lbl_DeviceName.AutoSize = True
-        Me.lbl_DeviceName.Location = New System.Drawing.Point(117, 48)
+        Me.lbl_DeviceName.Location = New System.Drawing.Point(117, 40)
         Me.lbl_DeviceName.Name = "lbl_DeviceName"
         Me.lbl_DeviceName.Size = New System.Drawing.Size(44, 17)
         Me.lbl_DeviceName.TabIndex = 9
@@ -196,7 +212,7 @@ Partial Class BusFreqGis
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(67, 138)
+        Me.Label10.Location = New System.Drawing.Point(67, 106)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(44, 17)
         Me.Label10.TabIndex = 8
@@ -205,7 +221,7 @@ Partial Class BusFreqGis
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(67, 108)
+        Me.Label9.Location = New System.Drawing.Point(67, 84)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(44, 17)
         Me.Label9.TabIndex = 7
@@ -214,7 +230,7 @@ Partial Class BusFreqGis
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(67, 78)
+        Me.Label8.Location = New System.Drawing.Point(67, 62)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(44, 17)
         Me.Label8.TabIndex = 6
@@ -223,7 +239,7 @@ Partial Class BusFreqGis
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(19, 48)
+        Me.Label7.Location = New System.Drawing.Point(19, 40)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(92, 17)
         Me.Label7.TabIndex = 5
@@ -439,6 +455,78 @@ Partial Class BusFreqGis
         Me.Label6.TabIndex = 11
         Me.Label6.Text = "频谱地图"
         '
+        'lbl_grid
+        '
+        Me.lbl_grid.AutoSize = True
+        Me.lbl_grid.Location = New System.Drawing.Point(117, 128)
+        Me.lbl_grid.Name = "lbl_grid"
+        Me.lbl_grid.Size = New System.Drawing.Size(44, 17)
+        Me.lbl_grid.TabIndex = 17
+        Me.lbl_grid.Text = "未选择"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(67, 128)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(44, 17)
+        Me.Label13.TabIndex = 16
+        Me.Label13.Text = "网格："
+        '
+        'lbl_cm
+        '
+        Me.lbl_cm.AutoSize = True
+        Me.lbl_cm.Location = New System.Drawing.Point(117, 150)
+        Me.lbl_cm.Name = "lbl_cm"
+        Me.lbl_cm.Size = New System.Drawing.Size(44, 17)
+        Me.lbl_cm.TabIndex = 19
+        Me.lbl_cm.Text = "未选择"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(67, 150)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(44, 17)
+        Me.Label15.TabIndex = 18
+        Me.Label15.Text = "移动："
+        '
+        'lbl_cu
+        '
+        Me.lbl_cu.AutoSize = True
+        Me.lbl_cu.Location = New System.Drawing.Point(117, 172)
+        Me.lbl_cu.Name = "lbl_cu"
+        Me.lbl_cu.Size = New System.Drawing.Size(44, 17)
+        Me.lbl_cu.TabIndex = 21
+        Me.lbl_cu.Text = "未选择"
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(67, 172)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(44, 17)
+        Me.Label17.TabIndex = 20
+        Me.Label17.Text = "联通："
+        '
+        'lbl_ct
+        '
+        Me.lbl_ct.AutoSize = True
+        Me.lbl_ct.Location = New System.Drawing.Point(117, 194)
+        Me.lbl_ct.Name = "lbl_ct"
+        Me.lbl_ct.Size = New System.Drawing.Size(44, 17)
+        Me.lbl_ct.TabIndex = 23
+        Me.lbl_ct.Text = "未选择"
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(67, 194)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(44, 17)
+        Me.Label19.TabIndex = 22
+        Me.Label19.Text = "电信："
+        '
         'BusFreqGis
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
@@ -503,4 +591,12 @@ Partial Class BusFreqGis
     Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
     Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
     Friend WithEvents CheckBox2 As CheckBox
+    Friend WithEvents lbl_ct As Label
+    Friend WithEvents Label19 As Label
+    Friend WithEvents lbl_cu As Label
+    Friend WithEvents Label17 As Label
+    Friend WithEvents lbl_cm As Label
+    Friend WithEvents Label15 As Label
+    Friend WithEvents lbl_grid As Label
+    Friend WithEvents Label13 As Label
 End Class
