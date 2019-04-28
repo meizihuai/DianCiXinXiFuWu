@@ -100,6 +100,12 @@
     <Compile Include="classes\GridInfo.vb" />
     <Compile Include="classes\json_PPSJ.vb" />
     <Compile Include="classes\runLocation.vb" />
+    <Compile Include="frms\FrmBlackRadio.Designer.vb">
+      <DependentUpon>FrmBlackRadio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frms\FrmBlackRadio.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="LisanInfo.vb" />
     <Compile Include="usrPanels\CarFreqGis.Designer.vb">
       <DependentUpon>CarFreqGis.vb</DependentUpon>
@@ -446,6 +452,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frms\FrmBlackRadio.resx">
+      <DependentUpon>FrmBlackRadio.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="usrPanels\CarFreqGis.resx">
       <DependentUpon>CarFreqGis.vb</DependentUpon>
     </EmbeddedResource>

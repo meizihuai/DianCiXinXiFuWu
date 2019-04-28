@@ -58,6 +58,7 @@ Partial Class Form1
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PanelMain = New System.Windows.Forms.Panel()
+        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel8.SuspendLayout()
@@ -77,6 +78,7 @@ Partial Class Form1
         Me.Panel11.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -101,14 +103,14 @@ Partial Class Form1
         Me.Panel4.Location = New System.Drawing.Point(712, 0)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Padding = New System.Windows.Forms.Padding(5)
-        Me.Panel4.Size = New System.Drawing.Size(345, 54)
+        Me.Panel4.Size = New System.Drawing.Size(305, 54)
         Me.Panel4.TabIndex = 8
         '
         'Panel8
         '
         Me.Panel8.Controls.Add(Me.ShapeContainer2)
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel8.Location = New System.Drawing.Point(302, 5)
+        Me.Panel8.Location = New System.Drawing.Point(262, 5)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(38, 44)
         Me.Panel8.TabIndex = 4
@@ -149,7 +151,7 @@ Partial Class Form1
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
         Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape1})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(335, 44)
+        Me.ShapeContainer1.Size = New System.Drawing.Size(295, 44)
         Me.ShapeContainer1.TabIndex = 3
         Me.ShapeContainer1.TabStop = False
         '
@@ -271,23 +273,24 @@ Partial Class Form1
         '
         'Panel7
         '
+        Me.Panel7.Controls.Add(Me.PictureBox8)
         Me.Panel7.Controls.Add(Me.PictureBox7)
         Me.Panel7.Controls.Add(Me.PictureBox6)
         Me.Panel7.Controls.Add(Me.PictureBox5)
         Me.Panel7.Controls.Add(Me.lblUser)
         Me.Panel7.Controls.Add(Me.lbl_Time)
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel7.Location = New System.Drawing.Point(1057, 0)
+        Me.Panel7.Location = New System.Drawing.Point(1017, 0)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Padding = New System.Windows.Forms.Padding(5)
-        Me.Panel7.Size = New System.Drawing.Size(277, 54)
+        Me.Panel7.Size = New System.Drawing.Size(317, 54)
         Me.Panel7.TabIndex = 4
         '
         'PictureBox7
         '
         Me.PictureBox7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), System.Drawing.Image)
-        Me.PictureBox7.Location = New System.Drawing.Point(238, 12)
+        Me.PictureBox7.Location = New System.Drawing.Point(270, 12)
         Me.PictureBox7.Name = "PictureBox7"
         Me.PictureBox7.Size = New System.Drawing.Size(30, 30)
         Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -298,7 +301,7 @@ Partial Class Form1
         '
         Me.PictureBox6.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox6.Image = CType(resources.GetObject("PictureBox6.Image"), System.Drawing.Image)
-        Me.PictureBox6.Location = New System.Drawing.Point(200, 12)
+        Me.PictureBox6.Location = New System.Drawing.Point(234, 12)
         Me.PictureBox6.Name = "PictureBox6"
         Me.PictureBox6.Size = New System.Drawing.Size(30, 30)
         Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -309,7 +312,7 @@ Partial Class Form1
         '
         Me.PictureBox5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), System.Drawing.Image)
-        Me.PictureBox5.Location = New System.Drawing.Point(164, 12)
+        Me.PictureBox5.Location = New System.Drawing.Point(198, 12)
         Me.PictureBox5.Name = "PictureBox5"
         Me.PictureBox5.Size = New System.Drawing.Size(30, 30)
         Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -432,6 +435,17 @@ Partial Class Form1
         Me.PanelMain.Size = New System.Drawing.Size(1153, 665)
         Me.PanelMain.TabIndex = 4
         '
+        'PictureBox8
+        '
+        Me.PictureBox8.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox8.Image = CType(resources.GetObject("PictureBox8.Image"), System.Drawing.Image)
+        Me.PictureBox8.Location = New System.Drawing.Point(162, 12)
+        Me.PictureBox8.Name = "PictureBox8"
+        Me.PictureBox8.Size = New System.Drawing.Size(30, 30)
+        Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox8.TabIndex = 55
+        Me.PictureBox8.TabStop = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
@@ -469,6 +483,7 @@ Partial Class Form1
         Me.Panel11.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -506,4 +521,5 @@ Partial Class Form1
     Friend WithEvents Panel11 As System.Windows.Forms.Panel
     Friend WithEvents Panel_Guide As System.Windows.Forms.Panel
     Friend WithEvents lblSpeed As System.Windows.Forms.Label
+    Friend WithEvents PictureBox8 As PictureBox
 End Class
